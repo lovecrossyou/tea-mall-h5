@@ -1,0 +1,45 @@
+
+.home_header{
+  height:90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home_header_left{
+  width:87px;
+  font-size:20px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  text-align: center;
+}
+.home_header_left img{
+  width:32px;
+  height:25px;
+}
+.home_header_right{
+  flex:1;
+}
+.home_header_right_input{
+  width:90%;
+  height:60px;
+  line-height:60px;
+  background:rgba(244,248,251,1);
+  border-radius:4px;
+  font-size:28px;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  padding-left:28px;
+  box-sizing:border-box;
+}
+.home_header_right_input img{
+  width:28px;
+  height:28px;
+  margin-right:7px;
+  box-sizing:border-box;
+}
+
+.carousel_container{
+
+}
