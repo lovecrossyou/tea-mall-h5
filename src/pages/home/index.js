@@ -25,7 +25,7 @@ class Index extends PureComponent{
               </div>
             </div>
         </div>
-        <div className={styles.carousel_container}>
+        <div className={styles.git}>
           <Carousel
             autoplay={false}
             infinite
