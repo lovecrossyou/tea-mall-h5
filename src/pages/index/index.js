@@ -1,30 +1,16 @@
-/*
- * @Author: Jan-superman 
- * @Date: 2018-09-27 20:38:37 
- * @Last Modified by: Jan-superman
- * @Last Modified time: 2018-11-07 23:33:55
- */
+import React from 'react'
+import styles from './index.less'
+import Link from 'umi/link';
 
-import React, { PureComponent } from 'react';
-import styles from './index.less';
-
-class Index extends PureComponent {
+export default class Home extends React.Component {
   render() {
-    const { route } = this.props;
-    const testList = Array.from({ length: 10 }, (v, i) => i);
     return (
-      <div className={styles.index}>
-        <div className={styles.test}>
-          <h2>{route.title}</h2>
-          {testList.map(i => (
-            <div className={styles.square} key={i}>
-              {i}
-            </div>
-          ))}
-        </div>
+      <div className={styles.container}>
+        <Link to="/category"><h2>分类管理-搜索模块 【店铺详情】</h2></Link>
+        <Link to="/home"><h2>首页【支付订单流程】</h2></Link>
+        <Link to="/product"><h2>商品模块 【评论模块</h2></Link>
+        <Link to="/limitbuy"><h2>限时秒杀 【地址管理模块】</h2></Link>
       </div>
     );
   }
 }
-
-export default Index;
