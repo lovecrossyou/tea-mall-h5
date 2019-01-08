@@ -10,7 +10,7 @@ export default {
       antd: true,
       dva: true,
       immer: true,
-      // hd: true,
+      hd: true,
     }],
   ],
   proxy: {
