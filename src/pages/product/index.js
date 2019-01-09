@@ -1,42 +1,99 @@
-import React, { PureComponent } from 'react';
-import styles from './index.less';
-import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
-const tabs = [
-  { title: <Badge text={'3'}>First Tab</Badge> },
-  { title: <Badge text={'今日(20)'}>Second Tab</Badge> },
-  { title: <Badge dot>Third Tab</Badge> },
-];
+import React, { PureComponent } from "react";
+import styles from "./index.less";
+import { NavBar, Icon, Button, Flex, WingBlank, Carousel } from "antd-mobile";
+import Product_figure from "./image/Product_figure.png";
 
-const tabs2 = [
-  { title: 'First Tab', sub: '1' },
-  { title: 'Second Tab', sub: '2' },
-  { title: 'Third Tab', sub: '3' },
-];
-
+const ProductInfo = () => {
+  return null;
+};
 
 export default class Index extends PureComponent {
-
   render() {
     return (
-      <div style={{height:'100%',position:'absolute'}}>
-        <Tabs tabs={tabs}
-              tabBarPosition="top"
-              initialPage={1}
-              onChange={(tab, index) => { console.log('onChange', index, tab); }}
-              onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-            Content of first tab
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-            Content of second tab
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-            Content of third tab
-          </div>
-        </Tabs>
-        <WhiteSpace />
+      <div>
+        <div>
+          <NavBar
+            mode="light"
+            icon={<Icon type="left" />}
+            onLeftClick={() => console.log("onLeftClick")}
+            rightContent={[
+              <Icon key="0" type="search" style={{ marginRight: "16px" }} />
+            ]}
+          >
+            <TopSegment />
+          </NavBar>
+        </div>
+        <div style={{ width: "100%", backgroundColor: "red" }}>
+          <CarouselTop />
+        </div>
+
+        <ProductInfo />
       </div>
+    );
+  }
+}
+
+const TopSegment = () => {
+  return (
+    <Flex justify="between">
+      <Flex.Item>商品</Flex.Item>
+      <Flex.Item>详情</Flex.Item>
+      <Flex.Item>评价</Flex.Item>
+    </Flex>
+  );
+};
+class CarouselTop extends PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      data: ["1", "2", "3"],
+      imgHeight: 176
+    };
+  }
+
+  componentDidMount() {
+    // setTimeout(() => {
+    //   this.setState({
+    //   data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+    //   });
+    // }, 100);
+  }
+  render() {
+    return (
+      <WingBlank>
+        <Carousel
+          autoplay={false}
+          infinite
+          beforeChange={(from, to) =>
+            console.log(`slide from ${from} to ${to}`)
+          }
+          afterChange={index => console.log("slide to", index)}
+        >
+          {this.state.data.map(val => (
+            <a
+              key={val}
+              href="http://www.alipay.com"
+              style={{
+                display: "inline-block",
+                width: "100%",
+                height: this.state.imgHeight
+              }}
+            >
+              <img
+                // src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                src={Product_figure}
+                alt="加载中。。"
+                style={{ width: "100%", verticalAlign: "top" }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event("resize"));
+                  this.setState({ imgHeight: "auto" });
+                }}
+              />
+            </a>
+          ))}
+        </Carousel>
+      </WingBlank>
     );
   }
 }
