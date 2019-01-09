@@ -13,3 +13,20 @@
   color: white;
   margin: 0;
 }
+
+.nav{
+  height: 120px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 44px 19px;
+}
+
+.nav_title{
+  height:35px;
+  font-size:36px;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(31,31,31,1);
+}

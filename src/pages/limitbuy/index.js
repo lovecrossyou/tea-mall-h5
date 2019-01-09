@@ -2,9 +2,11 @@ import React, { PureComponent } from "react";
 import styles from "./index.less";
 import { TabBar } from "antd-mobile";
 import Swiper from "react-id-swiper";
-
 import header_bg from "./image/goodtea_top_bg@2x.png";
 import shoppingcart_btn from "./image/goodtea_btn_shopping@2x.png";
+
+
+import router from 'umi/router';
 
 const Header = () => {
   return (
@@ -18,8 +20,8 @@ const Header = () => {
 };
 
 
-const ProductItem = () => {
-  return <div className={styles.product_item}>
+const ProductItem = ({onClick}) => {
+  return <div className={styles.product_item} onClick={onClick}>
     <img className={styles.product_item_icon} src="" alt=""/>
     <div className={styles.product_item_infos}>
       <div className={styles.product_item_title}>
@@ -37,14 +39,13 @@ const ProductItem = () => {
 };
 
 
-const Products = () => {
+const Products = ({onClick}) => {
   return <div>
-    <ProductItem/>
-    <ProductItem/>
-    <ProductItem/>
-    <ProductItem/>
-    <ProductItem/>
-    <ProductItem/>
+    <ProductItem onClick={onClick}/>
+    <ProductItem onClick={onClick}/>
+    <ProductItem onClick={onClick}/>
+    <ProductItem onClick={onClick}/>
+    <ProductItem onClick={onClick}/>
   </div>;
 };
 
@@ -79,7 +80,10 @@ export default class Index extends PureComponent {
         <SegmentedControl
           values={["今日秒杀", "明日预告"]}/>
         <Timer/>
-        <Products/>
+        <Products
+          onClick={()=>{
+            router.push('/orderconfirm')
+          }}/>
       </div>
     );
   }
