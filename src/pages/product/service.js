@@ -10,3 +10,6 @@ import { apiUrlfun, stringify } from "../../../services/config";
 export async function rtsGetShopProductDetail(params) {
   return request(`${apiUrlfun("mall")}/v1/commodities?${stringify(params)}`);
 }
+export async function rtsGetShopStoreDetail(params) {
+  return request(`${apiUrlfun("mall")}/v1/commodities?${stringify(params)}`);
+}
