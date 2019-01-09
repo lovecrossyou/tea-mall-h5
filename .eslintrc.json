@@ -1,0 +1,22 @@
+{
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true,
+    "mocha": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "eqeqeq": "off",
+    "curly": "warn",
+    "quotes": ["warn", "double"],
+    "semi": 2
+  }
+}

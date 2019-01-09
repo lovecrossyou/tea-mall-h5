@@ -13,3 +13,26 @@
   color: white;
   margin: 0;
 }
+.left_arrow_wrapper{
+  /*width: 60px;*/
+  /*padding: 20px;*/
+  /*box-sizing: border-box;*/
+}
+
+.nav{
+  height: 120px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 44px 19px;
+  box-sizing: border-box;
+}
+
+.nav_title{
+  height:35px;
+  font-size:36px;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(31,31,31,1);
+}
