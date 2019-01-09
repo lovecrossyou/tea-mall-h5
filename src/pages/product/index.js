@@ -4,7 +4,14 @@ import { NavBar, Icon, Button, Flex, WingBlank, Carousel } from "antd-mobile";
 import Product_figure from "./image/Product_figure.png";
 
 const ProductInfo = () => {
-  return null;
+  return <div className={styles.product_info}>
+    <div className={styles.price_info_wrapper}>
+      <div className={styles.price_now}>￥125</div>
+      <div className={styles.price_origin}>￥125</div>
+    </div>
+    <div className={styles.product_name}>2018新茶西湖牌龙井茶叶正宗雨前西湖龙井茶茶纸包春茶绿茶250g</div>
+    <div></div>
+  </div>;
 };
 
 export default class Index extends PureComponent {
