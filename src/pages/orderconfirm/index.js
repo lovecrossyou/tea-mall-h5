@@ -100,7 +100,6 @@ export default class OrderConfirm extends PureComponent {
         <Navigator title='提交订单'/>
         <OrderContent/>
         <ProductOptionFooter/>
-
         <Footer onClick={()=>{
           router.push('/orderconfirm/orderpay')
         }}/>
