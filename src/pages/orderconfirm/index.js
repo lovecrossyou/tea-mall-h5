@@ -3,11 +3,19 @@ import styles from "./index.less";
 import React from "react";
 import { Navigator } from "../../layouts/navigator";
 
-export default class ConfirmOrder extends PureComponent {
+
+const OrderContent = ()=>{
+  return <div className={styles.ordercontent}>
+
+  </div>
+}
+
+export default class OrderConfirm extends PureComponent {
   render() {
     return (
       <div className={styles.container}>
         <Navigator/>
+        <OrderContent/>
       </div>
     );
   }

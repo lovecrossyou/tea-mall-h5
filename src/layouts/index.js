@@ -8,7 +8,7 @@ import withRouter from "umi/withRouter";
 import styles from './index.css';
 
 function BasicLayout(props) {
-  return <div>
+  return <div style={{height:'100%'}}>
     {props.children}
   </div>;
   return (
