@@ -13,6 +13,7 @@ import mall_main_img_3 from './image/mall_main_img_3@2x.png';
 import mall_p_hot from './image/mall_p_hot@2x.png';
 import mall_p_1 from './image/mall_p_1@2x.png';
 import mall_p_5 from './image/mall_p_5@2x.png';
+import CarouselTop from "../../layouts/carousel";
 
 
 class Index extends PureComponent{
@@ -35,27 +36,7 @@ class Index extends PureComponent{
         </div>
         <NavBarList/>
         <div className={styles.carousel_container}>
-          <Carousel
-            autoplay={false}
-            infinite
-          >
-            {carousel.map(val => (
-              <a
-                key={val}
-                href="javascript:;"
-                style={{ display: 'inline-block', width: '100%', height: imgHeight }}
-              >
-                <img
-                  src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
-                  alt=""
-                  style={{ width: '100%', verticalAlign: 'top' }}
-                  onLoad={() => {
-
-                  }}
-                />
-              </a>
-            ))}
-          </Carousel>
+          <CarouselTop />
         </div>
         <div className={styles.home_section}>
           <div className={styles.home_free_tea}>
