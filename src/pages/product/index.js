@@ -277,6 +277,26 @@ class StoreInProduct extends PureComponent {
           </div>
 
           <div className={styles.storeInProduct_header_bottom} />
+          {[
+            { name: "宝贝描述：4.8", level: 4.8 },
+            { name: "宝贝描述：4.8", level: 4.8 },
+            { name: "宝贝描述：4.8", level: 4.8 }
+          ].map(value => {
+            return (
+              <div
+                key={value.name}
+                className={styles.storeInProduct_header_bottomDetail_container}
+              >
+                <div className={styles.storeInProduct_header_bottomDetail}>
+                  {value.name}
+                </div>
+                <div className={styles.storeInProduct_header_bottomLevel}>
+                  {value.level}
+                </div>
+              </div>
+            );
+          })}
+
           <div />
         </div>
       </div>
