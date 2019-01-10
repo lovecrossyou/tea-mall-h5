@@ -65,7 +65,7 @@ class SegmentedControl extends React.Component {
         values.map((title,index)=> {
           if (index === firstIndex) return <div onClick={()=>this.setState({activeIndex:index})} key={index+'#'} className={activeIndex===index?styles.segmentcontrol_left_active:styles.segmentcontrol_left}>{title}</div>;
           if (index === lastIndex) return <div onClick={()=>this.setState({activeIndex:index})} key={index+'#'} key={index+'#'} className={activeIndex===index?styles.segmentcontrol_right_active:styles.segmentcontrol_right}>{title}</div>;
-          return null ;
+          return <div onClick={()=>this.setState({activeIndex:index})} key={index+'#'} key={index+'#'} className={activeIndex===index?styles.segmentcontrol_item_active:styles.segmentcontrol_item}>{title}</div>; ;
         })
       }
     </div>;
