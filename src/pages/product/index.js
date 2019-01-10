@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import styles from "./index.less";
+import styles from "./index.css";
 import {
   NavBar,
   Icon,
@@ -143,16 +143,16 @@ class CarouselTop extends PureComponent {
             console.log(`slide from ${from} to ${to}`)
           }
           dotStyle={{
-            width: 50,
-            height: 10,
-            borderRadius: 5,
-            backgroundColor: "yellow"
+            width: "28px",
+            height: "4px",
+            borderRadius: "2px",
+            backgroundColor: "#D3D3D3"
           }}
           dotActiveStyle={{
-            width: 50,
-            height: 10,
-            borderRadius: 5,
-            backgroundColor: "green"
+            width: "28px",
+            height: "4px",
+            borderRadius: "2px",
+            backgroundColor: "#101010"
           }}
           afterChange={index => console.log("slide to", index)}
         >
