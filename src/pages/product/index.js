@@ -98,7 +98,11 @@ export default class Index extends PureComponent {
         <ProductItem dic={{ title: "产品参数：", content: "", arrow: true }} />
         <WhiteSpace />
 
+        {/*商品评价*/}
         <ProductAppraise />
+        <WhiteSpace />
+        {/*商品店铺*/}
+        <StoreInProduct />
       </div>
     );
   }
@@ -133,16 +137,28 @@ class CarouselTop extends PureComponent {
     return (
       <WingBlank>
         <Carousel
-          autoplay={false}
+          autoplay={true}
           infinite
           beforeChange={(from, to) =>
             console.log(`slide from ${from} to ${to}`)
           }
+          dotStyle={{
+            width: 50,
+            height: 10,
+            borderRadius: 5,
+            backgroundColor: "yellow"
+          }}
+          dotActiveStyle={{
+            width: 50,
+            height: 10,
+            borderRadius: 5,
+            backgroundColor: "green"
+          }}
           afterChange={index => console.log("slide to", index)}
         >
           {this.state.data.map(val => (
             <a
-              key={val}
+              key={val + ""}
               href="http://www.alipay.com"
               style={{
                 display: "inline-block",
@@ -224,6 +240,44 @@ class Product_appraise extends PureComponent {
               );
             })}
           </div>
+        </div>
+      </div>
+    );
+  }
+}
+class StoreInProduct extends PureComponent {
+  render() {
+    return (
+      <div className={styles.storeInProduct_container}>
+        <div className={styles.storeInProduct_header}>
+          <div className={styles.storeInProduct_header_top}>
+            <div className={styles.storeInProduct_header_topleft}>
+              <img
+                style={{ width: 76, height: 76 }}
+                src={require("./image/store_logo.png")}
+              />
+              <div className={styles.storeInProduct_header_topInfo}>
+                <div className={styles.storeInProduct_header_topInfo_name}>
+                  {"张一元旗舰店"}
+                </div>
+                <div className={styles.storeInProduct_header_topInfo_count}>
+                  {"全部宝贝：98"}
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.storeInProduct_header_topright}>
+              <div className={styles.storeInProduct_header_toprightAll}>
+                {"全部宝贝"}
+              </div>
+              <div className={styles.storeInProduct_header_toprightToStore}>
+                {"进店逛逛"}
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.storeInProduct_header_bottom} />
+          <div />
         </div>
       </div>
     );
