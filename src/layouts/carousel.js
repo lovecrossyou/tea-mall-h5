@@ -8,7 +8,6 @@ export default class CarouselTop extends PureComponent {
     super();
     this.state = {
       data: ["1", "2", "3"],
-      imgHeight: 176
     };
   }
 
