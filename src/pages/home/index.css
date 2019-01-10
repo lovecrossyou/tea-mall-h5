@@ -1,4 +1,8 @@
-
+.home_container{
+  width:100%;
+  background: #ffffff;
+  overflow-x: hidden;
+}
 .home_header{
   height:90px;
   display: flex;
@@ -39,7 +43,196 @@
   margin-right:7px;
   box-sizing:border-box;
 }
-
 .carousel_container{
-
+  width:100%;
 }
+.home_list{
+  width:100%;
+  height:88px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size:28px;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:#A0A0A0;
+}
+
+.home_section{
+  width:100%;
+  padding:0 40px 50px;
+  box-sizing: border-box;
+}
+.home_free_tea{
+  display: flex;
+  justify-content: space-between;
+  margin-top:70px;
+}
+.home_free_tea_left{
+  width:240px;
+  height:352px;
+  background:rgba(248,250,252,1);
+  box-shadow:0px 2px 15px 1px rgba(230,235,239,1);
+  border-radius:4px;
+  margin-right:32px;
+}
+.home_free_tea_left .home_free_tea_intro{
+  width:750px;
+  height:116px;
+  color:rgba(54,59,66,1);
+}
+.home_free_tea_intro{
+  padding-left:18px;
+  padding-top:24px;
+  box-sizing: border-box;
+  font-size:24px;
+  line-height: 1.5;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(54,59,66,1);
+}
+.home_free_tea_intro .home_free_tea_intro_h{
+  font-size:28px;
+  font-weight:bold;
+  color:rgba(54,59,66,1);
+}
+.home_free_tea_left .home_free_tea_img,
+.home_free_tea_left .home_free_tea_img img{
+  width:240px;
+  height:236px;
+}
+.home_free_tea_right{
+  flex: 1;
+  height:352px;
+
+  box-shadow:0px 2px 15px 1px rgba(230,235,239,1);
+  border-radius:4px;
+}
+.home_free_tea_right_item{
+  display: flex;
+  background:rgba(248,250,252,1);
+}
+.home_free_tea_right .home_free_tea_intro{
+  flex:1;
+}
+.home_free_tea_right_item .home_free_tea_img,
+.home_free_tea_right_item .home_free_tea_img img{
+  width:220px;
+  height:170px;
+}
+.home_top_selling_tit{
+  margin-top:86px;
+  margin-bottom:56px;
+  font-size:44px;
+  font-family:PingFang-SC-Bold;
+  color:rgba(31,31,31,1);
+  display: flex;
+  justify-content: space-between;
+}
+.home_top_selling_tit .home_top_selling_tit_right{
+  font-size:28px;
+  color:rgba(255,89,75,1)
+}
+.home_top_selling_tit .home_top_selling_tit_right span{
+  display: inline-block;
+  background:rgba(255,89,75,1);
+  color:rgba(255,255,255,1);
+  border-radius: 4px;
+  padding: 8px;
+  margin-left:10px;
+  margin-right:10px;
+}
+.home_top_selling_tea{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.home_top_selling_tea_item{
+  width:328px;
+}
+.home_top_selling_tea_item_img{
+  width:328px;
+  height:220px;
+  border-radius:20px;
+  overflow: hidden;
+}
+
+.home_top_selling_tea_item_img img{
+  width:328px;
+  height:220px;
+}
+.home_top_selling_tea_item_intro{
+  font-size:28px;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(31,31,31,1);
+  margin-top:20px;
+}
+.home_top_selling_tea_item_intro_content{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.home_top_selling_tea_item_intro_price{
+  color:rgba(255,89,75,1);
+  margin-top:26px;
+  margin-bottom:20px;
+}
+.time_limit_selling{
+  display: flex;
+  overflow-x: scroll;
+}
+.time_limit_selling .home_top_selling_tea_item{
+  margin-right:16px;
+}
+.time_limit_selling .home_top_selling_tea_item_img{
+  margin-bottom:46px;
+}
+.time_limit_selling .home_top_selling_tea_item_img,
+.time_limit_selling .home_top_selling_tea_item_img img{
+  width:252px;
+  height:240px;
+}
+.time_limit_selling .home_top_selling_tea_item_intro{
+  width:252px;
+}
+.home_footer{
+  width: 100%;
+  padding:50px 40px;
+  box-sizing: border-box;
+  background:rgba(244,248,251,1);
+  display: flex;
+  flex-wrap: wrap;
+}
+.home_footer .home_top_selling_tea_item{
+  flex-basis: 47%;
+  width:326px;
+  height:508px;
+  background:rgba(255,255,255,1);
+  border-radius:10px;
+  overflow: hidden;
+  margin-bottom:14px;
+}
+.home_footer .home_top_selling_tea_item:nth-child(even){
+  margin-left:14px;
+}
+.home_footer .home_top_selling_tea_item_img{
+  border-radius:0;
+}
+.home_footer .home_top_selling_tea_item_img,
+.home_footer .home_top_selling_tea_item_img img{
+  width:326px;
+  height:344px;
+}
+.home_footer .home_top_selling_tea_item_intro{
+  padding:14px;
+}
+.home_footer .home_top_selling_tea_item_intro .home_top_selling_tea_item_intro_content{
+  /*display: -webkit-box;*/
+  /*-webkit-box-orient: vertical;*/
+  /*-webkit-line-clamp: 2;*/
+  /*overflow: hidden;*/
+}
+
+
+

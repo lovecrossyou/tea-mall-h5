@@ -3,8 +3,8 @@ import { Toast} from 'antd-mobile';
 export default {
   namespace: 'classify',
   state: {
-    category_list:['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-    category_list_img_height:176,
+    carousel:['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+    imgHeight:240,
     category_products:[],
     categoryIndex:0
   },
