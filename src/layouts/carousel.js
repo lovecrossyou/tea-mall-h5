@@ -12,13 +12,6 @@ export default class CarouselTop extends PureComponent {
     };
   }
 
-  componentDidMount() {
-    // setTimeout(() => {
-    //   this.setState({
-    //   data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-    //   });
-    // }, 100);
-  }
   render() {
     return (
       <WingBlank>
