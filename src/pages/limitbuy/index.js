@@ -49,11 +49,27 @@ const Products = ({onClick}) => {
   </div>;
 };
 
-const SegmentedControl = () => {
-  return <div className={styles.segmentcontrol}>
-        <div className={styles.segmentcontrol_left}>今日秒杀</div>
-        <div className={styles.segmentcontrol_right}>明日预告</div>
-  </div>;
+class SegmentedControl extends React.Component {
+
+  state = {
+    activeIndex:0
+  }
+
+  render() {
+    const {values} = this.props ;
+    const activeIndex = this.state.activeIndex ;
+    const firstIndex = 0 ;
+    const lastIndex = values.length - 1 ;
+    return <div className={styles.segmentcontrol}>
+      {
+        values.map((title,index)=> {
+          if (index === firstIndex) return <div onClick={()=>this.setState({activeIndex:index})} key={index+'#'} className={activeIndex===index?styles.segmentcontrol_left_active:styles.segmentcontrol_left}>{title}</div>;
+          if (index === lastIndex) return <div onClick={()=>this.setState({activeIndex:index})} key={index+'#'} key={index+'#'} className={activeIndex===index?styles.segmentcontrol_right_active:styles.segmentcontrol_right}>{title}</div>;
+          return <div onClick={()=>this.setState({activeIndex:index})} key={index+'#'} key={index+'#'} className={activeIndex===index?styles.segmentcontrol_item_active:styles.segmentcontrol_item}>{title}</div>; ;
+        })
+      }
+    </div>;
+  }
 };
 
 const Timer = ()=>{
@@ -88,3 +104,6 @@ export default class Index extends PureComponent {
     );
   }
 }
+
+
+module.SegmentedControl=SegmentedControl;

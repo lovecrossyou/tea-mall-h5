@@ -55,11 +55,13 @@ const ProductOptionFooter = () => {
 const Address = () => {
   return <div className={styles.addr}>
     <img className={styles.addr_icon} src={addr_icon} alt=""/>
+
     <div className={styles.addr_info}>
       <div className={styles.addr_info_position}>北京市西城区百万庄大街粮科大厦</div>
       <div className={styles.addr_info_phone}>137431341641</div>
     </div>
-    <img src={arrow_right} alt=""/>
+
+    <img src={arrow_right} alt="" className={styles.addr_arrow}/>
   </div>;
 };
 
@@ -100,8 +102,8 @@ export default class OrderConfirm extends PureComponent {
         <Navigator title='提交订单'/>
         <OrderContent/>
         <ProductOptionFooter/>
-
         <Footer onClick={()=>{
+          console.log('xxx');
           router.push('/orderconfirm/orderpay')
         }}/>
       </div>
