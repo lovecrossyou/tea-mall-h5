@@ -43,27 +43,22 @@ export default class CarouselTop extends PureComponent {
           afterChange={index => console.log("slide to", index)}
         >
           {this.state.data.map(val => (
-            <a
+            <div
               key={val + ""}
-              href="http://www.alipay.com"
-              style={{
-                display: "inline-block",
-                width: "100%",
-                height: this.state.imgHeight
-              }}
+              className={this.props.clsName}
             >
               <img
                 // src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
                 src={Product_figure}
                 alt="加载中..."
-                style={{ width: "100%", verticalAlign: "top" }}
+                style={{height: '100%', width: "100%", verticalAlign: "top" }}
                 onLoad={() => {
                   // fire window resize event to change height
-                  window.dispatchEvent(new Event("resize"));
-                  this.setState({ imgHeight: "auto" });
+                  // window.dispatchEvent(new Event("resize"));
+                  // this.setState({ imgHeight: "auto" });
                 }}
               />
-            </a>
+            </div>
           ))}
         </Carousel>
       </WingBlank>

@@ -73,7 +73,7 @@ export default class Index extends PureComponent {
           </NavBar>
         </div>
         <div style={{ width: "100%", backgroundColor: "#fff" }}>
-          <CarouselTop />
+          <CarouselTop clsName={styles.carouselStyle}/>
         </div>
 
         <ProductInfo />

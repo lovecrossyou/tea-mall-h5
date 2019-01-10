@@ -36,7 +36,7 @@ class Index extends PureComponent{
         </div>
         <NavBarList/>
         <div className={styles.carousel_container}>
-          <CarouselTop />
+          <CarouselTop clsName={styles.carousel_container}/>
         </div>
         <div className={styles.home_section}>
           <div className={styles.home_free_tea}>
