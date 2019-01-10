@@ -36,3 +36,9 @@
   font-weight:bold;
   color:rgba(31,31,31,1);
 }
+
+
+.nav_arrow{
+  width: 19px;
+  height: 36px;
+}

@@ -11,7 +11,7 @@ export const Navigator = ({title=''}) => {
       }}
       src={nav_left_arrow}
       alt=""
-      style={{ width: "19px", height: "36px" }}/>
+      className={styles.nav_arrow}/>
     <div className={styles.nav_title}>{title}</div>
     <div></div>
   </div>;
