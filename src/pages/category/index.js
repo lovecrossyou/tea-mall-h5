@@ -42,13 +42,14 @@ class Category extends PureComponent {
   }
 
   render() {
-    const needIndex = this.props.store;
+    const { firstList, needIndex, subcategoriesList } = this.props.store;
 
+    console.log("subcategoriesList ", subcategoriesList);
     return (
       <div className={styles.wrapper}>
         <ul>
           <li className={styles.classify_list}>
-            {this.state.list.map((data, index) => {
+            {firstList.map((data, index) => {
               return (
                 <div
                   key={index}
@@ -65,7 +66,7 @@ class Category extends PureComponent {
             })}
           </li>
           <li className={styles.classify_content_wrap}>
-            {this.state.list.map((data, index) => {
+            {subcategoriesList.map((data, index) => {
               return (
                 <div
                   key={index}
@@ -74,8 +75,10 @@ class Category extends PureComponent {
                   }}
                   className={styles.classify_shop}
                 >
-                  <div className={styles.shop_img}>假装是张图</div>
-                  <div className={styles.shop_img_text}>{data.content}</div>
+                  <div className={styles.shop_img}>
+                    <img src={data.imageUrl} alt="" />
+                  </div>
+                  <div className={styles.shop_img_text}>{data.title}</div>
                 </div>
               );
             })}
@@ -86,4 +89,8 @@ class Category extends PureComponent {
   }
 }
 
-export default Category;
+export default connect(state => {
+  return {
+    store: state.category
+  };
+})(Category);
