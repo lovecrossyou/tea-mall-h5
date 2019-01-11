@@ -152,7 +152,7 @@ export default class Index extends PureComponent {
     return (
       <div className={styles.container}>
         <Header />
-        <SegmentedControl values={["今日秒杀", "明日预告","zu让人"]} />
+        <SegmentedControl values={["今日秒杀", "明日预告"]} />
         <Timer />
         <Products
           addToShoppingCart={() => {
