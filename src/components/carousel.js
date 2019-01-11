@@ -1,3 +1,6 @@
+/**
+ * 封装antd Carousel 轮播图组件
+ */
 import { PureComponent } from "react";
 import { Carousel, WingBlank } from "antd-mobile";
 import Product_figure from "../pages/product/image/Product_figure.png";
