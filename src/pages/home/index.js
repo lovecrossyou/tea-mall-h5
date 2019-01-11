@@ -1,18 +1,10 @@
-<<<<<<< HEAD
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { TabBar } from 'antd-mobile';
 import { Carousel, SegmentedControl, WingBlank } from 'antd-mobile';
 import styles from './index.css';
 import NavBarList from './components/navBarList';
-=======
-import React, { PureComponent } from "react";
-import { connect } from "dva";
-import { TabBar } from "antd-mobile";
-import { Carousel, SegmentedControl, WingBlank } from "antd-mobile";
-import styles from "./index.css";
-import NavBarList from "./navBarList";
->>>>>>> f7ec9377029e6c01af1ef241ef9685577a6fa8f5
+
 
 import mall_classification from "./image/mall_icon_classification@2x.png";
 import mall_icon_search from "./image/mall_icon_search@2x.png";
@@ -25,7 +17,6 @@ import mall_p_5 from "./image/mall_p_5@2x.png";
 import CarouselTop from "../../components/carousel";
 import router from "umi/router";
 
-<<<<<<< HEAD
 const Header = function() {
   return <div className={styles.home_header}>
       <div className={styles.home_header_left}>
@@ -132,18 +123,13 @@ const Footer = function() {
 };
 
 class Index extends PureComponent{
-=======
-class Index extends PureComponent {
->>>>>>> f7ec9377029e6c01af1ef241ef9685577a6fa8f5
   render() {
     console.log(this.props.store);
     const { carousel, imgHeight } = this.props.store;
     return (
       <div className={styles.home_container}>
-<<<<<<< HEAD
         <Header/>
         <NavBarList/>
-=======
         <div className={styles.home_header}>
           <div className={styles.home_header_left}>
             <img src={mall_classification} alt="" />
@@ -157,14 +143,11 @@ class Index extends PureComponent {
           </div>
         </div>
         <NavBarList />
->>>>>>> f7ec9377029e6c01af1ef241ef9685577a6fa8f5
         <div className={styles.carousel_container}>
           <CarouselTop clsName={styles.carousel_container} />
         </div>
-<<<<<<< HEAD
         <Section/>
         <Footer/>
-=======
         <div className={styles.home_section}>
           <div className={styles.home_free_tea}>
             <div className={styles.home_free_tea_left}>
@@ -336,17 +319,12 @@ class Index extends PureComponent {
             </div>
           </div>
         </div>
->>>>>>> f7ec9377029e6c01af1ef241ef9685577a6fa8f5
       </div>
     );
   }
 }
-<<<<<<< HEAD
 
-export default connect(state=>{
-=======
 export default connect(state => {
->>>>>>> f7ec9377029e6c01af1ef241ef9685577a6fa8f5
   return {
     store: state.classify
   };
