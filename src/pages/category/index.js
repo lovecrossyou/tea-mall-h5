@@ -11,31 +11,34 @@ import styles from "./index.css";
 import { Layout, Row, Col, Icon } from "antd";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import back_icon from "./images/class_icon_ return@2x.png";
+
 const { Header, Footer, Sider, Content } = Layout;
+
+const SearchBox = () => {
+  return (
+    <div className={styles.top_search}>
+      <div className={styles.back_icon}>
+        <img src={back_icon} alt="" />
+      </div>
+      <div className={styles.top_search_input}>
+        <input type="text" placeholder="搜索商品或品牌" />
+      </div>
+    </div>
+  );
+};
 
 class Category extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      needIndex: 0,
-      list: [
-        { title: "热卖", content: "111111" },
-        { title: "绿茶", content: "222222" },
-        { title: "红茶", content: "333333" },
-        { title: "乌龙茶", content: "4444444" },
-        { title: "黑茶", content: "555555" },
-        { title: "白茶", content: "666666" },
-        { title: "黄茶", content: "222222" },
-        { title: "花草茶", content: "000000" },
-        { title: "茶具", content: "88888" }
-      ]
+      needIndex: 0
     };
   }
   componentDidMount() {
     console.log(this.state);
   }
   handleClick(e) {
-    console.log(e);
     this.setState({
       needIndex: e
     });
@@ -43,12 +46,11 @@ class Category extends PureComponent {
 
   render() {
     const { firstList, needIndex, subcategoriesList } = this.props.store;
-
     console.log("subcategoriesList ", subcategoriesList);
 
-    console.log("subcategoriesList ", subcategoriesList);
     return (
       <div className={styles.wrapper}>
+        <SearchBox />
         <ul>
           <li className={styles.classify_list}>
             {firstList.map((data, index) => {
@@ -78,9 +80,11 @@ class Category extends PureComponent {
                   className={styles.classify_shop}
                 >
                   <div className={styles.shop_img}>
-                    <img src={data.imageUrl} alt="" />
+                    <img src={data.secondCategoryImageUrl} alt="" />
                   </div>
-                  <div className={styles.shop_img_text}>{data.title}</div>
+                  <div className={styles.shop_img_text}>
+                    {data.secondCategoryName}
+                  </div>
                 </div>
               );
             })}
