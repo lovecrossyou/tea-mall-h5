@@ -95,20 +95,22 @@ class SegmentedControl extends React.Component {
                 {title}
               </div>
             );
-          return (
-            <div
-              onClick={() => this.setState({ activeIndex: index })}
-              key={index + "#"}
-              key={index + "#"}
-              className={
-                activeIndex === index
-                  ? styles.segmentcontrol_item_active
-                  : styles.segmentcontrol_item
-              }
-            >
-              {title}
-            </div>
-          );
+          else {
+            return (
+              <div
+                onClick={() => this.setState({ activeIndex: index })}
+                key={index + "#"}
+                key={index + "#"}
+                className={
+                  activeIndex === index
+                    ? styles.segmentcontrol_item_active
+                    : styles.segmentcontrol_item
+                }
+              >
+                {title}
+              </div>
+            );
+          }
         })}
       </div>
     );
@@ -150,7 +152,7 @@ export default class Index extends PureComponent {
     return (
       <div className={styles.container}>
         <Header />
-        <SegmentedControl values={["今日秒杀", "明日预告"]} />
+        <SegmentedControl values={["今日秒杀", "明日预告","zu让人"]} />
         <Timer />
         <Products
           addToShoppingCart={() => {

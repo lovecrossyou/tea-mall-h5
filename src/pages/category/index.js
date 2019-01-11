@@ -8,6 +8,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "dva";
 import styles from "./index.css";
+import { Layout, } from "antd";
 import router from "umi/router";
 
 import back_icon from "./images/class_icon_ return@2x.png";

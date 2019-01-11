@@ -6,6 +6,14 @@ import styles from "./index.css";
  *作者: lovecross
  *功能:
  */
+
+const getFistIndex = ({ }) => {
+  // this.
+}
+
+
+
+
 export default class SegmentedControl extends React.Component {
   state = {
     activeIndex: 0
@@ -16,6 +24,9 @@ export default class SegmentedControl extends React.Component {
     const activeIndex = this.state.activeIndex;
     const firstIndex = 0;
     const lastIndex = values.length - 1;
+
+
+
     return (
       <div className={styles.segmentcontrol}>
         {values.map((title, index) => {
