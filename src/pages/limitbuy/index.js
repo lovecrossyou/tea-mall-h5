@@ -98,7 +98,7 @@ export default class Index extends PureComponent {
         <Timer/>
         <Products
           onClick={()=>{
-            router.push('/orderconfirm')
+            router.push('/product')
           }}/>
       </div>
     );

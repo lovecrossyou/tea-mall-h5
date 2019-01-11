@@ -10,16 +10,28 @@
 import request from '../../../services/request';
 import { apiUrlfun,stringify } from '../../../services/config';
 
-export async function rtsGetCommodityList(params) {
-  return request(`${apiUrlfun('mall')}/v1/commodities?${stringify(params)}`);
+// export async function rtsGetCommodityList(params) {
+//   return request(`${apiUrlfun('mall')}/v1/commodities?${stringify(params)}`);
+// }
+//
+// // 获取一级类目
+// export async function rtsGetCategorysList(params) {
+//   return request(`${apiUrlfun('mall')}/v1/categories?${stringify(params)}`);
+// }
+//
+// // 获取二级类目
+// export async function rtsGetSubcategories(params) {
+//   return request(`${apiUrlfun('mall')}/v1/subcategories?${stringify(params)}`);
+// }
+
+export async function categoryList() {
+  return request('category/list',{
+    method:'post'
+  })
 }
 
-// 获取一级类目
-export async function rtsGetCategorysList(params) {
-  return request(`${apiUrlfun('mall')}/v1/categories?${stringify(params)}`);
-}
-
-// 获取二级类目
-export async function rtsGetSubcategories(params) {
-  return request(`${apiUrlfun('mall')}/v1/subcategories?${stringify(params)}`);
+export async function subcategoriesList() {
+  return request('category/categoryById',{
+    method:'post'
+  })
 }
