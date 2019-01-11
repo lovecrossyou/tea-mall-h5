@@ -10,7 +10,7 @@ import {
   Carousel
 } from "antd-mobile";
 import Product_figure from "./image/Product_figure.png";
-import CarouselTop from "../../layouts/carousel";
+import CarouselTop from "../../components/carousel";
 
 const ProductInfo = () => {
   return (
