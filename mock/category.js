@@ -55,6 +55,126 @@ export default {
         secondCategoryName: "休闲零食",
         secondCategoryImageUrl:
           "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8LuACct9AAER1jXHXy4383.png"
+      },
+      {
+        secondCategoryId: 8,
+        secondCategoryName: "电视",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_7-CAK7iLAAEHhzvm9AE965.png"
+      },
+      {
+        secondCategoryId: 12,
+        secondCategoryName: "生活电器",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8BuABftqAAB7yVLT5Zs904.png"
+      },
+      {
+        secondCategoryId: 13,
+        secondCategoryName: "小家电",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8CiAXQ5fAABHspd4cbo500.png"
+      },
+      {
+        secondCategoryId: 19,
+        secondCategoryName: "日用",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8JKADKs-AAGx2nUW-oQ135.png"
+      },
+      {
+        secondCategoryId: 21,
+        secondCategoryName: "休闲零食",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8LuACct9AAER1jXHXy4383.png"
+      },
+      {
+        secondCategoryId: 8,
+        secondCategoryName: "电视",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_7-CAK7iLAAEHhzvm9AE965.png"
+      },
+      {
+        secondCategoryId: 12,
+        secondCategoryName: "生活电器",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8BuABftqAAB7yVLT5Zs904.png"
+      },
+      {
+        secondCategoryId: 13,
+        secondCategoryName: "小家电",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8CiAXQ5fAABHspd4cbo500.png"
+      },
+      {
+        secondCategoryId: 19,
+        secondCategoryName: "日用",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8JKADKs-AAGx2nUW-oQ135.png"
+      },
+      {
+        secondCategoryId: 21,
+        secondCategoryName: "休闲零食",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8LuACct9AAER1jXHXy4383.png"
+      },
+      {
+        secondCategoryId: 8,
+        secondCategoryName: "电视",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_7-CAK7iLAAEHhzvm9AE965.png"
+      },
+      {
+        secondCategoryId: 12,
+        secondCategoryName: "生活电器",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8BuABftqAAB7yVLT5Zs904.png"
+      },
+      {
+        secondCategoryId: 13,
+        secondCategoryName: "小家电",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8CiAXQ5fAABHspd4cbo500.png"
+      },
+      {
+        secondCategoryId: 19,
+        secondCategoryName: "日用",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8JKADKs-AAGx2nUW-oQ135.png"
+      },
+      {
+        secondCategoryId: 21,
+        secondCategoryName: "休闲零食",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8LuACct9AAER1jXHXy4383.png"
+      },
+      {
+        secondCategoryId: 8,
+        secondCategoryName: "电视",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_7-CAK7iLAAEHhzvm9AE965.png"
+      },
+      {
+        secondCategoryId: 12,
+        secondCategoryName: "生活电器",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8BuABftqAAB7yVLT5Zs904.png"
+      },
+      {
+        secondCategoryId: 13,
+        secondCategoryName: "小家电",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8CiAXQ5fAABHspd4cbo500.png"
+      },
+      {
+        secondCategoryId: 19,
+        secondCategoryName: "日用",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8JKADKs-AAGx2nUW-oQ135.png"
+      },
+      {
+        secondCategoryId: 21,
+        secondCategoryName: "休闲零食",
+        secondCategoryImageUrl:
+          "http://123.57.161.212:8080/group1/M00/00/48/ezmh1Fr_8LuACct9AAER1jXHXy4383.png"
       }
     ]
   }

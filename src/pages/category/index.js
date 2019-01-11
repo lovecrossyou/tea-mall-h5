@@ -12,6 +12,7 @@ import { Layout, Row, Col, Icon } from "antd";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import back_icon from "./images/class_icon_ return@2x.png";
+import ScrollWrap from "../../components/scroll";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -19,10 +20,10 @@ const SearchBox = () => {
   return (
     <div className={styles.top_search}>
       <div className={styles.back_icon}>
-        <img src={back_icon} alt="" />
+        <img src={back_icon} alt=""/>
       </div>
       <div className={styles.top_search_input}>
-        <input type="text" placeholder="搜索商品或品牌" />
+        <input type="text" placeholder="搜索商品或品牌"/>
       </div>
     </div>
   );
@@ -35,9 +36,11 @@ class Category extends PureComponent {
       needIndex: 0
     };
   }
+
   componentDidMount() {
     console.log(this.state);
   }
+
   handleClick(e) {
     this.setState({
       needIndex: e
@@ -50,7 +53,7 @@ class Category extends PureComponent {
 
     return (
       <div className={styles.wrapper}>
-        <SearchBox />
+        <SearchBox/>
         <ul>
           <li className={styles.classify_list}>
             {firstList.map((data, index) => {
@@ -69,23 +72,27 @@ class Category extends PureComponent {
               );
             })}
           </li>
-          <li className={styles.classify_content_wrap}>
-            {subcategoriesList.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  className={styles.classify_product}
-                >
-                  <div className={styles.shop_img}>
-                    <img src={data.secondCategoryImageUrl} alt="" />
+          <ScrollWrap wrapId="rootList" wrapClass={styles.wrap_body}>
+            <li className={styles.classify_content_wrap}>
+              {subcategoriesList.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={styles.classify_product}
+                  >
+                    <div className={styles.shop_img}>
+                      <img src={data.secondCategoryImageUrl} alt=""/>
+                    </div>
+                    <div className={styles.shop_img_text}>
+                      {data.secondCategoryName}
+                    </div>
                   </div>
-                  <div className={styles.shop_img_text}>
-                    {data.secondCategoryName}
-                  </div>
-                </div>
-              );
-            })}
-          </li>
+                );
+              })}
+            </li>
+
+
+          </ScrollWrap>
         </ul>
       </div>
     );
