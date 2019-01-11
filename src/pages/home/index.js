@@ -14,6 +14,7 @@ import mall_p_hot from './image/mall_p_hot@2x.png';
 import mall_p_1 from './image/mall_p_1@2x.png';
 import mall_p_5 from './image/mall_p_5@2x.png';
 import CarouselTop from "../../layouts/carousel";
+import router from 'umi/router';
 
 
 class Index extends PureComponent{
@@ -102,7 +103,7 @@ class Index extends PureComponent{
             </div>
           </div>
           <div className={styles.time_limit_selling}>
-            <div className={styles.home_top_selling_tea_item}>
+            <div className={styles.home_top_selling_tea_item} onClick={()=>router.push('/limitbuy')}>
               <div className={styles.home_top_selling_tea_item_img}>
                 <img src={mall_p_1} alt=""/>
               </div>
