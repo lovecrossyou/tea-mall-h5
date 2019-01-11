@@ -10,7 +10,7 @@ import {
   Carousel
 } from "antd-mobile";
 import Product_figure from "./image/Product_figure.png";
-import CarouselTop from "../../layouts/carousel";
+import CarouselTop from "../../components/carousel";
 
 const ProductInfo = () => {
   return (
@@ -73,7 +73,7 @@ export default class Index extends PureComponent {
           </NavBar>
         </div>
         <div style={{ width: "100%", backgroundColor: "#fff" }}>
-          <CarouselTop clsName={styles.carouselStyle}/>
+          <CarouselTop clsName={styles.carouselStyle} />
         </div>
 
         <ProductInfo />
@@ -118,7 +118,6 @@ const TopSegment = () => {
     </Flex>
   );
 };
-
 
 class ProductAppraise extends PureComponent {
   render() {

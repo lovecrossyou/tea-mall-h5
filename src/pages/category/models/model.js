@@ -1,27 +1,28 @@
-import { Toast } from 'antd-mobile';
+import { Toast } from "antd-mobile";
 import { categoryList, subcategoriesList } from "../service";
 
 export default {
-  namespace: 'category',
+  namespace: "category",
   state: {
     firstList: [],
     subcategoriesList: [],
-    activeTab: null,
+    activeTab: null
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/category') {
+        if (pathname === "/category") {
           dispatch({
-            type: 'getCategorysList',
-            payload: {},
+            type: "getCategorysList",
+            payload: {}
           });
           dispatch({
-            type: 'global/setTitle', payload:'商品列表'
+            type: "global/setTitle",
+            payload: "商品列表"
           });
         }
       });
-    },
+    }
   },
   effects: {
     *getCategorysList({ payload }, { call, put }) {
@@ -31,20 +32,20 @@ export default {
         Toast.fail(message);
       } else {
         yield put({
-          type: 'saveGetagoryData',
+          type: "saveGetagoryData",
           payload: {
-            firstList: list,
-          },
+            firstList: list
+          }
         });
 
         // 一级分类第一个id，获取子分类
         // subcategoriesList
         const result = yield call(subcategoriesList, {});
         yield put({
-          type: 'saveSubCategoriesList',
+          type: "saveSubCategoriesList",
           payload: {
-            subcategoriesList: result.list,
-          },
+            subcategoriesList: result.list
+          }
         });
       }
     },
@@ -56,27 +57,27 @@ export default {
         Toast.fail(message);
       } else {
         yield put({
-          type: 'saveSubCategoriesList',
+          type: "saveSubCategoriesList",
           payload: {
             SubcategoriesList: data,
-            activeTab: payload.categoryId,
-          },
+            activeTab: payload.categoryId
+          }
         });
       }
-    },
+    }
   },
   reducers: {
     saveGetagoryData(state, { payload }) {
       return {
         ...state,
-        ...payload,
+        ...payload
       };
     },
     saveSubCategoriesList(state, { payload }) {
       return {
         ...state,
-        ...payload,
+        ...payload
       };
-    },
-  },
+    }
+  }
 };

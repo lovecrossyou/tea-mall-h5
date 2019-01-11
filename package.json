@@ -18,7 +18,7 @@
   "dependencies": {
     "antd-mobile": "^2.2.5",
     "babel-cli": "^6.26.0",
-    "better-scroll": "^1.13.2",
+    "better-scroll": "^1.13.4",
     "dva": "^2.4.0",
     "enzyme": "^3.4.4",
     "hash.js": "^1.1.5",

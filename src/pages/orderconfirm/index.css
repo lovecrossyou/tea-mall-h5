@@ -1,0 +1,253 @@
+.container {
+  background-color: #f5f5f5;
+  height: 100%;
+}
+
+.ordercontent {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  margin: 40px 40px 0 40px;
+  padding: 32px;
+  box-sizing: border-box;
+  height: 700px;
+}
+
+.shop_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 39px;
+}
+
+.addr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 68px;
+  //background-color: #999999;
+}
+
+.addr_icon {
+  width: 29px;
+  height: 35px;
+}
+
+.addr_info {
+  display: flex;
+  flex-direction: column;
+  //background-color: #eeeeee;
+  height: 68px;
+}
+
+.addr_arrow {
+  width: 13px;
+  height: 22px;
+}
+
+.addr_info_position {
+  height: 27px;
+  font-size: 28px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(31, 31, 31, 1);
+  line-height: 27px;
+}
+
+.addr_info_phone {
+  height: 21px;
+  font-size: 28px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+  line-height: 21px;
+  margin-top: 19px;
+}
+
+.shop_info_name {
+  height: 26px;
+  font-size: 28px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(31, 31, 31, 1);
+  line-height: 26px;
+  margin-left: 17px;
+}
+
+.product_shop_icon {
+  width: 29px;
+  height: 27px;
+}
+
+.p_icon {
+  width: 140px;
+  height: 140px;
+  background-color: #cccccc;
+}
+
+.p_info {
+  display: flex;
+  flex-direction: row;
+  height: 140px;
+  margin-top: 39px;
+}
+
+.p_info_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //align-items: center;
+  padding-left: 23px;
+  box-sizing: border-box;
+}
+
+.p_name {
+  width: 440px;
+  height: 67px;
+  font-size: 28px;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(31, 31, 31, 1);
+  line-height: 40px;
+}
+
+.p_special {
+  height: 23px;
+  font-size: 24px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+}
+
+.p_option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 117px;
+}
+
+.p_option_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 117px;
+}
+
+.p_option_icon {
+  width: 28px;
+}
+
+.p_option_title {
+  height: 97px;
+  font-size: 28px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(31, 31, 31, 1);
+  line-height: 97px;
+  margin-left: 20px;
+}
+
+.pay_icon {
+  width: 38px;
+  height: 38px;
+}
+
+.pay_icon_right {
+  width: 44px;
+  height: 44px;
+}
+
+.p_opt_footer {
+  height: 122px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  margin-top: 17px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-left: 32px;
+  box-sizing: border-box;
+}
+
+.delivery {
+  height: 27px;
+  font-size: 28px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(31, 31, 31, 1);
+}
+
+.confirm_footer {
+  height: 98px;
+  background: rgba(255, 89, 75, 1);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  font-size: 32px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 98px;
+  text-align: center;
+}
+
+.order_content {
+  height: 718px;
+  margin: 20px 40px;
+  background-color: #ffffff;
+  padding: 0 29px;
+  box-sizing: border-box;
+}
+
+.order_pay_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 101px;
+}
+
+.order_pay_top_time {
+  margin-top: 60px;
+
+  height: 23px;
+  font-size: 24px;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+  line-height: 23px;
+}
+
+.order_pay_top_amount {
+  margin-top: 39px;
+  height: 55px;
+  font-size: 73px;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(31, 31, 31, 1);
+  line-height: 73px;
+}
+
+.modal_content {
+  background-color: #999999;
+  height: 200px;
+}
+
+.Modal {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 0px;
+  height: 200px;
+  background-color: papayawhip;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rebeccapurple;
+}

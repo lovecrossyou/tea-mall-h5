@@ -1,3 +1,6 @@
+/**
+ * 封装antd Carousel 轮播图组件
+ */
 import { PureComponent } from "react";
 import { Carousel, WingBlank } from "antd-mobile";
 import Product_figure from "../pages/product/image/Product_figure.png";
@@ -7,7 +10,7 @@ export default class CarouselTop extends PureComponent {
   constructor() {
     super();
     this.state = {
-      data: ["1", "2", "3"],
+      data: ["1", "2", "3"]
     };
   }
 
@@ -35,15 +38,12 @@ export default class CarouselTop extends PureComponent {
           afterChange={index => console.log("slide to", index)}
         >
           {this.state.data.map(val => (
-            <div
-              key={val + ""}
-              className={this.props.clsName}
-            >
+            <div key={val + ""} className={this.props.clsName}>
               <img
                 // src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
                 src={Product_figure}
                 alt="加载中..."
-                style={{height: '100%', width: "100%", verticalAlign: "top" }}
+                style={{ height: "100%", width: "100%", verticalAlign: "top" }}
                 onLoad={() => {
                   // fire window resize event to change height
                   // window.dispatchEvent(new Event("resize"));

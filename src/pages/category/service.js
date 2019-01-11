@@ -5,10 +5,9 @@
  * @Last Modified time: 2018-12-25 00:56:22
  */
 
-
 // 获取商品列表
-import request from '../../../services/request';
-import { apiUrlfun,stringify } from '../../../services/config';
+import request from "../../../services/request";
+import { apiUrlfun, stringify } from "../../../services/config";
 
 // export async function rtsGetCommodityList(params) {
 //   return request(`${apiUrlfun('mall')}/v1/commodities?${stringify(params)}`);
@@ -25,13 +24,13 @@ import { apiUrlfun,stringify } from '../../../services/config';
 // }
 
 export async function categoryList() {
-  return request('category/list',{
-    method:'post'
-  })
+  return request("category/list", {
+    method: "post"
+  });
 }
 
 export async function subcategoriesList() {
-  return request('category/categoryById',{
-    method:'post'
-  })
+  return request("category/categoryById", {
+    method: "post"
+  });
 }
