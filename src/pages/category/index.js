@@ -74,10 +74,7 @@ class Category extends PureComponent {
               return (
                 <div
                   key={index}
-                  style={{
-                    display: this.state.needIndex === index ? "block" : "none"
-                  }}
-                  className={styles.classify_shop}
+                  className={styles.classify_product}
                 >
                   <div className={styles.shop_img}>
                     <img src={data.secondCategoryImageUrl} alt="" />
