@@ -45,6 +45,8 @@ class Category extends PureComponent {
     const { firstList, needIndex, subcategoriesList } = this.props.store;
 
     console.log("subcategoriesList ", subcategoriesList);
+
+    console.log("subcategoriesList ", subcategoriesList);
     return (
       <div className={styles.wrapper}>
         <ul>
