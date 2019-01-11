@@ -8,9 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow:0px 0px 22px 2px rgba(201,201,201,0.42);
 }
 .home_header_left{
-  width:87px;
+  flex-basis: 15%;
   font-size:20px;
   font-family:PingFang-SC-Medium;
   font-weight:500;
@@ -22,10 +23,10 @@
   height:25px;
 }
 .home_header_right{
-  flex:1;
+  flex-basis: 85%;
 }
 .home_header_right_input{
-  width:90%;
+  width:95%;
   height:60px;
   line-height:60px;
   background:rgba(244,248,251,1);
@@ -55,8 +56,14 @@
   align-items: center;
   font-size:28px;
   font-family:PingFang-SC-Bold;
-  font-weight:bold;
+
+  border:1px solid #eeeeee;
+}
+.home_list_item{
   color:#A0A0A0;
+}
+.home_list_item_active{
+  color:red;
 }
 
 .home_section{
@@ -105,7 +112,6 @@
 .home_free_tea_right{
   flex: 1;
   height:352px;
-
   box-shadow:0px 2px 15px 1px rgba(230,235,239,1);
   border-radius:4px;
 }
@@ -114,11 +120,14 @@
   background:rgba(248,250,252,1);
 }
 .home_free_tea_right .home_free_tea_intro{
-  flex:1;
+  flex-basis: 40%;
 }
-.home_free_tea_right_item .home_free_tea_img,
+.home_free_tea_right_item .home_free_tea_img{
+  flex-basis: 60%;
+  height:170px;
+}
 .home_free_tea_right_item .home_free_tea_img img{
-  width:220px;
+  width:100%;
   height:170px;
 }
 .home_top_selling_tit{
@@ -129,6 +138,7 @@
   color:rgba(31,31,31,1);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .home_top_selling_tit .home_top_selling_tit_right{
   font-size:28px;
@@ -139,7 +149,7 @@
   background:rgba(255,89,75,1);
   color:rgba(255,255,255,1);
   border-radius: 4px;
-  padding: 8px;
+  padding: 6px;
   margin-left:10px;
   margin-right:10px;
 }
@@ -147,19 +157,17 @@
   width:100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .home_top_selling_tea_item{
-  width:328px;
+  width:48%;
 }
 .home_top_selling_tea_item_img{
-  width:328px;
-  height:220px;
   border-radius:20px;
-  overflow: hidden;
 }
-
+.home_top_selling_tea_item_img,
 .home_top_selling_tea_item_img img{
-  width:328px;
+  width:100%;
   height:220px;
 }
 .home_top_selling_tea_item_intro{
@@ -203,16 +211,16 @@
   box-sizing: border-box;
   background:rgba(244,248,251,1);
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .home_footer .home_top_selling_tea_item{
-  flex-basis: 47%;
-  width:326px;
+  flex-basis: 48%;
   height:508px;
   background:rgba(255,255,255,1);
   border-radius:10px;
   overflow: hidden;
-  margin-bottom:14px;
+  margin-bottom:30px;
 }
 .home_footer .home_top_selling_tea_item:nth-child(even){
   margin-left:14px;
@@ -222,7 +230,7 @@
 }
 .home_footer .home_top_selling_tea_item_img,
 .home_footer .home_top_selling_tea_item_img img{
-  width:326px;
+  width:100%;
   height:344px;
 }
 .home_footer .home_top_selling_tea_item_intro{

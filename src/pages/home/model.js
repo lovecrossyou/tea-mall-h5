@@ -3,10 +3,7 @@ import { Toast} from 'antd-mobile';
 export default {
   namespace: 'classify',
   state: {
-    carousel:['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-    imgHeight:240,
-    category_products:[],
-    categoryIndex:0
+    selectedInd : 0
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -29,9 +26,18 @@ export default {
     * fetch({ payload, cb }, { call, put,select }) {
 
     },
+    * setActive({payload},{call,put}){
+      yield put({
+        type: 'saveActive',
+        payload:payload
+      });
+    }
   },
   // 同步
   reducers: {
-
+    saveActive(state,action){
+      console.log(state,action);
+      return {...state,selectedInd:action.payload}
+    }
   },
 };
