@@ -9,7 +9,7 @@ import React, { PureComponent } from "react";
 import { connect } from "dva";
 import styles from "./index.css";
 import { Layout, Row, Col, Icon } from "antd";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import router from "umi/router";
 
 import back_icon from "./images/class_icon_ return@2x.png";
 import ScrollWrap from "../../components/scroll";
@@ -19,7 +19,7 @@ const { Header, Footer, Sider, Content } = Layout;
 const SearchBox = () => {
   return (
     <div className={styles.top_search}>
-      <div className={styles.back_icon}>
+      <div className={styles.back_icon} onClick={()=>router.go(-1)}>
         <img src={back_icon} alt=""/>
       </div>
       <div className={styles.top_search_input}>
@@ -35,6 +35,7 @@ class Category extends PureComponent {
     this.state = {
       needIndex: 0
     };
+    this.clientHeight = window.document.body.clientHeight;
   }
 
   componentDidMount() {
@@ -54,24 +55,24 @@ class Category extends PureComponent {
     return (
       <div className={styles.wrapper}>
         <SearchBox/>
-        <ul>
-          <li className={styles.classify_list}>
-            {firstList.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  onClick={this.handleClick.bind(this, index)}
-                  className={
-                    this.state.needIndex === index
-                      ? styles.onclick_after
-                      : styles.onclick_before
-                  }
-                >
-                  {data.title}
-                </div>
-              );
-            })}
-          </li>
+        <ul style={{ height: `${this.clientHeight - 188}px`, position: "relative" }}>
+            <li className={styles.classify_list}>
+              {firstList.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    onClick={this.handleClick.bind(this, index)}
+                    className={
+                      this.state.needIndex === index
+                        ? styles.onclick_after
+                        : styles.onclick_before
+                    }
+                  >
+                    {data.title}
+                  </div>
+                );
+              })}
+            </li>
           <ScrollWrap wrapId="rootList" wrapClass={styles.wrap_body}>
             <li className={styles.classify_content_wrap}>
               {subcategoriesList.map((data, index) => {
@@ -90,8 +91,6 @@ class Category extends PureComponent {
                 );
               })}
             </li>
-
-
           </ScrollWrap>
         </ul>
       </div>
