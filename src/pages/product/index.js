@@ -11,6 +11,15 @@ import {
 } from "antd-mobile";
 import Product_figure from "./image/Product_figure.png";
 import CarouselTop from "../../components/carousel";
+import storeInProduct_contentimg1 from "./image/storeInProduct_contentimg1.png";
+import storeInProduct_contentimg2 from "./image/storeInProduct_contentimg2.png";
+import storeInProduct_contentimg3 from "./image/storeInProduct_contentimg3.png";
+
+const storeInProduct_contentimgs = [
+  storeInProduct_contentimg1,
+  storeInProduct_contentimg2,
+  storeInProduct_contentimg3
+];
 
 const ProductInfo = () => {
   return (
@@ -104,6 +113,8 @@ export default class Index extends PureComponent {
         <WhiteSpace />
         {/*商品店铺*/}
         <StoreInProduct />
+        <WhiteSpace />
+        <ProductTabbar />
       </div>
     );
   }
@@ -187,7 +198,7 @@ class StoreInProduct extends PureComponent {
           <div className={styles.storeInProduct_header_top}>
             <div className={styles.storeInProduct_header_topleft}>
               <img
-                style={{ width: 76, height: 76 }}
+                className={styles.storeInProduct_header_topleftImg}
                 src={require("./image/store_logo.png")}
               />
               <div className={styles.storeInProduct_header_topInfo}>
@@ -210,30 +221,48 @@ class StoreInProduct extends PureComponent {
             </div>
           </div>
 
-          <div className={styles.storeInProduct_header_bottom} />
-          {[
-            { name: "宝贝描述：4.8", level: 4.8 },
-            { name: "宝贝描述：4.8", level: 4.8 },
-            { name: "宝贝描述：4.8", level: 4.8 }
-          ].map(value => {
+          <div className={styles.storeInProduct_header_bottom}>
+            {[
+              { name: "宝贝描述：4.8", level: "高" },
+              { name: "宝贝描述：4.8", level: "平" },
+              { name: "宝贝描述：4.8", level: "低" }
+            ].map((value, index) => {
+              return (
+                <div
+                  key={index + "#"}
+                  className={
+                    styles.storeInProduct_header_bottomDetail_container
+                  }
+                >
+                  <div className={styles.storeInProduct_header_bottomDetail}>
+                    {value.name}
+                  </div>
+                  <div className={styles.storeInProduct_header_bottomLevel}>
+                    {value.level}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <WhiteSpace />
+        <div className={styles.storeInProduct_content}>
+          {storeInProduct_contentimgs.map((value, index) => {
             return (
-              <div
-                key={value.name}
-                className={styles.storeInProduct_header_bottomDetail_container}
-              >
-                <div className={styles.storeInProduct_header_bottomDetail}>
-                  {value.name}
-                </div>
-                <div className={styles.storeInProduct_header_bottomLevel}>
-                  {value.level}
-                </div>
-              </div>
+              <img
+                src={value}
+                key={"#" + index}
+                className={styles.storeInProduct_contentImg}
+              />
             );
           })}
-
-          <div />
         </div>
       </div>
     );
+  }
+}
+class ProductTabbar extends PureComponent {
+  render() {
+    return <div className={styles.productTabbar_container} />;
   }
 }
