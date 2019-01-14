@@ -123,3 +123,19 @@
 #leftList{
     width: 140px;
 }
+
+.wrap_body_left{
+    width: 140px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.wrap_body{
+    position: absolute;
+    left: 140px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}

@@ -11,7 +11,7 @@
     height: 313px;
     background: url("./images/store_top_bg@2x.png") no-repeat  center center;
     background-size:100% 313px ;
-    padding: 54px 27px;
+    padding: 54px 30px;
     box-sizing: border-box;
 }
 .top_search{
@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 .top_search_input input{
     width:580px;
@@ -29,4 +30,98 @@
     border-radius:30px;
     font-size:28px;
     color:rgba(102,102,102,1);
+    border: 0;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.back_icon img{
+    width: 19px;
+    height: 36px;
+}
+.classfiy_icon{
+    width: 45px;
+    height: 61px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px 0 0;
+}
+.classfiy_icon img{
+    width: 32px;
+    height: 25px;
+}
+.classfiy_text{
+    font-size:20px;
+    color:rgba(255,255,255,1);
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+.store_info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    justify-content: space-between;
+}
+.store_img img{
+    width: 74px;
+    height: 74px;
+}
+.store_name_area{
+    flex: 1;
+    height: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.store_name{
+    font-size:32px;
+    color:rgba(51,51,51,1);
+}
+.store_fans{
+    font-size:24px;
+    color:rgba(51,51,51,1);
+}
+.store_attention{
+    width: 136px;
+    display: flex;
+    align-items: center;
+}
+.store_attention img{
+    width: 136px;
+    height: 52px;
+}
+.store_info_left{
+    width: 290px;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.store_classify_area{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.store_classify_option{
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.onclick_before{
+    width: 60px;
+    font-size:28px;
+    font-weight:500;
+    color:#333;
+}
+.onclick_after{
+    width: 60px;
+    font-size:28px;
+    font-weight:500;
+    color:#FF594B;
 }
