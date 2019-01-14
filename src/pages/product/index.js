@@ -9,8 +9,6 @@ import {
   WhiteSpace,
   Carousel
 } from "antd-mobile";
-import { Layout } from "antd";
-import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
 import Product_figure from "./image/Product_figure.png";
 import CarouselTop from "../../components/carousel";
@@ -135,7 +133,7 @@ class ProductNav extends PureComponent {
     return (
       <div className={styles.productNav_container}>
         <div
-          onClick={this.props.onBack && this.props.onBack()}
+          onClick={() => this.props.onBack && this.props.onBack()}
           className={styles.productNav_leftIcon}
         >
           <img className={styles.productNav_leftIcon_img} src={icon_return} />
