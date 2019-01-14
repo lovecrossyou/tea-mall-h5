@@ -19,10 +19,11 @@ import storeInProduct_contentimg2 from "./image/storeInProduct_contentimg2.png";
 import storeInProduct_contentimg3 from "./image/storeInProduct_contentimg3.png";
 import bottom_icon_mall from "./image/bottom_icon_mall@2x.png";
 import bottom_icon_service from "./image/bottom_icon_service@2x.png";
-import icon_return from "./image/icon_return.png";
-import icon_share from "./image/icon_share.png";
+import icon_return from "./image/icon_return@2x.png";
+import icon_share from "./image/icon_share@2x.png";
 import { ProductItem } from "../home";
 import ModalBox from "../../components/modal";
+import { connect } from "dva";
 
 const storeInProduct_contentimgs = [
   storeInProduct_contentimg1,
@@ -30,7 +31,19 @@ const storeInProduct_contentimgs = [
   storeInProduct_contentimg3
 ];
 
-export default class Index extends PureComponent {
+class Product extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.clientHeight = window.document.body.clientHeight;
+  }
+  componentDidMount() {
+    console.log("xxxxxxx====" + JSON.stringify(this.props.store));
+    this.props.dispatch({
+      type: "product/getBannerList",
+      payload: {}
+    });
+  }
+
   render() {
     return (
       <div className={styles.container}>
@@ -40,7 +53,6 @@ export default class Index extends PureComponent {
           }}
           rightAction={() => {}}
         />
-
         <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
           <div style={{ width: "100%", backgroundColor: "#fff" }}>
             <CarouselTop clsName={styles.carouselStyle} />
@@ -174,7 +186,7 @@ class ProductNav extends PureComponent {
           onClick={this.props.rightAction && this.props.rightAction()}
           className={styles.productNav_leftIcon}
         >
-          <img src={icon_share} />
+          <img src={icon_share} className={styles.productNav_rigthIcon_img} />
         </div>
       </div>
     );
@@ -511,3 +523,8 @@ class ProductParameterChoose extends PureComponent {
     );
   }
 }
+export default connect(state => {
+  return {
+    store: state.product
+  };
+})(Product);

@@ -6,10 +6,8 @@
 import request from "../../../services/request";
 import { apiUrlfun, stringify } from "../../../services/config";
 
-//获取商品详情
-export async function rtsGetShopProductDetail(params) {
-  return request(`${apiUrlfun("mall")}/v1/commodities?${stringify(params)}`);
-}
-export async function rtsGetShopStoreDetail(params) {
-  return request(`${apiUrlfun("mall")}/v1/commodities?${stringify(params)}`);
+export async function querybannerList() {
+  return request("product/bannerList", {
+    method: "post"
+  });
 }

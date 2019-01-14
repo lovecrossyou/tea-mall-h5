@@ -4,53 +4,45 @@
  *desc
  */
 import { Toast } from "antd-mobile";
-import { rtsGetShopProductDetail, rtsGetShopStoreDetail } from "../service";
+import { querybannerList } from "../service";
 
 export default {
   namespace: "product",
   state: {
-    firstList: [],
-    SubcategoriesList: [],
-    activeTab: null
+    bannerList: []
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === "/product") {
           dispatch({
-            type: "getProductDetail",
+            type: "getBannerList",
             payload: {}
-          });
-          dispatch({
-            type: "global/setTitle",
-            payload: "商品列表"
           });
         }
       });
     }
   },
   effects: {
-    *GetShopProductDetail({ payload }, { call, put }) {
-      const response = yield call(rtsGetShopProductDetail, payload);
-      const { code, message, data } = response;
+    *getBannerList({ payload }, { call, put }) {
+      const response = yield call(querybannerList, payload);
+      const { code, message, list } = response;
       if (code !== 0) {
         Toast.fail(message);
       } else {
         yield put({
-          type: "getProductDetail",
-          payload: {
-            firstList: data
-          }
+          type: "saveBannerList",
+          payload: list
         });
         // 一级分类第一个id，获取子分
       }
     }
   },
   reducers: {
-    getProductDetail(state, { payload }) {
+    saveBannerList(state, action) {
       return {
         ...state,
-        ...payload
+        bannerList: action.payload
       };
     }
   }
