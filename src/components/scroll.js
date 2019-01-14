@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
-import BScroll from 'better-scroll';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from "react";
+import BScroll from "better-scroll";
+import PropTypes from "prop-types";
 
 class ScrollWrap extends PureComponent {
   componentDidMount() {
@@ -13,9 +13,9 @@ class ScrollWrap extends PureComponent {
       scrollY: true,
       mouseWheel: true,
       bounce: {
-        top: false,
-        bottom: true,
-      },
+        top: true,
+        bottom: true
+      }
     });
   }
 
@@ -23,7 +23,7 @@ class ScrollWrap extends PureComponent {
     const { children, wrapId, wrapClass, height } = this.props;
     return (
       <div
-        style={{ overflow: 'hidden', height }}
+        style={{ overflow: "hidden", height }}
         id={wrapId}
         className={wrapClass}
         ref={ref => {
@@ -38,14 +38,14 @@ class ScrollWrap extends PureComponent {
 
 ScrollWrap.defaultProps = {
   children: null,
-  wrapId: '',
-  wrapClass: '',
+  wrapId: "",
+  wrapClass: ""
 };
 
 ScrollWrap.propTypes = {
   children: PropTypes.node,
   wrapId: PropTypes.string,
-  wrapClass: PropTypes.string,
+  wrapClass: PropTypes.string
 };
 
 export default ScrollWrap;
