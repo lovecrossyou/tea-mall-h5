@@ -384,7 +384,8 @@ class ProductParameterChoose extends PureComponent {
       price: 150,
       productName: "2018新茶西湖牌龙井茶叶正宗雨前西湖龙井茶250g",
       productImg:
-        "http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg"
+        "http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg",
+      standardChooseIndex: -1
     }
   };
 
@@ -398,7 +399,8 @@ class ProductParameterChoose extends PureComponent {
         productImg:
           "http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg"
       },
-      number: 2
+      number: 2,
+      standardChooseIndex: -1
     });
   };
 
@@ -451,7 +453,16 @@ class ProductParameterChoose extends PureComponent {
                 return (
                   <div
                     key={"#" + index}
-                    className={styles.product_modal_standards_item}
+                    className={
+                      index === this.state.standardChooseIndex
+                        ? styles.product_modal_standards_itemSelected
+                        : styles.product_modal_standards_item
+                    }
+                    onClick={() => {
+                      this.setState({
+                        standardChooseIndex: index
+                      });
+                    }}
                   >
                     {value}
                   </div>
@@ -479,7 +490,7 @@ class ProductParameterChoose extends PureComponent {
                   {this.state.number}
                 </div>
                 <div
-                  className={styles.product_modal_standard_countChoose_leftBtn}
+                  className={styles.product_modal_standard_countChoose_rightBtn}
                   onClick={() => this._plus()}
                 />
               </div>

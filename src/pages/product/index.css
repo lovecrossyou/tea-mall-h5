@@ -539,6 +539,21 @@
   margin: 0 16px;
 
 }
+.product_modal_standards_itemSelected{
+
+  width:160px;
+  height:52px;
+  background:rgba(255,89,75,1);
+  border-radius:24px;
+
+  text-align: center;
+  font-size:28px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:#ffffff;
+  line-height:52px ;
+  margin: 0 16px;
+}
 .product_modal_standard_line{
   margin-left: 40px;
   margin-right: 38px;
@@ -573,9 +588,18 @@
 .product_modal_standard_countChoose_leftBtn{
   width:79px;
   height:48px;
-  background:rgba(213,213,213,0);
-  border:1px solid rgba(153,153,153,1);
-  border-radius:24px;
+  background:url("./image/pay_number_Reduction@2x.png");
+  background-size:79px 48px;
+  background-repeat:no-repeat;
+
+}
+.product_modal_standard_countChoose_rightBtn{
+  width:79px;
+  height:48px;
+  background:url("./image/pay_number_add@2x.png");
+  background-size:79px 48px;
+  background-repeat:no-repeat;
+
 }
 .product_modal_standard_countChoose_number{
 
