@@ -103,7 +103,7 @@ const Section = function() {
     <HomeFreeTea/>
     <div className={styles.home_top_selling_tit}>爆款工夫茶</div>
     <HomeSellingTea/>
-    <div className={styles.home_top_selling_tit}>
+    <div className={styles.home_top_selling_tit}   onClick={()=>router.push('/limitbuy')}>
       <div>限时秒杀</div>
       <div className={styles.home_top_selling_tit_right}>
         <span>23</span>:
