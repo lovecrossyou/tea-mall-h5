@@ -123,6 +123,9 @@ export const HotRecommendShow = function() {
   </div>;
 };
 
+const listArr = ['精选','绿茶','红茶','黄茶','白茶','青茶','黑茶']
+
+
 class Index extends PureComponent {
 
   constructor(props) {
@@ -137,7 +140,7 @@ class Index extends PureComponent {
     return (
       <div className={styles.home_container}>
         <Header/>
-        <NavBarList/>
+        <NavBarList data={listArr}/>
         <div
           style={{
             height: `${this.clientHeight - 135 - 132 - 150}px`,
