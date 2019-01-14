@@ -5,7 +5,7 @@
  */
 export default {
   // 支持值为 Object 和 Array
-  "POST /h5/category/list": {
+  "POST /h5/storeDetails/list": {
     code: 0,
     list: [
       { title: "首页", content: "111111", id: 0 },
@@ -16,7 +16,7 @@ export default {
   },
 
   // GET POST 可省略
-  "POST /h5/category/categoryById": {
+  "POST /h5/storeDetails/categoryById": {
     code: 0,
     list: [
       {
