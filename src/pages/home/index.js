@@ -36,7 +36,7 @@ const Header = function() {
 const HomeFreeTea = function() {
   return <div className={styles.home_free_tea}>
     <div className={styles.home_free_tea_left}>
-      <div className={styles.home_free_tea_intro}>
+      <div className={styles.home_free_tea_intro} onClick={()=>router.push('/limitbuy')}>
         <div className={styles.home_free_tea_intro_h}>好茶试饮</div>
         <div>人气好茶免费送</div>
       </div>
@@ -70,7 +70,7 @@ const HomeFreeTea = function() {
 };
 
 export const ProductItem = function() {
-  return <div className={styles.home_top_selling_tea_item}>
+  return <div className={styles.home_top_selling_tea_item}  onClick={()=>router.push('/product')}>
     <div className={styles.home_top_selling_tea_item_img}>
       <img src={mall_p_1} alt=""/>
     </div>
