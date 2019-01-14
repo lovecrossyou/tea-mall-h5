@@ -325,3 +325,7 @@
   position: absolute;
   bottom: 0;
 }
+
+.wrap_body{
+  height: 100%;
+}
