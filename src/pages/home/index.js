@@ -1,7 +1,5 @@
 import React, { PureComponent } from "react";
 import { connect } from "dva";
-import { TabBar } from "antd-mobile";
-import { Carousel, SegmentedControl, WingBlank } from "antd-mobile";
 import styles from "./index.css";
 
 
