@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-12-25 01:03:00
  */
 
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { connect } from "dva";
 import styles from "./index.css";
 import { Layout } from "antd";
@@ -29,7 +29,7 @@ const SearchBox = () => {
   );
 };
 
-class Category extends PureComponent {
+class Category extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,6 +40,10 @@ class Category extends PureComponent {
 
   componentDidMount() {
     console.log(this.state);
+    this.props.dispatch({
+      type: "category/getCategorysList",
+      payload: {}
+    })
   }
 
   handleClick(e) {
@@ -57,7 +61,7 @@ class Category extends PureComponent {
         <SearchBox />
         <ul
           style={{
-            height: `${this.clientHeight - 188}px`,
+            height: `${this.clientHeight - 174}px`,
             position: "relative"
           }}
         >
