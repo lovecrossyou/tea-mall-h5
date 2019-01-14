@@ -9,6 +9,8 @@ import {
   WhiteSpace,
   Carousel
 } from "antd-mobile";
+import { Layout } from "antd";
+import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
 import Product_figure from "./image/Product_figure.png";
 import CarouselTop from "../../components/carousel";
@@ -17,6 +19,8 @@ import storeInProduct_contentimg2 from "./image/storeInProduct_contentimg2.png";
 import storeInProduct_contentimg3 from "./image/storeInProduct_contentimg3.png";
 import bottom_icon_mall from "./image/bottom_icon_mall@2x.png";
 import bottom_icon_service from "./image/bottom_icon_service@2x.png";
+import icon_return from "./image/icon_return.png";
+import icon_share from "./image/icon_share.png";
 
 const storeInProduct_contentimgs = [
   storeInProduct_contentimg1,
@@ -72,18 +76,12 @@ export default class Index extends PureComponent {
   render() {
     return (
       <div className={styles.container}>
-        <div>
-          <NavBar
-            mode="light"
-            icon={<Icon type="left" />}
-            onLeftClick={() => console.log("onLeftClick")}
-            rightContent={[
-              <Icon key="0" type="search" style={{ marginRight: "16px" }} />
-            ]}
-          >
-            <TopSegment />
-          </NavBar>
-        </div>
+        <ProductNav
+          onBack={() => {
+            router.go(-1);
+          }}
+          rightAction={() => {}}
+        />
 
         <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
           <div style={{ width: "100%", backgroundColor: "#fff" }}>
@@ -130,6 +128,45 @@ export default class Index extends PureComponent {
   }
 }
 
+class ProductNav extends PureComponent {
+  render() {
+    return (
+      <div className={styles.productNav_container}>
+        <div
+          onClick={this.props.onBack && this.props.onBack()}
+          className={styles.productNav_leftIcon}
+        >
+          <img className={styles.productNav_leftIcon_img} src={icon_return} />
+        </div>
+        <div className={styles.productNav_middle}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {["商品", "详情", "评价"].map((value, index) => {
+              return (
+                <div
+                  key={index + "#"}
+                  className={
+                    index === 0
+                      ? styles.productNav_middle_titleSelected
+                      : styles.productNav_middle_titleNormal
+                  }
+                  onClick={() => {}}
+                >
+                  {value}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div
+          onClick={this.props.rightAction && this.props.rightAction()}
+          className={styles.productNav_leftIcon}
+        >
+          <img src={icon_share} />
+        </div>
+      </div>
+    );
+  }
+}
 const TopSegment = () => {
   return (
     <Flex justify="between">
@@ -276,12 +313,18 @@ class ProductTabbar extends PureComponent {
     return (
       <div className={styles.productTabbar_container}>
         <div className={styles.productTabbar_store}>
-          <img src={bottom_icon_mall} />
-          <div>{"店铺"}</div>
+          <img
+            src={bottom_icon_mall}
+            className={styles.productTabbar_store_icon}
+          />
+          <div className={styles.productTabbar_store_title}>{"店铺"}</div>
         </div>
         <div className={styles.productTabbar_store}>
-          <img src={bottom_icon_service} />
-          <div>{"客服"}</div>
+          <img
+            src={bottom_icon_service}
+            className={styles.productTabbar_store_icon}
+          />
+          <div className={styles.productTabbar_store_title}>{"客服"}</div>
         </div>
         <div className={styles.productTabbar_storeCar}>{"加入购物车"}</div>
         <div className={styles.productTabbar_buy}>{"立即购买"}</div>
