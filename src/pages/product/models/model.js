@@ -4,7 +4,7 @@
  *desc
  */
 import { Toast } from "antd-mobile";
-import { rtsGetCategorysList, rtsGetSubcategories } from "../service";
+import { rtsGetShopProductDetail, rtsGetShopStoreDetail } from "../service";
 
 export default {
   namespace: "product",
