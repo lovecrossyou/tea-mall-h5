@@ -9,11 +9,14 @@ import {
   WhiteSpace,
   Carousel
 } from "antd-mobile";
+import ScrollWrap from "../../components/scroll";
 import Product_figure from "./image/Product_figure.png";
 import CarouselTop from "../../components/carousel";
 import storeInProduct_contentimg1 from "./image/storeInProduct_contentimg1.png";
 import storeInProduct_contentimg2 from "./image/storeInProduct_contentimg2.png";
 import storeInProduct_contentimg3 from "./image/storeInProduct_contentimg3.png";
+import bottom_icon_mall from "./image/bottom_icon_mall@2x.png";
+import bottom_icon_service from "./image/bottom_icon_service@2x.png";
 
 const storeInProduct_contentimgs = [
   storeInProduct_contentimg1,
@@ -81,39 +84,46 @@ export default class Index extends PureComponent {
             <TopSegment />
           </NavBar>
         </div>
-        <div style={{ width: "100%", backgroundColor: "#fff" }}>
-          <CarouselTop clsName={styles.carouselStyle} />
-        </div>
 
-        <ProductInfo />
-        <WhiteSpace />
-        <ProductItem
-          dic={{
-            title: "产品参数：",
-            content: "领取新人专享福利",
-            arrow: true
-          }}
-        />
-        <Product_Line />
-        <ProductItem
-          dic={{
-            title: "优惠券：",
-            content: "满50-100  满300-80  满200-50",
-            arrow: true
-          }}
-        />
-        <Product_Line />
-        <ProductItem dic={{ title: "运费：", content: "包邮", arrow: false }} />
-        <Product_Line />
-        <ProductItem dic={{ title: "产品参数：", content: "", arrow: true }} />
-        <WhiteSpace />
+        <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
+          <div style={{ width: "100%", backgroundColor: "#fff" }}>
+            <CarouselTop clsName={styles.carouselStyle} />
+          </div>
 
-        {/*商品评价*/}
-        <ProductAppraise />
-        <WhiteSpace />
-        {/*商品店铺*/}
-        <StoreInProduct />
-        <WhiteSpace />
+          <ProductInfo />
+          <WhiteSpace />
+          <ProductItem
+            dic={{
+              title: "产品参数：",
+              content: "领取新人专享福利",
+              arrow: true
+            }}
+          />
+          <Product_Line />
+          <ProductItem
+            dic={{
+              title: "优惠券：",
+              content: "满50-100  满300-80  满200-50",
+              arrow: true
+            }}
+          />
+          <Product_Line />
+          <ProductItem
+            dic={{ title: "运费：", content: "包邮", arrow: false }}
+          />
+          <Product_Line />
+          <ProductItem
+            dic={{ title: "产品参数：", content: "", arrow: true }}
+          />
+          <WhiteSpace />
+
+          {/*商品评价*/}
+          <ProductAppraise />
+          <WhiteSpace />
+          {/*商品店铺*/}
+          <StoreInProduct />
+          <WhiteSpace />
+        </ScrollWrap>
         <ProductTabbar />
       </div>
     );
@@ -263,6 +273,19 @@ class StoreInProduct extends PureComponent {
 }
 class ProductTabbar extends PureComponent {
   render() {
-    return <div className={styles.productTabbar_container} />;
+    return (
+      <div className={styles.productTabbar_container}>
+        <div className={styles.productTabbar_store}>
+          <img src={bottom_icon_mall} />
+          <div>{"店铺"}</div>
+        </div>
+        <div className={styles.productTabbar_store}>
+          <img src={bottom_icon_service} />
+          <div>{"客服"}</div>
+        </div>
+        <div className={styles.productTabbar_storeCar}>{"加入购物车"}</div>
+        <div className={styles.productTabbar_buy}>{"立即购买"}</div>
+      </div>
+    );
   }
 }
