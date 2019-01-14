@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './payloadResult.css';
 import pay_icon_success from './images/pay_icon_success@2x.png';
+import { HotRecommendShow, ProductItem } from "../home";
 
 function PayloadResult(){
   return <div className={styles.pay_load_result_container}>
@@ -16,7 +17,7 @@ function PayloadResult(){
     </div>
     <div className={styles.hot_recommend}>
       <div className={styles.hot_recommend_tit}>--- 热门推荐 ---</div>
-
+      <HotRecommendShow/>
     </div>
   </div>
 }

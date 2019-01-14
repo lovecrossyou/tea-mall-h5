@@ -68,7 +68,7 @@ const HomeFreeTea = function(){
   </div>
 };
 
-const ProductItem = function(){
+export const ProductItem = function(){
   return <div className={styles.home_top_selling_tea_item}>
     <div className={styles.home_top_selling_tea_item_img}>
       <img src={mall_p_1} alt=""/>
@@ -114,7 +114,7 @@ const Section = function() {
   </div>
 };
 
-const Footer = function() {
+export const HotRecommendShow = function() {
   return <div className={styles.home_footer}>
     <ProductItem/>
     <ProductItem/>
@@ -134,7 +134,7 @@ class Index extends PureComponent{
           <CarouselTop clsName={styles.carousel_container} />
         </div>
         <Section/>
-        <Footer/>
+        <HotRecommendShow/>
       </div>
     );
   }
