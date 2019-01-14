@@ -3,7 +3,6 @@ import { connect } from "dva";
 import { TabBar } from "antd-mobile";
 import { Carousel, SegmentedControl, WingBlank } from "antd-mobile";
 import styles from "./index.css";
-import NavBarList from "./components/navBarList";
 
 
 import mall_classification from "./image/mall_icon_classification@2x.png";
@@ -17,6 +16,7 @@ import mall_p_5 from "./image/mall_p_5@2x.png";
 import CarouselTop from "../../components/carousel";
 import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
+import NavBarList from "../../components/navbarlist";
 
 const Header = function() {
   return <div className={styles.home_header}>
