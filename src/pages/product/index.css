@@ -241,6 +241,13 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
+/*轮播*/
+.carouselStyle{
+  height: 700px;
+}
+
+/*商店*/
 .storeInProduct_container {
   width: 100%;
   box-sizing: border-box;
@@ -366,15 +373,38 @@
 
 }
 
-.carouselStyle{
-  height: 700px;
-}
+
 .storeInProduct_content{
   width: 100%;
 }
 .storeInProduct_contentImg{
   width: 100%;
 }
+
+/*推荐*/
+.productCommend_container{
+
+  padding-left: 23px;
+  padding-right: 23px;
+  box-sizing: border-box;
+}
+.productCommend_title{
+  height:31px;
+  margin-top: 27px;
+  font-size:32px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:31px;
+}
+.productCommend_list_container{
+  display: flex;
+  margin-top: 25px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .productTabbar_container{
 
   display: flex;
@@ -433,3 +463,159 @@
   line-height:102px;
 
 }
+
+
+.model_content{
+  background-color: #ffffff;
+  position: relative;
+  padding-bottom: 98px;
+  box-sizing: border-box;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-radius: 12px;
+
+}
+
+.modal_p_img{
+  width: 224px;
+  height: 224px;
+}
+
+.model_flex_r{
+  display: flex;
+  flex-direction: row;
+}
+
+.modal_p_img_wrapper{
+  position: absolute;
+  top: -60px;
+  left: 45px;
+
+  border-radius: 5px;
+  border:solid 4px #ffffff;
+}
+
+.modal_p_info{
+  position: absolute;
+  top: 32px;
+  left: 269px;
+  margin-left: 27px;
+}
+
+.standard{
+
+  margin-top: 233px;
+  margin-left: 45px;
+  height:31px;
+  font-size:32px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(31,31,31,1);
+
+}
+.product_modal_standards{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 29px;
+  padding-right: 27px;
+  margin-top: 47px;
+  margin-bottom: 68px;
+  box-sizing: border-box;
+}
+.product_modal_standards_item{
+  width:160px;
+  height:52px;
+  background:rgba(236,236,236,1);
+  border-radius:24px;
+
+  text-align: center;
+  font-size:28px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(31,31,31,1);
+  line-height:52px ;
+  margin: 0 16px;
+
+}
+.product_modal_standard_line{
+  margin-left: 40px;
+  margin-right: 38px;
+  height:1px;
+  background:rgba(234,234,234,1);
+}
+.product_modal_standard_count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 41px 0 57px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-bottom: 67px;
+}
+.product_modal_standard_countTitle{
+  height:31px;
+  font-size:32px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(31,31,31,1);
+}
+.product_modal_standard_countChoose{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 48px;
+
+}
+.product_modal_standard_countChoose_leftBtn{
+  width:79px;
+  height:48px;
+  background:rgba(213,213,213,0);
+  border:1px solid rgba(153,153,153,1);
+  border-radius:24px;
+}
+.product_modal_standard_countChoose_number{
+
+  font-size:32px;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(31,31,31,1);
+  margin: 0 21px;
+}
+.modal_price{
+  font-size:35px;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(255,89,75,1);
+}
+
+
+.modal_p_name{
+
+  font-size:24px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:36px;
+
+}
+
+.modal_footer_btn{
+  height:98px;
+  background:rgba(255,89,75,1);
+
+  font-size:32px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:98px;
+  width: 100%;
+  text-align: center;
+
+  position: absolute;
+  bottom: 0;
+}
+
