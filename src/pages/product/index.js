@@ -14,6 +14,8 @@ import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
 import Product_figure from "./image/Product_figure.png";
 import CarouselTop from "../../components/carousel";
+
+import router from "umi/router";
 import storeInProduct_contentimg1 from "./image/storeInProduct_contentimg1.png";
 import storeInProduct_contentimg2 from "./image/storeInProduct_contentimg2.png";
 import storeInProduct_contentimg3 from "./image/storeInProduct_contentimg3.png";
@@ -262,7 +264,10 @@ class StoreInProduct extends PureComponent {
               <div className={styles.storeInProduct_header_toprightAll}>
                 {"全部宝贝"}
               </div>
-              <div className={styles.storeInProduct_header_toprightToStore}>
+              <div
+                className={styles.storeInProduct_header_toprightToStore}
+                onClick={() => router.push("/storeDetails")}
+              >
                 {"进店逛逛"}
               </div>
             </div>
