@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
-import { connect } from 'dva';
-import { TabBar } from 'antd-mobile';
-import { Carousel, SegmentedControl, WingBlank } from 'antd-mobile';
-import styles from './index.css';
-import NavBarList from './components/navBarList';
+import React, { PureComponent } from "react";
+import { connect } from "dva";
+import { TabBar } from "antd-mobile";
+import { Carousel, SegmentedControl, WingBlank } from "antd-mobile";
+import styles from "./index.css";
+import NavBarList from "./components/navBarList";
 
 
 import mall_classification from "./image/mall_icon_classification@2x.png";
@@ -16,23 +16,24 @@ import mall_p_1 from "./image/mall_p_1@2x.png";
 import mall_p_5 from "./image/mall_p_5@2x.png";
 import CarouselTop from "../../components/carousel";
 import router from "umi/router";
+import ScrollWrap from "../../components/scroll";
 
 const Header = function() {
   return <div className={styles.home_header}>
-      <div className={styles.home_header_left}>
-        <img src={mall_classification} alt=""/>
-        <div>分类</div>
-      </div>
-      <div className={styles.home_header_right}>
-        <div className={styles.home_header_right_input}>
-          <img src={mall_icon_search} alt=""/>
-          <span>大家正在搜：喝茶时间表</span>
-        </div>
+    <div className={styles.home_header_left}>
+      <img src={mall_classification} alt=""/>
+      <div>分类</div>
+    </div>
+    <div className={styles.home_header_right}>
+      <div className={styles.home_header_right_input}>
+        <img src={mall_icon_search} alt=""/>
+        <span>大家正在搜：喝茶时间表</span>
       </div>
     </div>
+  </div>;
 };
 // 好茶试饮
-const HomeFreeTea = function(){
+const HomeFreeTea = function() {
   return <div className={styles.home_free_tea}>
     <div className={styles.home_free_tea_left}>
       <div className={styles.home_free_tea_intro}>
@@ -54,7 +55,7 @@ const HomeFreeTea = function(){
           <img src={mall_main_img_2} alt=""/>
         </div>
       </div>
-      <div className={styles.home_free_tea_right_item} style={{marginTop:"12px"}}>
+      <div className={styles.home_free_tea_right_item} style={{ marginTop: "12px" }}>
         <div className={styles.home_free_tea_intro}>
           <div className={styles.home_free_tea_intro_h}>名品优店</div>
           <div>回头客</div>
@@ -65,11 +66,11 @@ const HomeFreeTea = function(){
         </div>
       </div>
     </div>
-  </div>
+  </div>;
 };
 
-const ProductItem = function(){
-  return <div className={styles.home_top_selling_tea_item}>
+const ProductItem = function() {
+  return <div className={styles.home_top_selling_tea_item} onClick={()=>router.push('/limitbuy')}>
     <div className={styles.home_top_selling_tea_item_img}>
       <img src={mall_p_1} alt=""/>
     </div>
@@ -77,7 +78,7 @@ const ProductItem = function(){
       <div className={styles.home_top_selling_tea_item_intro_content}>自桃树乌龙茶15包组合自桃树乌龙茶15包组合</div>
       <div className={styles.home_top_selling_tea_item_intro_price}>￥58.3</div>
     </div>
-  </div>
+  </div>;
 };
 
 // 爆款茶
@@ -85,16 +86,16 @@ const HomeSellingTea = function() {
   return <div className={styles.home_top_selling_tea}>
     <ProductItem/>
     <ProductItem/>
-  </div>
+  </div>;
 };
 // 限时秒杀
 const TimeLimitSelling = function() {
   return <div className={styles.time_limit_selling}>
-    <ProductItem onClick={()=>router.push('/limitbuy')}/>
+    <ProductItem onClick={() => router.push("/limitbuy")}/>
     <ProductItem/>
     <ProductItem/>
     <ProductItem/>
-  </div>
+  </div>;
 };
 
 const Section = function() {
@@ -111,7 +112,7 @@ const Section = function() {
       </div>
     </div>
     <TimeLimitSelling/>
-  </div>
+  </div>;
 };
 
 const Footer = function() {
@@ -119,10 +120,16 @@ const Footer = function() {
     <ProductItem/>
     <ProductItem/>
     <ProductItem/>
-  </div>
+  </div>;
 };
 
-class Index extends PureComponent{
+class Index extends PureComponent {
+
+  constructor(props) {
+    super(props);
+    this.clientHeight = window.document.body.clientHeight;
+  }
+
   render() {
     console.log(this.props.store);
     const { carousel, imgHeight } = this.props.store;
@@ -130,11 +137,18 @@ class Index extends PureComponent{
       <div className={styles.home_container}>
         <Header/>
         <NavBarList/>
-        <div className={styles.carousel_container}>
-          <CarouselTop clsName={styles.carousel_container} />
+        <div style={{
+          height: `${this.clientHeight - 267 - 150}px`,
+          position: "relative"
+        }}>
+          <ScrollWrap wrapId="homeList" wrapClass={styles.scrollwrap}>
+            <div className={styles.carousel_container}>
+              <CarouselTop clsName={styles.carousel_container}/>
+            </div>
+            <Section/>
+            <Footer/>
+          </ScrollWrap>
         </div>
-        <Section/>
-        <Footer/>
       </div>
     );
   }

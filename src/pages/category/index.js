@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-12-25 01:03:00
  */
 
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { connect } from "dva";
 import styles from "./index.css";
 import { Layout } from "antd";
@@ -19,17 +19,17 @@ const { Header, Footer, Sider, Content } = Layout;
 const SearchBox = () => {
   return (
     <div className={styles.top_search}>
-      <div className={styles.back_icon} onClick={()=>router.go(-1)}>
-        <img src={back_icon} alt=""/>
+      <div className={styles.back_icon} onClick={() => router.go(-1)}>
+        <img src={back_icon} alt="" />
       </div>
       <div className={styles.top_search_input}>
-        <input type="text" placeholder="搜索商品或品牌"/>
+        <input type="text" placeholder="搜索商品或品牌" />
       </div>
     </div>
   );
 };
 
-class Category extends PureComponent {
+class Category extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,6 +40,10 @@ class Category extends PureComponent {
 
   componentDidMount() {
     console.log(this.state);
+    this.props.dispatch({
+      type: "category/getCategorysList",
+      payload: {}
+    })
   }
 
   handleClick(e) {
@@ -54,8 +58,14 @@ class Category extends PureComponent {
 
     return (
       <div className={styles.wrapper}>
-        <SearchBox/>
-        <ul style={{ height: `${this.clientHeight - 188}px`, position: "relative" }}>
+        <SearchBox />
+        <ul
+          style={{
+            height: `${this.clientHeight - 174}px`,
+            position: "relative"
+          }}
+        >
+          <ScrollWrap wrapId="lefttList" wrapClass={styles.wrap_body_left}>
             <li className={styles.classify_list}>
               {firstList.map((data, index) => {
                 return (
@@ -73,16 +83,14 @@ class Category extends PureComponent {
                 );
               })}
             </li>
+          </ScrollWrap>
           <ScrollWrap wrapId="rootList" wrapClass={styles.wrap_body}>
             <li className={styles.classify_content_wrap}>
               {subcategoriesList.map((data, index) => {
                 return (
-                  <div
-                    key={index}
-                    className={styles.classify_product}
-                  >
+                  <div key={index} className={styles.classify_product}>
                     <div className={styles.shop_img}>
-                      <img src={data.secondCategoryImageUrl} alt=""/>
+                      <img src={data.secondCategoryImageUrl} alt="" />
                     </div>
                     <div className={styles.shop_img_text}>
                       {data.secondCategoryName}
