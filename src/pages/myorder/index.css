@@ -5,12 +5,29 @@
     position: fixed;
 }
 .myOrder_scroll{
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*top: 220px;*/
+    /*bottom: 0;*/
+    /*background-color: #f4f8fb;*/
+    width: 100%;
+    height: 100%;
+}
+.tabbar_container{
+    display: flex;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 220px;
-    bottom: 0;
-    background-color: #f4f8fb;
+    top: 120px;
+    bottom: 0px;
+    width: 100%;
+}
+.order_all_container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.tabBarUnderlineStyle{
+    background-color: #FF594B;
 }
 .selectorBar_container{
 

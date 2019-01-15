@@ -10,11 +10,25 @@ import { Navigator } from "../../components/navigator";
 import React from "react";
 import ScrollWrap from "../../components/scroll";
 import { connect } from "dva";
-import { Toast, WhiteSpace, Carousel } from "antd-mobile";
+import { Toast, WhiteSpace, Carousel, Tabs } from "antd-mobile";
 
 const listArr = ["全部", "待付款", "待发货", "待收货", "待评价"];
+const tabs = [
+  { title: "全部" },
+  { title: "待付款" },
+  { title: "待发货" },
+  { title: "待收货" },
+  { title: "待评价" }
+];
 
 class MyOrder extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      defaultSelect: 0
+    };
+  }
+
   componentWillMount() {
     Toast.loading("loading...", 0);
     this.props.dispatch({
@@ -26,21 +40,55 @@ class MyOrder extends PureComponent {
     }, 2000);
   }
 
+  renderTabBar = props => {
+    return (
+      <SelectorBar
+        listArr={listArr}
+        defaultSelect={this.state.defaultSelect}
+        onClick={index => {
+          this.setState({ defaultSelect: index });
+          props.goToTab(index) ;
+        }}
+      >
+      </SelectorBar>
+    );
+  };
   render() {
     const { orderList } = this.props.store;
     return (
       <div style={{ backgroundColor: "#f4f8fb" }}>
         <div className={styles.order_topView}>
           <Navigator title={"我的订单"} />
-          <div
-            style={{ width: "100%", height: "1px", backgroundColor: "#cccccc" }}
-          />
-          <SelectorBar listArr={listArr} defaultSelect={0} />
+          {/*<div*/}
+          {/*style={{ width: "100%", height: "1px", backgroundColor: "#cccccc" }}*/}
+          {/*/>*/}
+          {/*<SelectorBar listArr={listArr} defaultSelect={0} />*/}
         </div>
 
-        <ScrollWrap wrapId="myOrder_scroll" wrapClass={styles.myOrder_scroll}>
-          <Order_All dataArr={orderList} />
-        </ScrollWrap>
+        <div className={styles.tabbar_container}>
+          <Tabs
+            tabs={tabs}
+            ref={c => (this._tabs = c)}
+            initialPage={this.state.defaultSelect}
+            animated={true}
+            useOnPan={true}
+            renderTabBar={this.renderTabBar}
+            onChange={(tab, index) => {
+              this.setState({ defaultSelect: index });
+            }}
+            tabBarUnderlineStyle={{ backgroundColor: "red", height: 2 }}
+          >
+            <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all1"} />
+            <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all2"} />
+            <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all3"} />
+            <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all4"} />
+            <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all5"} />
+          </Tabs>
+        </div>
+
+        {/*<ScrollWrap wrapId="myOrder_scroll" wrapClass={styles.myOrder_scroll}>*/}
+        {/*<Order_All dataArr={orderList} />*/}
+        {/*</ScrollWrap>*/}
       </div>
     );
   }
@@ -48,14 +96,16 @@ class MyOrder extends PureComponent {
 export class Order_All extends PureComponent {
   componentWillMount() {}
   render() {
-    console.log(
-      "dataArr=========" + JSON.stringify(JSON.stringify(this.props.dataArr))
-    );
     return (
-      <div>
-        {this.props.dataArr.map((value, index) => {
-          return <OrderListItem data={value} key={index + "#"} />;
-        })}
+      <div className={styles.order_all_container}>
+        <ScrollWrap
+          wrapId={this.props.wrapId}
+          wrapClass={styles.myOrder_scroll}
+        >
+          {this.props.dataArr.map((value, index) => {
+            return <OrderListItem data={value} key={index + "#"} />;
+          })}
+        </ScrollWrap>
       </div>
     );
   }
@@ -136,13 +186,13 @@ export class SelectorBar extends PureComponent {
               key={"#" + index}
               className={styles.selectorBar_item}
               onClick={() => {
-                this.setState({ defaultSelect: index });
+                this.props.onClick(index);
               }}
             >
               <div className={styles.selectorBar_item_title}>{value}</div>
               <div
                 className={
-                  index === this.state.defaultSelect
+                  index === this.props.defaultSelect
                     ? styles.selectorBar_item_indicator
                     : styles.selectorBar_item_indicator_normal
                 }
