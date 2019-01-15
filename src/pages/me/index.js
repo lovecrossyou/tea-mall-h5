@@ -18,6 +18,7 @@ import walletIcon from "./images/center_icon_Wallet@2x.png";
 import couponIcon from "./images/center_icon_Coupon@2x.png";
 import storeIcon from "./images/center_icon_store@2x.png";
 import settingIcon from "./images/center_icon_Setting@2x.png";
+import router from "umi/router";
 
 // 头部个人信息
 const Header = () => {
@@ -67,7 +68,14 @@ const CargoManage = () => {
       <div className={styles.my_order_area}>
         <div className={styles.my_order_text}>我的订单</div>
         <div className={styles.all_order_area}>
-          <div className={styles.all_order_text}>全部订单</div>
+          <div
+            className={styles.all_order_text}
+            onClick={() => {
+              router.push("/myorder");
+            }}
+          >
+            全部订单
+          </div>
           <div className={styles.next_icon}>
             <img src={gotoNext} alt="" />
           </div>
