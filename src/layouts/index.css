@@ -27,6 +27,7 @@
   justify-content: space-between;
   padding: 44px 19px;
   box-sizing: border-box;
+  border-bottom: 1px solid #cccccc;
 }
 
 .nav_title{
