@@ -1,9 +1,9 @@
 import router from "umi/router";
 
-import styles from "./index.css";
-import nav_left_arrow from "./images/order_top_icon_return@2x.png";
+import styles from "../layouts/index.css";
+import nav_left_arrow from "../layouts/images/order_top_icon_return@2x.png";
 
-export const Navigator = ({title=''}) => {
+export const Navigator = ({title='',right=null}) => {
   return <div className={styles.nav}>
     <img
       onClick={() => {
@@ -13,6 +13,8 @@ export const Navigator = ({title=''}) => {
       alt=""
       className={styles.nav_arrow}/>
     <div className={styles.nav_title}>{title}</div>
-    <div></div>
+    <div>
+      {right? right : null}
+    </div>
   </div>;
 };

@@ -1,6 +1,6 @@
 import { PureComponent } from "react";
 import React from "react";
-import { Navigator } from "../../layouts/navigator";
+import { Navigator } from "../../components/navigator";
 /**
  *Created by tianhaojie .
  *Created on 2019-01-14 .
