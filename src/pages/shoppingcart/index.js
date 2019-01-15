@@ -79,11 +79,11 @@ const ShoppingCartGoBuy = function() {
       <span>全选</span>
     </div>
     <div className={styles.shopping_cart_go_buy_right}>
-      <div>
-        <div>合计：￥1188</div>
+      <div className={styles.total_container}>
+        <div className={styles.total}>合计：￥1188</div>
         <div>店铺优惠20元</div>
       </div>
-      <div>去结算(5)</div>
+      <div className={styles.close_total}>去结算(5)</div>
     </div>
   </div>
 };
