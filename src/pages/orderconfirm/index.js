@@ -1,7 +1,7 @@
 import { PureComponent } from "react";
 import styles from "./index.css";
 import React from "react";
-import { Navigator } from "../../layouts/navigator";
+import { Navigator } from "../../components/navigator";
 import { Stepper } from "antd-mobile";
 
 import addr_icon from "./images/order_icon_address@2x.png";
