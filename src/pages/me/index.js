@@ -163,7 +163,6 @@ const MainOperation = () => {
           </div>
         </div>
       </div>
-      >>>>>>> 0b05ce66fb800b9381447aca2adf38486e4bd4ab
     </div>
   );
 };
