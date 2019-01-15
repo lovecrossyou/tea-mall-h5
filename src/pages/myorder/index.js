@@ -6,7 +6,7 @@
 import NavBarList from "../../components/navbarlist";
 import styles from "./index.css";
 import { PureComponent } from "react";
-import { Navigator } from "../../layouts/navigator";
+import { Navigator } from "../../components/navigator";
 import React from "react";
 import ScrollWrap from "../../components/scroll";
 import { connect } from "dva";
