@@ -10,7 +10,7 @@ import { Navigator } from "../../components/navigator";
 import React from "react";
 import ScrollWrap from "../../components/scroll";
 import { connect } from "dva";
-import { Toast, WhiteSpace } from "antd-mobile";
+import { Toast, WhiteSpace, Carousel } from "antd-mobile";
 
 const listArr = ["全部", "待付款", "待发货", "待收货", "待评价"];
 

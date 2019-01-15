@@ -18,6 +18,7 @@ import walletIcon from "./images/center_icon_Wallet@2x.png";
 import couponIcon from "./images/center_icon_Coupon@2x.png";
 import storeIcon from "./images/center_icon_store@2x.png";
 import settingIcon from "./images/center_icon_Setting@2x.png";
+import router from "umi/router";
 import { MeItem } from "./components";
 
 // 头部个人信息
@@ -68,7 +69,14 @@ const CargoManage = () => {
       <div className={styles.my_order_area}>
         <div className={styles.my_order_text}>我的订单</div>
         <div className={styles.all_order_area}>
-          <div className={styles.all_order_text}>全部订单</div>
+          <div
+            className={styles.all_order_text}
+            onClick={() => {
+              router.push("/myorder");
+            }}
+          >
+            全部订单
+          </div>
           <div className={styles.next_icon}>
             <img src={gotoNext} alt="" />
           </div>
@@ -119,6 +127,43 @@ const MainOperation = () => {
       <MeItem title="优惠券" subtitle="3张优惠券" icon={couponIcon} />
       <MeItem title="我要开店" icon={storeIcon} />
       <MeItem title="设置" icon={settingIcon} />
+      <div className={styles.person_operation_list}>
+        <div className={styles.my_order_area_wrapper}>
+          <div className={styles.my_order_img}>
+            <img
+              src={walletIcon}
+              alt=""
+              style={{ width: "36px", height: "40px" }}
+            />
+          </div>
+          <div className={styles.my_order_text}>我的钱包</div>
+        </div>
+        <div className={styles.all_order_area}>
+          <div className={styles.next_icon}>
+            <img src={gotoNext} alt="" />
+          </div>
+        </div>
+      </div>
+      <MeItem title="优惠券" subtitle="3张优惠券" icon={couponIcon} />
+      <MeItem title="我要开店" icon={storeIcon} />
+      <div className={styles.person_operation_list}>
+        <div className={styles.my_order_area_wrapper}>
+          <div className={styles.my_order_img}>
+            <img
+              src={settingIcon}
+              alt=""
+              style={{ width: "40px", height: "36px" }}
+            />
+          </div>
+          <div className={styles.my_order_text}>设置</div>
+        </div>
+        <div className={styles.all_order_area}>
+          <div className={styles.next_icon}>
+            <img src={gotoNext} alt="" />
+          </div>
+        </div>
+      </div>
+      >>>>>>> 0b05ce66fb800b9381447aca2adf38486e4bd4ab
     </div>
   );
 };
