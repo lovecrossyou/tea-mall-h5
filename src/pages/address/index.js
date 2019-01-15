@@ -8,9 +8,9 @@ import router from "umi/router";
 const CreateNewAddress = ({ onClick }) => {
   return (
     <div className={styles["add-addr-container"]}>
-      <Button className={styles["btn-new"]} type="warning" onClick={onClick}>
-        添加新地址
-      </Button>
+      <div className={styles["btn-new"]} type="warning" onClick={onClick}>
+        + 添加新地址
+      </div>
     </div>
   );
 };
@@ -22,7 +22,7 @@ class AddressList extends React.Component {
       type: "address/setActive",
       payload: address
     });
-    router.push("AddressEdit");
+    router.push("address/AddressEdit");
   };
 
   // 删除
@@ -46,7 +46,7 @@ class AddressList extends React.Component {
       type: "address/saveActive",
       payload: null
     });
-    router.push("addressedit");
+    router.push("address/addressedit");
   };
 
   render() {
