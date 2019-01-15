@@ -75,15 +75,8 @@ const CargoManage = () => {
         </div>
       </div>
       <div className={styles.cargo_manage_list}>
-        <div className={styles.cargo_manage_option}>
-          <div className={styles.manage_option_img}>
-            <img
-              src={obligationsIcon}
-              style={{ width: "48px", height: "43px" }}
-            />
-          </div>
-          <div className={styles.manage_option_text}>待付款</div>
-        </div>
+        {/*<CargoManage img={obligationsIcon} title="待付款"/>*/}
+
         <div className={styles.cargo_manage_option}>
           <div className={styles.manage_option_img}>
             <img src={dropshipIcon} style={{ width: "47px", height: "47px" }} />
@@ -122,46 +115,10 @@ const CargoManage = () => {
 const MainOperation = () => {
   return (
     <div className={styles.person_operation_bottom}>
-      <div className={styles.person_operation_list}>
-        <div className={styles.my_order_area_wrapper}>
-          <div className={styles.my_order_img}>
-            <img
-              src={walletIcon}
-              alt=""
-              style={{ width: "36px", height: "40px" }}
-            />
-          </div>
-          <div className={styles.my_order_text}>我的钱包</div>
-        </div>
-        <div className={styles.all_order_area}>
-          <div className={styles.next_icon}>
-            <img src={gotoNext} alt="" />
-          </div>
-        </div>
-      </div>
-
-      <MeItem title='优惠券' subtitle='3张优惠券' icon={couponIcon}/>
-      <MeItem title='我要开店'  icon={storeIcon}/>
-
-
-
-      <div className={styles.person_operation_list}>
-        <div className={styles.my_order_area_wrapper}>
-          <div className={styles.my_order_img}>
-            <img
-              src={settingIcon}
-              alt=""
-              style={{ width: "40px", height: "36px" }}
-            />
-          </div>
-          <div className={styles.my_order_text}>设置</div>
-        </div>
-        <div className={styles.all_order_area}>
-          <div className={styles.next_icon}>
-            <img src={gotoNext} alt="" />
-          </div>
-        </div>
-      </div>
+      <MeItem title="我的钱包" icon={walletIcon} />
+      <MeItem title="优惠券" subtitle="3张优惠券" icon={couponIcon} />
+      <MeItem title="我要开店" icon={storeIcon} />
+      <MeItem title="设置" icon={settingIcon} />
     </div>
   );
 };
