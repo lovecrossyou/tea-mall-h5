@@ -40,7 +40,6 @@ class MyOrder extends PureComponent {
     }, 2000);
   }
 
-  // {({ style }) => <div style={{ ...style, zIndex: 1 }}><Tabs.DefaultTabBar {...props} /></div>}
   renderTabBar = props => {
     return (
       <SelectorBar
@@ -48,8 +47,10 @@ class MyOrder extends PureComponent {
         defaultSelect={this.state.defaultSelect}
         onClick={index => {
           this.setState({ defaultSelect: index });
+          props.goToTab(index) ;
         }}
-      />
+      >
+      </SelectorBar>
     );
   };
   render() {
@@ -95,9 +96,6 @@ class MyOrder extends PureComponent {
 export class Order_All extends PureComponent {
   componentWillMount() {}
   render() {
-    console.log(
-      "dataArr=========" + JSON.stringify(JSON.stringify(this.props.dataArr))
-    );
     return (
       <div className={styles.order_all_container}>
         <ScrollWrap
