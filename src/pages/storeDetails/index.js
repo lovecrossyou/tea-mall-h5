@@ -29,7 +29,7 @@ const SearchArea = () => {
   return (
     <div className={styles.top_area}>
       <div className={styles.top_search}>
-        <div className={styles.back_icon}>
+        <div className={styles.back_icon} onClick={()=>router.go(-1)}>
           <img src={backIcon} alt="" />
         </div>
         <div className={styles.top_search_input}>
