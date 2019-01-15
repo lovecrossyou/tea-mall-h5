@@ -19,6 +19,7 @@ import couponIcon from "./images/center_icon_Coupon@2x.png";
 import storeIcon from "./images/center_icon_store@2x.png";
 import settingIcon from "./images/center_icon_Setting@2x.png";
 import router from "umi/router";
+import { MeItem } from "./components";
 
 // 头部个人信息
 const Header = () => {
@@ -147,42 +148,8 @@ const MainOperation = () => {
         </div>
       </div>
 
-      <div className={styles.person_operation_list}>
-        <div className={styles.my_order_area_wrapper}>
-          <div className={styles.my_order_img}>
-            <img
-              src={couponIcon}
-              alt=""
-              style={{ width: "39px", height: "33px" }}
-            />
-          </div>
-          <div className={styles.my_order_text}>优惠券</div>
-        </div>
-        <div className={styles.all_order_area}>
-          <div className={styles.all_order_text}>3张优惠券</div>
-          <div className={styles.next_icon}>
-            <img src={gotoNext} alt="" />
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.person_operation_list}>
-        <div className={styles.my_order_area_wrapper}>
-          <div className={styles.my_order_img}>
-            <img
-              src={storeIcon}
-              alt=""
-              style={{ width: "40px", height: "34px" }}
-            />
-          </div>
-          <div className={styles.my_order_text}>我要开店</div>
-        </div>
-        <div className={styles.all_order_area}>
-          <div className={styles.next_icon}>
-            <img src={gotoNext} alt="" />
-          </div>
-        </div>
-      </div>
+      <MeItem title="优惠券" subtitle="3张优惠券" icon={couponIcon} />
+      <MeItem title="我要开店" icon={storeIcon} />
 
       <div className={styles.person_operation_list}>
         <div className={styles.my_order_area_wrapper}>
