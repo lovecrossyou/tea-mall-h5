@@ -4,6 +4,13 @@ import styles from './payloadResult.css';
 import pay_icon_success from './images/pay_icon_success@2x.png';
 import { HotRecommendShow, ProductItem } from "../home";
 
+export const HotRecommend = function({tit}){
+  return <div className={styles.hot_recommend}>
+    <div className={styles.hot_recommend_tit}><div></div>{tit}<div></div></div>
+    <HotRecommendShow/>
+  </div>
+};
+
 function PayloadResult(){
   return <div className={styles.pay_load_result_container}>
     <div className={styles.pay_load_result}>
@@ -15,10 +22,7 @@ function PayloadResult(){
         <div>送好友</div>
       </div>
     </div>
-    <div className={styles.hot_recommend}>
-      <div className={styles.hot_recommend_tit}>--- 热门推荐 ---</div>
-      <HotRecommendShow/>
-    </div>
+    <HotRecommend tit="热门推荐" />
   </div>
 }
 
