@@ -89,59 +89,77 @@ export class Order_All extends PureComponent {
           wrapClass={styles.myOrder_scroll}
         >
           {this.props.dataArr.map((value, index) => {
-            return <OrderListItem data={value} key={index + "#"} />;
+            return (
+              <div key={index + "#"}>
+                <OrderListItem data={value} />
+                <OrderItemFooter />
+              </div>
+            );
           })}
         </ScrollWrap>
       </div>
     );
   }
 }
-const OrderListItem = ({ data }) => {
+export class OrderListItem extends PureComponent {
+  render() {
+    const { data } = this.props;
+    return (
+      <div>
+        <WhiteSpace />
+        <div className={styles.orderItem_container}>
+          <div className={styles.orderItem_top}>
+            <div className={styles.orderItem_top_name}>{data.shopName}</div>
+            <div className={styles.orderItem_top_statusDes}>
+              {data.orderStatusDes}
+            </div>
+          </div>
+
+          <div className={styles.orderItem_middle}>
+            <img
+              className={styles.orderItem_middle_img}
+              src={data.productImg}
+            />
+            <div className={styles.orderItem_middle_right}>
+              <div className={styles.orderItem_middle_right_product}>
+                <div className={styles.orderItem_middle_right_productName}>
+                  {data.productName}
+                </div>
+                <div
+                  className={styles.orderItem_middle_product_price_container}
+                >
+                  <div className={styles.orderItem_middle_product_price}>
+                    {"¥" + data.productPrice / 100}
+                  </div>
+                  <div className={styles.orderItem_middle_product_number}>
+                    {"x" + data.productNumber}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.orderItem_middle_right_bottom_totoal}>
+                {"共" +
+                  data.productNumber +
+                  "件商品 " +
+                  "合计¥" +
+                  data.totoalPrice / 100 +
+                  "(含运费¥" +
+                  data.postagePrice / 100 +
+                  ")"}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+const OrderItemFooter = () => {
   return (
-    <div>
-      <WhiteSpace />
-      <div className={styles.orderItem_container}>
-        <div className={styles.orderItem_top}>
-          <div className={styles.orderItem_top_name}>{data.shopName}</div>
-          <div className={styles.orderItem_top_statusDes}>
-            {data.orderStatusDes}
-          </div>
-        </div>
-
-        <div className={styles.orderItem_middle}>
-          <img className={styles.orderItem_middle_img} src={data.productImg} />
-          <div className={styles.orderItem_middle_right}>
-            <div className={styles.orderItem_middle_right_product}>
-              <div className={styles.orderItem_middle_right_productName}>
-                {data.productName}
-              </div>
-              <div className={styles.orderItem_middle_product_price_container}>
-                <div className={styles.orderItem_middle_product_price}>
-                  {"¥" + data.productPrice / 100}
-                </div>
-                <div className={styles.orderItem_middle_product_number}>
-                  {"x" + data.productNumber}
-                </div>
-              </div>
-            </div>
-            <div className={styles.orderItem_middle_right_bottom_totoal}>
-              {"共" +
-                data.productNumber +
-                "件商品 " +
-                "合计¥" +
-                data.totoalPrice / 100 +
-                "(含运费¥" +
-                data.postagePrice / 100 +
-                ")"}
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.orderItem_middle_line} />
-        <div className={styles.orderItem_bottom}>
-          <div className={styles.orderItem_bottom_delete}>{"追加评论"}</div>
-          <div className={styles.orderItem_bottom_delete}>{"删除订单"}</div>
-        </div>
+    <div className={styles.orderItem_footer_container}>
+      <div className={styles.orderItem_middle_line} />
+      <div className={styles.orderItem_bottom}>
+        <div className={styles.orderItem_bottom_delete}>{"追加评论"}</div>
+        <div className={styles.orderItem_bottom_delete}>{"删除订单"}</div>
       </div>
     </div>
   );

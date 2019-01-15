@@ -5,12 +5,7 @@
     position: fixed;
 }
 .myOrder_scroll{
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*top: 220px;*/
-    /*bottom: 0;*/
-    /*background-color: #f4f8fb;*/
+
     width: 100%;
     height: 100%;
 }
@@ -76,7 +71,6 @@
     padding: 31px;
     box-sizing: border-box;
     width:100%;
-    height:412px;
     background:white;
 }
 
@@ -170,15 +164,22 @@
     color:rgba(102,102,102,1);
 }
 .orderItem_middle_line{
-    margin: 32px 0 30px 0;
     height:1px;
     background:rgba(234,234,234,1);
+}
+.orderItem_footer_container{
+    padding: 31px;
+    padding-top: 0;
+    box-sizing: border-box;
+    width:100%;
+    background:white;
 }
 .orderItem_bottom{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     width: 100%;
+    margin-top: 31px;
 }
 .orderItem_bottom_delete{
 
@@ -197,3 +198,4 @@
     margin: 0 9px 0 9px;
 
 }
+
