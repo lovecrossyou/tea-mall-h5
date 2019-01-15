@@ -41,8 +41,8 @@ const ShoppingCartContent = function() {
         <img src={mall_product} alt=""/>
       </div>
       <div className={styles.shopping_cart_product_right}>
-        <div className={styles.shopping_cart_product_right_tit}>茶茶茶茶茶茶茶茶茶茶茶茶茶茶茶茶茶</div>
-        <div className={styles.shopping_cart_product_right_intro}>sss</div>
+        <div className={styles.shopping_cart_product_right_tit}>洞庭碧螺春洞庭碧螺春洞庭碧螺春</div>
+        <div className={styles.shopping_cart_product_right_intro}>规格6小包80g</div>
         <div className={styles.shopping_cart_product_right_price}>￥500</div>
         <div className={styles.shopping_cart_product_right_count}>
           <ProductOption
