@@ -100,20 +100,13 @@ const MainOperation = () => {
       <MeItem title="我的钱包" icon={walletIcon} />
       <MeItem title="优惠券" subtitle="3张优惠券" icon={couponIcon} />
       <MeItem title="我要开店" icon={storeIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
-      <MeItem title="设置" icon={settingIcon} />
+      <MeItem
+        title="设置"
+        icon={settingIcon}
+        onClick={() => {
+          router.push("/settings");
+        }}
+      />
     </div>
   );
 };
