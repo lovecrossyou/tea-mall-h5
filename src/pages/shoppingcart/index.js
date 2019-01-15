@@ -6,13 +6,15 @@
 
 import React, { PureComponent } from "react";
 import styles from "./index.less";
-import icon_noselected from './images/shoppingcart_btn_noselected@2x.png'
-import icon_selected from './images/shoppingcart_btn_selected@2x.png'
-import car_icon_store from './images/car_icon_store@2x.png'
-import mall_product from './images/mall_p_5@2x.png'
+import icon_noselected from "./images/shoppingcart_btn_noselected@2x.png";
+import icon_selected from "./images/shoppingcart_btn_selected@2x.png";
+import car_icon_store from "./images/car_icon_store@2x.png";
+import mall_product from "./images/mall_p_5@2x.png";
 import { ProductOption } from "../orderconfirm";
 import { Stepper } from "antd-mobile";
 import { HotRecommend } from "../orderconfirm/payloadResult";
+import { Navigator } from "../../components/navigator";
+import ScrollWrap from "../../components/scroll";
 
 const ShoppingCartTit = function() {
   return <div className={styles.shopping_cart_tit}>
@@ -26,7 +28,7 @@ const ShoppingCartTit = function() {
       </div>
       <div className={styles.shopping_cart_shop_right}>领劵</div>
     </div>
-  </div>
+  </div>;
 };
 
 const ShoppingCartContent = function() {
@@ -57,7 +59,7 @@ const ShoppingCartContent = function() {
         </div>
       </div>
     </div>
-  </div>
+  </div>;
 };
 
 
@@ -69,7 +71,7 @@ const ShoppingCartItem = function() {
       <ShoppingCartContent/>
       <ShoppingCartContent/>
     </div>
-  </div>
+  </div>;
 };
 
 const ShoppingCartGoBuy = function() {
@@ -85,16 +87,32 @@ const ShoppingCartGoBuy = function() {
       </div>
       <div className={styles.close_total}>去结算(5)</div>
     </div>
-  </div>
+  </div>;
 };
 
-export default class ShoppingCart extends PureComponent{
+export default class ShoppingCart extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.clientHeight = window.document.body.clientHeight;
+  }
+
+
   render() {
     return <div className={styles.shopping_cart_container}>
-      <ShoppingCartItem/>
-      <ShoppingCartItem/>
-      <HotRecommend tit="猜你喜欢" />
-      <ShoppingCartGoBuy/>
-    </div>
+      <div
+        style={{
+          height: `${this.clientHeight - 180 - 150 - 138}px`,
+          position: "relative"
+        }}
+      >
+        <Navigator title='购物车'/>
+        <ScrollWrap wrapId="shoppingcartList" wrapClass={styles.wrap_body}>
+          <ShoppingCartItem/>
+          <ShoppingCartItem/>
+          <HotRecommend tit="猜你喜欢"/>
+        </ScrollWrap>
+        <ShoppingCartGoBuy/>
+      </div>
+    </div>;
   }
 }
