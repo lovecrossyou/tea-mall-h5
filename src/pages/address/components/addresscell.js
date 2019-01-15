@@ -41,7 +41,7 @@ export const AddressCell = ({ address, del, edit }) => {
               <div className={styles.right}>
                 <div className={styles.linkman}>
                   <div className={styles.reciev_name}>{address.recievName}</div>
-                  <div>{address.phoneNum}</div>
+                  <div className={styles.phone}>{address.phoneNum}</div>
                 </div>
                 <div className={styles.shipping_address}>
                   <div>{address.fullAddress}</div>
