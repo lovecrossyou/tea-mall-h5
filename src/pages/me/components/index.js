@@ -28,9 +28,12 @@ export const MeItem = ({ title, subtitle = "", icon, onClick }) => {
   );
 };
 
-export const OrderItem = ({ img, title }) => {
+export const OrderItem = ({ img, title, orderItemClick }) => {
   return (
-    <div className={styles.cargo_manage_option}>
+    <div
+      className={styles.cargo_manage_option}
+      onClick={() => orderItemClick()}
+    >
       <div className={styles.manage_option_img}>
         <img src={img} style={{ width: "48px", height: "43px" }} />
       </div>

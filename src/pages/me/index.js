@@ -64,7 +64,7 @@ const Header = () => {
 };
 
 //发货管理&售后管理
-const CargoManage = () => {
+const CargoManage = ({ orderItemClick, orderRefund }) => {
   return (
     <div className={styles.cargo_manage_area}>
       <div className={styles.my_order_area}>
@@ -73,7 +73,7 @@ const CargoManage = () => {
           <div
             className={styles.all_order_text}
             onClick={() => {
-              router.push("/myorder");
+              orderItemClick(0);
             }}
           >
             全部订单
@@ -84,11 +84,31 @@ const CargoManage = () => {
         </div>
       </div>
       <div className={styles.cargo_manage_list}>
-        <OrderItem img={obligationsIcon} title="待付款" />
-        <OrderItem img={dropshipIcon} title="待发货" />
-        <OrderItem img={receivingIcon} title="待收货" />
-        <OrderItem img={evaluatedIcon} title="待评价" />
-        <OrderItem img={refundIcon} title="退款 / 售后" />
+        <OrderItem
+          img={obligationsIcon}
+          title="待付款"
+          orderItemClick={() => orderItemClick(1)}
+        />
+        <OrderItem
+          img={dropshipIcon}
+          title="待发货"
+          orderItemClick={() => orderItemClick(2)}
+        />
+        <OrderItem
+          img={receivingIcon}
+          title="待收货"
+          orderItemClick={() => orderItemClick(3)}
+        />
+        <OrderItem
+          img={evaluatedIcon}
+          title="待评价"
+          orderItemClick={() => orderItemClick(4)}
+        />
+        <OrderItem
+          img={refundIcon}
+          title="退款 / 售后"
+          orderItemClick={() => orderRefund()}
+        />
       </div>
     </div>
   );
@@ -128,7 +148,17 @@ export default class Me extends PureComponent {
         >
           <ScrollWrap wrapId="meList" wrapClass={styles.wrap_body}>
             <Header />
-            <CargoManage />
+            <CargoManage
+              orderRefund={() => {
+                router.push("/myorder/RefundOrder");
+              }}
+              orderItemClick={index => {
+                router.push({
+                  pathname: "/myorder",
+                  query: { defaultSelect: index }
+                });
+              }}
+            />
             <MainOperation />
           </ScrollWrap>
         </div>

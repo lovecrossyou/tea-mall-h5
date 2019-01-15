@@ -13,13 +13,6 @@ import { connect } from "dva";
 import { Toast, WhiteSpace, Carousel, Tabs } from "antd-mobile";
 
 const listArr = ["全部", "待付款", "待发货", "待收货", "待评价"];
-const tabs = [
-  { title: "全部" },
-  { title: "待付款" },
-  { title: "待发货" },
-  { title: "待收货" },
-  { title: "待评价" }
-];
 
 class MyOrder extends PureComponent {
   constructor(props) {
@@ -30,6 +23,9 @@ class MyOrder extends PureComponent {
   }
 
   componentWillMount() {
+    this.setState({
+      defaultSelect: parseInt(this.props.location.query.defaultSelect || 0)
+    });
     Toast.loading("loading...", 0);
     this.props.dispatch({
       type: "myorder/getOrderList",
@@ -37,7 +33,7 @@ class MyOrder extends PureComponent {
     });
     setTimeout(() => {
       Toast.hide();
-    }, 2000);
+    }, 1000);
   }
 
   renderTabBar = props => {
@@ -47,10 +43,9 @@ class MyOrder extends PureComponent {
         defaultSelect={this.state.defaultSelect}
         onClick={index => {
           this.setState({ defaultSelect: index });
-          props.goToTab(index) ;
+          props.goToTab(index);
         }}
-      >
-      </SelectorBar>
+      />
     );
   };
   render() {
@@ -59,24 +54,19 @@ class MyOrder extends PureComponent {
       <div style={{ backgroundColor: "#f4f8fb" }}>
         <div className={styles.order_topView}>
           <Navigator title={"我的订单"} />
-          {/*<div*/}
-          {/*style={{ width: "100%", height: "1px", backgroundColor: "#cccccc" }}*/}
-          {/*/>*/}
-          {/*<SelectorBar listArr={listArr} defaultSelect={0} />*/}
         </div>
 
         <div className={styles.tabbar_container}>
           <Tabs
-            tabs={tabs}
-            ref={c => (this._tabs = c)}
-            initialPage={this.state.defaultSelect}
+            tabs={listArr}
+            initialPage={this.props.location.query.defaultSelect || 0}
             animated={true}
             useOnPan={true}
+            distanceToChangeTab={0.5}
             renderTabBar={this.renderTabBar}
             onChange={(tab, index) => {
               this.setState({ defaultSelect: index });
             }}
-            tabBarUnderlineStyle={{ backgroundColor: "red", height: 2 }}
           >
             <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all1"} />
             <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all2"} />
@@ -85,10 +75,6 @@ class MyOrder extends PureComponent {
             <Order_All dataArr={orderList} wrapId={"myOrder_scroll_all5"} />
           </Tabs>
         </div>
-
-        {/*<ScrollWrap wrapId="myOrder_scroll" wrapClass={styles.myOrder_scroll}>*/}
-        {/*<Order_All dataArr={orderList} />*/}
-        {/*</ScrollWrap>*/}
       </div>
     );
   }
