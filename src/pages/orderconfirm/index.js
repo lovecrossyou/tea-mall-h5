@@ -73,7 +73,7 @@ const ProductOptionFooter = () => {
 
 const Address = () => {
   return (
-    <div className={styles.addr}>
+    <div className={styles.addr} onClick={()=>router.push('address')}>
       <img className={styles.addr_icon} src={addr_icon} alt="" />
 
       <div className={styles.addr_info}>

@@ -2,7 +2,6 @@ import styles from "../index.css";
 import couponIcon from "../images/center_icon_Coupon@2x.png";
 import gotoNext from "../images/center_icon_next@2x.png";
 import React from "react";
-import obligationsIcon from "../images/Center_icon_obligations@2x.png";
 
 /**
  *日期: 2019-01-15
@@ -29,14 +28,13 @@ export const MeItem = ({ title, subtitle = "", icon, onClick }) => {
   );
 };
 
-// export const CargoManage =({img,title})=>{
-//   return <div className={styles.cargo_manage_option}>
-//     <div className={styles.manage_option_img}>
-//       <img
-//         src={img}
-//         style={{ width: "48px", height: "43px" }}
-//       />
-//     </div>
-//     <div className={styles.manage_option_text}>{title}</div>
-//   </div>
-// };
+export const OrderItem = ({ img, title }) => {
+  return (
+    <div className={styles.cargo_manage_option}>
+      <div className={styles.manage_option_img}>
+        <img src={img} style={{ width: "48px", height: "43px" }} />
+      </div>
+      <div className={styles.manage_option_text}>{title}</div>
+    </div>
+  );
+};

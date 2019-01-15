@@ -43,8 +43,10 @@
   justify-content: space-between;
 }
 .shipping_address{
-  color: #777;
-  font-size: 30px;
+  font-size:24px;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
 }
 .address_operate{
   display: flex;
@@ -62,4 +64,19 @@
 }
 .am-swipe-content{
   margin-bottom: 20px;
+}
+
+.reciev_name{
+  font-size:32px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(31,31,31,1);
+}
+
+.phone{
+  font-size:32px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(31,31,31,1);
+  margin-left: 48px;
 }
