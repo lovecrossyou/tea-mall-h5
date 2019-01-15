@@ -133,7 +133,7 @@ export default class Me extends PureComponent {
             position: "relative"
           }}
         >
-          <ScrollWrap wrapId="lefttList" wrapClass={styles.wrap_body}>
+          <ScrollWrap wrapId="meList" wrapClass={styles.wrap_body}>
             <Header />
             <CargoManage />
             <MainOperation />
