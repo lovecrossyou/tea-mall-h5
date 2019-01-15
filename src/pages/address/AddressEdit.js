@@ -11,7 +11,9 @@ import {
 import { createForm } from "rc-form";
 import { routerRedux } from "dva/router";
 import commonCityData from "./data/city";
-// import {ActivityIndicator} from "../../components/ActivityIndicator";
+import { Navigator } from "../../components/navigator";
+
+import styles from './page.css'
 
 class AddressEdit extends React.Component {
   constructor(props) {
@@ -105,10 +107,13 @@ class AddressEdit extends React.Component {
     const { loading } = this.props;
     return (
       <div>
+        <Navigator title='添加地址' right={<div onClick={this.onCreate} className={styles.nav_save_btn}>
+          保存
+        </div>}/>
         <InputItem
           {...getFieldProps("recievName")}
           clear
-          placeholder="收件人"
+          placeholder="联系人"
           ref={el => (this.autoFocusInst = el)}
         >
           收件人
@@ -120,11 +125,11 @@ class AddressEdit extends React.Component {
           placeholder="电话号码"
           ref={el => (this.autoFocusInst = el)}
         >
-          电话号码
+          电话
         </InputItem>
 
         <Picker
-          extra="省市区县"
+          extra="地址"
           data={this.state.commonCityData}
           title="请选择"
           {...getFieldProps("districtAddress", {
@@ -141,14 +146,7 @@ class AddressEdit extends React.Component {
           placeholder="详细地址"
           ref={el => (this.autoFocusInst = el)}
         >
-          详细地址
         </InputItem>
-
-        <div style={{ margin: "auto", marginTop: "40px", width: "95%" }}>
-          <Button type="warning" onClick={this.onCreate}>
-            确认添加
-          </Button>
-        </div>
         <ActivityIndicator toast text="正在加载" animating={loading} />
       </div>
     );

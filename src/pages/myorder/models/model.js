@@ -1,22 +1,21 @@
 /**
  *Created by tianhaojie .
- *Created on 2019-01-08 .
+ *Created on 2019-01-15 .
  *desc
  */
 import { Toast } from "antd-mobile";
-import { querybannerList } from "../service";
-
+import { requestOrderList } from "../service";
 export default {
-  namespace: "product",
+  namespace: "myorder",
   state: {
-    bannerList: []
+    orderList: []
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === "/product") {
+        if (pathname === "myorder") {
           dispatch({
-            type: "getBannerList",
+            type: "getOrderList",
             payload: {}
           });
         }
@@ -24,25 +23,25 @@ export default {
     }
   },
   effects: {
-    *getBannerList({ payload }, { call, put }) {
-      const response = yield call(querybannerList, payload);
-      const { code, message, list } = response;
+    *getOrderList({ payload }, { call, put }) {
+      const response = yield call(requestOrderList, payload);
+
+      const { code, list, message } = response;
       if (code !== 0) {
         Toast.fail(message);
       } else {
         yield put({
-          type: "saveBannerList",
+          type: "saveOrderList",
           payload: list
         });
-        // 一级分类第一个id，获取子分
       }
     }
   },
   reducers: {
-    saveBannerList(state, action) {
+    saveOrderList(state, action) {
       return {
         ...state,
-        bannerList: action.payload
+        orderList: action.payload
       };
     }
   }

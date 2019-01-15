@@ -19,8 +19,11 @@ import storeInProduct_contentimg2 from "./image/storeInProduct_contentimg2.png";
 import storeInProduct_contentimg3 from "./image/storeInProduct_contentimg3.png";
 import bottom_icon_mall from "./image/bottom_icon_mall@2x.png";
 import bottom_icon_service from "./image/bottom_icon_service@2x.png";
-import icon_return from "./image/icon_return.png";
-import icon_share from "./image/icon_share.png";
+import icon_return from "./image/icon_return@2x.png";
+import icon_share from "./image/icon_share@2x.png";
+import { ProductItem } from "../home";
+import ModalBox from "../../components/modal";
+import { connect } from "dva";
 
 const storeInProduct_contentimgs = [
   storeInProduct_contentimg1,
@@ -28,6 +31,83 @@ const storeInProduct_contentimgs = [
   storeInProduct_contentimg3
 ];
 
+class Product extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.clientHeight = window.document.body.clientHeight;
+  }
+  componentDidMount() {
+    console.log("xxxxxxx====" + JSON.stringify(this.props.store));
+    this.props.dispatch({
+      type: "product/getBannerList",
+      payload: {}
+    });
+  }
+
+  render() {
+    return (
+      <div className={styles.container}>
+        <ProductNav
+          onBack={() => {
+            router.go(-1);
+          }}
+          rightAction={() => {}}
+        />
+        <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
+          <div style={{ width: "100%", backgroundColor: "#fff" }}>
+            <CarouselTop clsName={styles.carouselStyle} />
+          </div>
+
+          <ProductInfo />
+          <WhiteSpace />
+          <ProductRowSelectItem
+            dic={{
+              title: "产品参数：",
+              content: "领取新人专享福利",
+              arrow: true
+            }}
+          />
+          <Product_Line />
+          <ProductRowSelectItem
+            dic={{
+              title: "优惠券：",
+              content: "满50-100  满300-80  满200-50",
+              arrow: true
+            }}
+          />
+          <Product_Line />
+          <ProductRowSelectItem
+            dic={{ title: "运费：", content: "包邮", arrow: false }}
+          />
+          <Product_Line />
+          <ProductRowSelectItem
+            dic={{ title: "产品参数：", content: "", arrow: true }}
+          />
+          <WhiteSpace />
+
+          {/*商品评价*/}
+          <ProductAppraise />
+          <WhiteSpace />
+          {/*商品店铺*/}
+          <StoreInProduct />
+          <WhiteSpace />
+          <ProductCommend />
+        </ScrollWrap>
+
+        <ProductTabbar
+          toShoppingCart={() => {
+            this._productParameterChoose._openModal();
+          }}
+          toBuy={() => {
+            this._productParameterChoose._openModal();
+          }}
+        />
+
+        <ProductParameterChoose ref={c => (this._productParameterChoose = c)} />
+      </div>
+    );
+  }
+}
 const ProductInfo = () => {
   return (
     <div className={styles.product_info}>
@@ -55,7 +135,7 @@ const Product_Line = () => {
     </div>
   );
 };
-const ProductItem = ({ dic, style = {} }) => {
+const ProductRowSelectItem = ({ dic, style = {} }) => {
   return (
     <div className={styles.product_item_container}>
       <div className={styles.product_display_row}>
@@ -72,61 +152,6 @@ const ProductItem = ({ dic, style = {} }) => {
     </div>
   );
 };
-export default class Index extends PureComponent {
-  render() {
-    return (
-      <div className={styles.container}>
-        <ProductNav
-          onBack={() => {
-            router.go(-1);
-          }}
-          rightAction={() => {}}
-        />
-
-        <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
-          <div style={{ width: "100%", backgroundColor: "#fff" }}>
-            <CarouselTop clsName={styles.carouselStyle} />
-          </div>
-
-          <ProductInfo />
-          <WhiteSpace />
-          <ProductItem
-            dic={{
-              title: "产品参数：",
-              content: "领取新人专享福利",
-              arrow: true
-            }}
-          />
-          <Product_Line />
-          <ProductItem
-            dic={{
-              title: "优惠券：",
-              content: "满50-100  满300-80  满200-50",
-              arrow: true
-            }}
-          />
-          <Product_Line />
-          <ProductItem
-            dic={{ title: "运费：", content: "包邮", arrow: false }}
-          />
-          <Product_Line />
-          <ProductItem
-            dic={{ title: "产品参数：", content: "", arrow: true }}
-          />
-          <WhiteSpace />
-
-          {/*商品评价*/}
-          <ProductAppraise />
-          <WhiteSpace />
-          {/*商品店铺*/}
-          <StoreInProduct />
-          <WhiteSpace />
-        </ScrollWrap>
-        <ProductTabbar />
-      </div>
-    );
-  }
-}
 
 class ProductNav extends PureComponent {
   render() {
@@ -161,7 +186,7 @@ class ProductNav extends PureComponent {
           onClick={this.props.rightAction && this.props.rightAction()}
           className={styles.productNav_leftIcon}
         >
-          <img src={icon_share} />
+          <img src={icon_share} className={styles.productNav_rigthIcon_img} />
         </div>
       </div>
     );
@@ -181,7 +206,7 @@ class ProductAppraise extends PureComponent {
   render() {
     return (
       <div style={{ backgroundColor: "#fff" }}>
-        <ProductItem
+        <ProductRowSelectItem
           dic={{ title: "商品评价（12345）", content: "", arrow: true }}
           style={{ fontSize: 32 }}
         />
@@ -311,6 +336,20 @@ class StoreInProduct extends PureComponent {
     );
   }
 }
+class ProductCommend extends PureComponent {
+  render() {
+    return (
+      <div className={styles.productCommend_container}>
+        <div className={styles.productCommend_title}>{"你可能喜欢"}</div>
+        <div className={styles.productCommend_list_container}>
+          {["", "", ""].map((value, index) => {
+            return <ProductItem key={index + "#"} />;
+          })}
+        </div>
+      </div>
+    );
+  }
+}
 class ProductTabbar extends PureComponent {
   render() {
     return (
@@ -329,9 +368,163 @@ class ProductTabbar extends PureComponent {
           />
           <div className={styles.productTabbar_store_title}>{"客服"}</div>
         </div>
-        <div className={styles.productTabbar_storeCar}>{"加入购物车"}</div>
-        <div className={styles.productTabbar_buy}>{"立即购买"}</div>
+        <div
+          className={styles.productTabbar_storeCar}
+          onClick={() =>
+            this.props.toShoppingCart && this.props.toShoppingCart()
+          }
+        >
+          {"加入购物车"}
+        </div>
+        <div
+          className={styles.productTabbar_buy}
+          onClick={() => this.props.toBuy && this.props.toBuy()}
+        >
+          {"立即购买"}
+        </div>
       </div>
     );
   }
 }
+
+class ProductParameterChoose extends PureComponent {
+  state = {
+    modalVisible: false,
+    data: {
+      number: 2,
+      standards: ["50g", "100g", "150g"],
+      price: 150,
+      productName: "2018新茶西湖牌龙井茶叶正宗雨前西湖龙井茶250g",
+      productImg:
+        "http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg",
+      standardChooseIndex: -1
+    }
+  };
+
+  _openModal = () => {
+    this.setState({
+      modalVisible: true,
+      data: {
+        standards: ["50g", "100g", "150g"],
+        price: 150,
+        productName: "2018新茶西湖牌龙井茶叶正宗雨前西湖龙井茶250g",
+        productImg:
+          "http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg"
+      },
+      number: 2,
+      standardChooseIndex: -1
+    });
+  };
+
+  _onModalClose = () => {
+    this.setState({
+      modalVisible: false
+    });
+  };
+
+  _plus() {
+    this.setState({
+      number: this.state.number + 1
+    });
+    this.state.data.number += 1;
+  }
+  _subtract() {
+    if (this.state.number < 2) return;
+    this.setState({
+      number: this.state.number - 1
+    });
+  }
+
+  render() {
+    return (
+      <ModalBox visible={this.state.modalVisible} onClose={this._onModalClose}>
+        <div className={styles.product_modal_container}>
+          <div className={styles.model_content}>
+            <div className={styles.model_flex_r}>
+              <div className={styles.modal_p_img_wrapper}>
+                <img
+                  src={this.state.data.productImg}
+                  alt=""
+                  className={styles.modal_p_img}
+                />
+              </div>
+              <div className={styles.modal_p_info}>
+                <div className={styles.modal_price}>
+                  {"¥" + this.state.data.price}
+                </div>
+                <div className={styles.modal_p_name}>
+                  {this.state.data.productName}
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.standard}>规格</div>
+
+            <div className={styles.product_modal_standards}>
+              {this.state.data.standards.map((value, index) => {
+                return (
+                  <div
+                    key={"#" + index}
+                    className={
+                      index === this.state.standardChooseIndex
+                        ? styles.product_modal_standards_itemSelected
+                        : styles.product_modal_standards_item
+                    }
+                    onClick={() => {
+                      this.setState({
+                        standardChooseIndex: index
+                      });
+                    }}
+                  >
+                    {value}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/*线*/}
+            <div className={styles.product_modal_standard_line} />
+
+            <div className={styles.product_modal_standard_count}>
+              <div className={styles.product_modal_standard_countTitle}>
+                {"数量"}
+              </div>
+              <div className={styles.product_modal_standard_countChoose}>
+                <div
+                  className={styles.product_modal_standard_countChoose_leftBtn}
+                  onClick={() => {
+                    this._subtract();
+                  }}
+                />
+                <div
+                  className={styles.product_modal_standard_countChoose_number}
+                >
+                  {this.state.number}
+                </div>
+                <div
+                  className={styles.product_modal_standard_countChoose_rightBtn}
+                  onClick={() => this._plus()}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            onClick={() => {
+              this._onModalClose();
+              router.push("/orderconfirm");
+            }}
+            className={styles.modal_footer_btn}
+          >
+            确定
+          </div>
+        </div>
+      </ModalBox>
+    );
+  }
+}
+export default connect(state => {
+  return {
+    store: state.product
+  };
+})(Product);

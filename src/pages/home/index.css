@@ -161,6 +161,8 @@
 }
 .home_top_selling_tea_item{
   width:48%;
+  background-color: #fff;
+  margin-bottom: 20px;
 }
 .home_top_selling_tea_item_img{
   border-radius:20px;

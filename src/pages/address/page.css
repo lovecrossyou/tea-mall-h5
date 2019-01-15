@@ -17,3 +17,12 @@
 }
 
 
+
+.nav_save_btn{
+  font-size:28px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(31,31,31,1);
+  padding: 0 20px;
+  box-sizing: border-box;
+}

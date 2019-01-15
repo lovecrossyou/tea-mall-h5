@@ -1,0 +1,171 @@
+.header_bg{
+  height:5.65rem;
+  background:linear-gradient(0deg,rgba(255,111,99,1),rgba(255,138,128,1));
+  padding: 99px  0 0 0;
+  box-sizing: border-box;
+}
+.person_info_area{
+  width: 100%;
+  height: 138px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.person_img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.person_img{
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+}
+.person_info_list{
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+.user_name_grade{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.user_name{
+  font-size:48px;
+  color:rgba(255,255,255,1);
+  font-family:PingFang-SC-Bold;
+}
+.user_grade{
+  width:52px;
+  height:32px;
+  background:rgba(255,210,28,1);
+  box-shadow:0 3px 5px 0 rgba(255,210,28,0.41);
+  border-radius:4px;
+  font-size:26px;
+  color:rgba(255,255,255,1);
+  line-height: 32px;
+  text-align: center;
+  margin: 28px 0 0 13px;
+}
+.num_details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size:28px;
+  color: #fff;
+}
+.person_info_bottom{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.my_operation{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #FB9C95;
+}
+.my_operation:nth-child(3){
+  border-right: none;
+}
+.operation_title{
+  width: 100%;
+  text-align: center;
+  font-size:28px;
+  color:#fff;
+}
+.operation_num{
+  font-size:32px;
+  color:#fff;
+  width: 100%;
+  text-align: center;
+  margin-top: 25px;
+}
+.cargo_manage_area{
+  background-color: #fff;
+  padding: 40px 0;
+  box-sizing: border-box;
+  border-radius: 20px 20px 0 0;
+  margin-top: -103px;
+}
+.my_order_area{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.my_order_text{
+  color: #1f1f1f;
+  font-size:32px;
+}
+.all_order_area{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.all_order_text{
+  font-size:28px;
+  color: #999;
+}
+.next_icon{
+  margin: 0 0 0 10px;
+}
+.next_icon img{
+  width: 14px;
+  height: 24px;
+}
+.cargo_manage_list{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+.cargo_manage_option{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.manage_option_text{
+  color: #1f1f1f;
+  font-size: 26px;
+  margin-top: 23px;
+  width: 100%;
+  text-align: center;
+}
+.manage_option_img{
+  text-align: center;
+}
+.person_operation_bottom{
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-top: 1px solid #E9E9E9;
+}
+.my_order_area_wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.person_operation_list{
+  width: 100%;
+  height: 112px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.my_order_img {
+  margin: 0 28px 0 0;
+}

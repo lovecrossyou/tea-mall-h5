@@ -1,7 +1,5 @@
 import React, { PureComponent } from "react";
 import { connect } from "dva";
-import { TabBar } from "antd-mobile";
-import { Carousel, SegmentedControl, WingBlank } from "antd-mobile";
 import styles from "./index.css";
 
 
@@ -20,7 +18,7 @@ import NavBarList from "../../components/navbarlist";
 
 const Header = function() {
   return <div className={styles.home_header}>
-    <div className={styles.home_header_left}>
+    <div className={styles.home_header_left} onClick={()=>router.push('/category')}>
       <img src={mall_classification} alt=""/>
       <div>分类</div>
     </div>

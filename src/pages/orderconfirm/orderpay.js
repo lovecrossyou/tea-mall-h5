@@ -1,7 +1,7 @@
 import { PureComponent } from "react";
 import styles from "./index.css";
 import React from "react";
-import { Navigator } from "../../layouts/navigator";
+import { Navigator } from "../../components/navigator";
 import { Stepper } from "antd-mobile";
 
 import weixin_icon from "./images/pay_icon_weixin@2x.png";
