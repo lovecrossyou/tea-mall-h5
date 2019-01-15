@@ -21,7 +21,7 @@ const Footer = ({ onClick }) => {
   );
 };
 
-const ProductOption = ({ icon, title = "", right }) => {
+export const ProductOption = ({ icon, title = "", right }) => {
   return (
     <div className={styles.p_option}>
       <div className={styles.p_option_left}>
