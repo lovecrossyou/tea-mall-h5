@@ -19,7 +19,8 @@ import couponIcon from "./images/center_icon_Coupon@2x.png";
 import storeIcon from "./images/center_icon_store@2x.png";
 import settingIcon from "./images/center_icon_Setting@2x.png";
 import router from "umi/router";
-import { MeItem } from "./components";
+import { MeItem, OrderItem } from "./components";
+import ScrollWrap from "../../components/scroll";
 
 // 头部个人信息
 const Header = () => {
@@ -83,38 +84,11 @@ const CargoManage = () => {
         </div>
       </div>
       <div className={styles.cargo_manage_list}>
-        {/*<CargoManage img={obligationsIcon} title="待付款"/>*/}
-
-        <div className={styles.cargo_manage_option}>
-          <div className={styles.manage_option_img}>
-            <img src={dropshipIcon} style={{ width: "47px", height: "47px" }} />
-          </div>
-          <div className={styles.manage_option_text}>待发货</div>
-        </div>
-        <div className={styles.cargo_manage_option}>
-          <div className={styles.manage_option_img}>
-            <img
-              src={receivingIcon}
-              style={{ width: "48px", height: "45px" }}
-            />
-          </div>
-          <div className={styles.manage_option_text}>待收货</div>
-        </div>
-        <div className={styles.cargo_manage_option}>
-          <div className={styles.manage_option_img}>
-            <img
-              src={evaluatedIcon}
-              style={{ width: "47px", height: "44px" }}
-            />
-          </div>
-          <div className={styles.manage_option_text}>待评价</div>
-        </div>
-        <div className={styles.cargo_manage_option}>
-          <div className={styles.manage_option_img}>
-            <img src={refundIcon} style={{ width: "48px", height: "45px" }} />
-          </div>
-          <div className={styles.manage_option_text}>退款 / 售后</div>
-        </div>
+        <OrderItem img={obligationsIcon} title="待付款" />
+        <OrderItem img={dropshipIcon} title="待发货" />
+        <OrderItem img={receivingIcon} title="待收货" />
+        <OrderItem img={evaluatedIcon} title="待评价" />
+        <OrderItem img={refundIcon} title="退款 / 售后" />
       </div>
     </div>
   );
@@ -127,53 +101,44 @@ const MainOperation = () => {
       <MeItem title="优惠券" subtitle="3张优惠券" icon={couponIcon} />
       <MeItem title="我要开店" icon={storeIcon} />
       <MeItem title="设置" icon={settingIcon} />
-      <div className={styles.person_operation_list}>
-        <div className={styles.my_order_area_wrapper}>
-          <div className={styles.my_order_img}>
-            <img
-              src={walletIcon}
-              alt=""
-              style={{ width: "36px", height: "40px" }}
-            />
-          </div>
-          <div className={styles.my_order_text}>我的钱包</div>
-        </div>
-        <div className={styles.all_order_area}>
-          <div className={styles.next_icon}>
-            <img src={gotoNext} alt="" />
-          </div>
-        </div>
-      </div>
-      <MeItem title="优惠券" subtitle="3张优惠券" icon={couponIcon} />
-      <MeItem title="我要开店" icon={storeIcon} />
-      <div className={styles.person_operation_list}>
-        <div className={styles.my_order_area_wrapper}>
-          <div className={styles.my_order_img}>
-            <img
-              src={settingIcon}
-              alt=""
-              style={{ width: "40px", height: "36px" }}
-            />
-          </div>
-          <div className={styles.my_order_text}>设置</div>
-        </div>
-        <div className={styles.all_order_area}>
-          <div className={styles.next_icon}>
-            <img src={gotoNext} alt="" />
-          </div>
-        </div>
-      </div>
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
+      <MeItem title="设置" icon={settingIcon} />
     </div>
   );
 };
 
 export default class Me extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.clientHeight = window.document.body.clientHeight;
+  }
+
   render() {
     return (
       <div>
-        <Header />
-        <CargoManage />
-        <MainOperation />
+        <div
+          style={{
+            height: `${this.clientHeight}px`,
+            position: "relative"
+          }}
+        >
+          <ScrollWrap wrapId="lefttList" wrapClass={styles.wrap_body}>
+            <Header />
+            <CargoManage />
+            <MainOperation />
+          </ScrollWrap>
+        </div>
       </div>
     );
   }
