@@ -165,7 +165,6 @@ export default class Me extends PureComponent {
               }}
             />
             <MainOperation />
-            <MainOperation />
           </ScrollWrap>
         </div>
       </div>
