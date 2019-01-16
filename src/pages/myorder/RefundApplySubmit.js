@@ -70,14 +70,16 @@ const RefundExplain = () => {
         </div>
 
         <div style={{ width: "100%" }}>
-          <TextareaItem
-            // style={{fontSize:36,backgroundColor:'red',paddingLeft:0,width:'100%'}}
-            clear={true}
-            autoFocus={true}
-            placeholder="请输入"
-            rows={2}
-            labelNumber={1}
-          />
+          {/*<TextareaItem*/}
+          {/*style={{fontSize:36,backgroundColor:'red',paddingLeft:0,width:'100%'}}*/}
+          {/*clear={true}*/}
+          {/*autoFocus={true}*/}
+          {/*placeholder="请输入"*/}
+          {/*rows={2}*/}
+          {/*labelNumber={1}*/}
+
+          {/*/>*/}
+          <textarea rows="3" cols="20" placeholder="选填" />
         </div>
       </div>
     </div>
