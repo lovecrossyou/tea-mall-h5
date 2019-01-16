@@ -93,3 +93,87 @@
     width:14px;
     height:24px;
 }
+
+/*提交退款申请*/
+.ras_container{
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    width: 100%;
+    background-color: #d2d2d2;
+}
+.ras_reason_c{
+
+    display: flex;
+    padding: 0 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height:88px;
+    background:rgba(255,255,255,1);
+}
+.ras_money_c{
+    padding: 0 40px;
+    background-color: white;
+    height: 88px;
+    display: flex;
+    align-items: center;
+}
+.ras_money_nunmber{
+
+    display: inline-block;
+    font-size:32px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(255,89,75,1);
+}
+
+.refundExplain{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    /*height:148px;*/
+    background:rgba(255,255,255,1);
+    padding: 30px 30px 10px 40px;
+    box-sizing: border-box;
+}
+.refundExplain_title_c {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+}
+.refundExplain_title{
+    display: inline-block;
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(31,31,31,1);
+}
+.refundExplain_title_p{
+    display: inline-block;
+    font-size:26px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+
+.explain_textareaItem{
+
+    height: 30px;
+    font-size: 22px;
+
+}
+.explain_textareaItem_c{
+
+    background-color: #FF594B;
+    width: 100%;
+    height: 50px;
+}
+
+
+.am-textarea-control{
+    font-size: 18px;
+}
+.am-list-item {
+ padding-left: 0;
+}
+

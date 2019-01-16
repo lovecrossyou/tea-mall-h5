@@ -1,0 +1,71 @@
+.wrap_body{
+    height: 100%;
+}
+.represent_wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.header_area{
+    width:90%;
+    height:140px;
+    background:rgba(255,255,255,1);
+    box-shadow:0 5px 16px 0 rgba(68,68,68,0.1);
+    border-radius:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 35px auto 0 auto;
+}
+.represent_info{
+    display: flex;
+    flex-direction: column;
+}
+.represent_text{
+    color: #1F1F1F;
+    font-size: 28px;
+    width: 100%;
+    text-align: center;
+}
+.represent_num{
+    color: #FF594B;
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+}
+.represent_shop_info{
+    display: flex;
+    flex-direction: row;
+    padding: 40px 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #EAEAEA;
+    height: 260px;
+}
+.tea_img img{
+    width: 180px;
+    height: 180px;
+}
+.represent_shop_details{
+    display: flex;
+    flex-direction: column;
+    margin-left: 23px;
+}
+.represent_shop_clicl{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+.represent_shop_name{
+    font-size: 28px;
+    color: #1f1f1f;
+    margin:13px 0 15px 0;
+}
+.represent_shop_clicl_text{
+    font-size: 28px;
+    color: #666;
+}
+.represent_shop_clicl_num{
+    font-size: 28px;
+    color: #FF594B;
+}
