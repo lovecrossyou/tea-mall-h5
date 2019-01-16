@@ -54,7 +54,12 @@ const Header = () => {
           <div className={styles.operation_title}>我的喜欢</div>
           <div className={styles.operation_num}>555</div>
         </div>
-        <div className={styles.my_operation}>
+        <div
+          className={styles.my_operation}
+          onClick={() => {
+            router.push("/represent");
+          }}
+        >
           <div className={styles.operation_title}>我的代言</div>
           <div className={styles.operation_num}>666</div>
         </div>
@@ -142,7 +147,7 @@ export default class Me extends PureComponent {
       <div>
         <div
           style={{
-            height: `${this.clientHeight}px`,
+            height: `${this.clientHeight - 150}px`,
             position: "relative"
           }}
         >
@@ -159,6 +164,7 @@ export default class Me extends PureComponent {
                 });
               }}
             />
+            <MainOperation />
             <MainOperation />
           </ScrollWrap>
         </div>
