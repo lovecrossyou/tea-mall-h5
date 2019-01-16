@@ -34,13 +34,16 @@ const Header = () => {
 // 代言商品
 const RepresentList = () => {
   return (
-    <div className={styles.represent_shop_info} onClick={()=>router.push('/product')}>
+    <div
+      className={styles.represent_shop_info}
+      onClick={() => router.push("/product")}
+    >
       <div className={styles.tea_img}>
         <img src={teaImg} alt="" />
       </div>
       <div className={styles.represent_shop_details}>
         <div className={styles.represent_shop_name}>
-          白桃乌龙茶15白桃乌龙茶桃乌龙
+          白桃乌龙茶15白桃乌龙茶桃白桃乌龙茶15白桃乌龙茶桃
         </div>
         <div className={styles.represent_shop_clicl}>
           <div className={styles.represent_shop_clicl_text}>点击量：</div>
