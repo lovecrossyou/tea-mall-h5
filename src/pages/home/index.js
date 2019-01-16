@@ -141,7 +141,7 @@ class Index extends PureComponent {
         <NavBarList data={listArr}/>
         <div
           style={{
-            height: `${this.clientHeight - 135 - 132 - 150}px`,
+            height: `${this.clientHeight - 135 - 132}px`,
             position: "relative"
           }}
         >

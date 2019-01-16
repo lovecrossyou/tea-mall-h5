@@ -34,7 +34,7 @@ const Header = () => {
 // 代言商品
 const RepresentList = () => {
   return (
-    <div className={styles.represent_shop_info}>
+    <div className={styles.represent_shop_info} onClick={()=>router.push('/product')}>
       <div className={styles.tea_img}>
         <img src={teaImg} alt="" />
       </div>
@@ -66,13 +66,16 @@ export default class Represent extends PureComponent {
       <div className={styles.represent_wrapper}>
         <div
           style={{
-            height: `${this.clientHeight}px`,
+            height: `${this.clientHeight - 180}px`,
             position: "relative"
           }}
         >
           <Navigator title="代言商品" />
+          <Header />
           <ScrollWrap wrapId="representList" wrapClass={styles.wrap_body}>
-            <Header />
+            <RepresentList />
+            <RepresentList />
+            <RepresentList />
             <RepresentList />
             <RepresentList />
             <RepresentList />

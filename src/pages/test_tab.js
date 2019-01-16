@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import { TabBar } from 'antd-mobile';
 
 
-import Home from './home/index'
-import Category from './category/index'
-import Shop from './shop/index'
-import Product from './product/index'
+import Home from '../home/index'
+import Category from '../category/index'
+import ShoppingCart from '../shoppingcart/index'
+import Me from '../me/index'
 
 class Index extends PureComponent {
   constructor(props) {
@@ -13,6 +13,7 @@ class Index extends PureComponent {
     this.state = {
       selectedTab: 'homeTab'
     };
+
   }
 
 
@@ -58,9 +59,10 @@ class Index extends PureComponent {
             <Category/>
           </TabBar.Item>
           <TabBar.Item
-            icon={{uri:'https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg'}}
-            selectedIcon={{uri:'https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg'}}
-            title="店铺"
+            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
+            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+
+            title="购物车"
             key="shop"
             dot
             selected={this.state.selectedTab === 'shopTab'}
@@ -70,12 +72,12 @@ class Index extends PureComponent {
               });
             }}
           >
-            <Shop/>
+            <ShoppingCart/>
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-            title="商品详情"
+            icon={{uri:'https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg'}}
+            selectedIcon={{uri:'https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg'}}
+            title="个人中心"
             key="product"
             selected={this.state.selectedTab === 'productTab'}
             onPress={() => {
@@ -84,7 +86,7 @@ class Index extends PureComponent {
               });
             }}
           >
-            <Product/>
+            <Me/>
           </TabBar.Item>
         </TabBar>
       </div>
