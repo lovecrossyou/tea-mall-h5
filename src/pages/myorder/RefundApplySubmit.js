@@ -11,11 +11,9 @@ import { OrderTopProduct } from "./components/OrderComponents";
 import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
 import { WhiteSpace, TextareaItem } from "antd-mobile";
+import right_arrow from "../../assets/right_arrow@2x.png";
 
 class RefundApplySubmit extends PureComponent {
-
-
-
   render() {
     return (
       <div>
@@ -34,13 +32,33 @@ class RefundApplySubmit extends PureComponent {
                 standard: "规格6小包80g"
               }}
             />
+            <WhiteSpace />
+            <RefundReason />
             <RefundExplain />
+            <WhiteSpace />
+            <RefundMoney />
           </ScrollWrap>
         </div>
       </div>
     );
   }
 }
+const RefundReason = () => {
+  return (
+    <div className={styles.ras_reason_c}>
+      <div className={styles.refundExplain_title}>退货原因</div>
+      <img src={right_arrow} className={styles.ra_item_arrow} />
+    </div>
+  );
+};
+const RefundMoney = () => {
+  return (
+    <div className={styles.ras_money_c}>
+      <div className={styles.refundExplain_title}>退款金额：</div>
+      <div className={styles.ras_money_nunmber}>{"¥124.50"}</div>
+    </div>
+  );
+};
 const RefundExplain = () => {
   return (
     <div>
@@ -50,13 +68,17 @@ const RefundExplain = () => {
           <div className={styles.refundExplain_title}>{"退款说明："}</div>
           <div className={styles.refundExplain_title_p}>{"选填"}</div>
         </div>
-        <TextareaItem
-          style={{fontSize:'20px'}}
-          clear={true}
-          placeholder="请输入"
-          autoHeight={true}
-          className={styles.explain_textareaItem}
-        />
+
+        <div style={{ width: "100%" }}>
+          <TextareaItem
+            // style={{fontSize:36,backgroundColor:'red',paddingLeft:0,width:'100%'}}
+            clear={true}
+            autoFocus={true}
+            placeholder="请输入"
+            rows={2}
+            labelNumber={1}
+          />
+        </div>
       </div>
     </div>
   );
