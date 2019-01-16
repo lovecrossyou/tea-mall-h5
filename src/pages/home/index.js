@@ -18,7 +18,7 @@ import NavBarList from "../../components/navbarlist";
 
 const Header = function() {
   return <div className={styles.home_header}>
-    <div className={styles.home_header_left} onClick={()=>router.push('/category')}>
+    <div className={styles.home_header_left} onClick={() => router.push("/category")}>
       <img src={mall_classification} alt=""/>
       <div>分类</div>
     </div>
@@ -34,7 +34,7 @@ const Header = function() {
 const HomeFreeTea = function() {
   return <div className={styles.home_free_tea}>
     <div className={styles.home_free_tea_left}>
-      <div className={styles.home_free_tea_intro} onClick={()=>router.push('/limitbuy')}>
+      <div className={styles.home_free_tea_intro} onClick={() => router.push("/limitbuy")}>
         <div className={styles.home_free_tea_intro_h}>好茶试饮</div>
         <div>人气好茶免费送</div>
       </div>
@@ -68,7 +68,7 @@ const HomeFreeTea = function() {
 };
 
 export const ProductItem = function() {
-  return <div className={styles.home_top_selling_tea_item}  onClick={()=>router.push('/product')}>
+  return <div className={styles.home_top_selling_tea_item} onClick={() => router.push("/product")}>
     <div className={styles.home_top_selling_tea_item_img}>
       <img src={mall_p_1} alt=""/>
     </div>
@@ -101,7 +101,7 @@ const Section = function() {
     <HomeFreeTea/>
     <div className={styles.home_top_selling_tit}>爆款工夫茶</div>
     <HomeSellingTea/>
-    <div className={styles.home_top_selling_tit}   onClick={()=>router.push('/limitbuy')}>
+    <div className={styles.home_top_selling_tit} onClick={() => router.push("/limitbuy")}>
       <div>限时秒杀</div>
       <div className={styles.home_top_selling_tit_right}>
         <span>23</span>:
@@ -121,7 +121,7 @@ export const HotRecommendShow = function() {
   </div>;
 };
 
-const listArr = ['精选','绿茶','红茶','黄茶','白茶','青茶','黑茶']
+const listArr = ["精选", "绿茶", "红茶", "黄茶", "白茶", "青茶", "黑茶"];
 
 
 class Index extends PureComponent {
@@ -145,7 +145,7 @@ class Index extends PureComponent {
             position: "relative"
           }}
         >
-          <ScrollWrap wrapId="lefttList" wrapClass={styles.wrap_body}>
+          <ScrollWrap wrapId="homeList" wrapClass={styles.wrap_body}>
             <div className={styles.carousel_container}>
               <CarouselTop clsName={styles.carousel_container}/>
             </div>

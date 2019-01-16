@@ -55,7 +55,10 @@ class Product extends PureComponent {
         />
         <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
           <div style={{ width: "100%", backgroundColor: "#fff" }}>
-            <CarouselTop clsName={styles.carouselStyle} />
+            <CarouselTop
+              clsName={styles.carouselStyle}
+              imgs={[Product_figure, Product_figure, Product_figure]}
+            />
           </div>
 
           <ProductInfo />
