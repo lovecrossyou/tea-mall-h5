@@ -19,7 +19,7 @@ export const AddressCell = ({ address, del, edit }) => {
               onPress: () => {
                 del(address);
               },
-              style: { backgroundColor: "#ddd", color: "white", width: "140px" }
+              style: { backgroundColor: "#ddd", color: "white", width: "280px" }
             },
             {
               text: "编辑",
@@ -29,7 +29,7 @@ export const AddressCell = ({ address, del, edit }) => {
               style: {
                 backgroundColor: "#F4333C",
                 color: "white",
-                width: "140px"
+                width: "280px"
               }
             }
           ]}
@@ -47,28 +47,6 @@ export const AddressCell = ({ address, del, edit }) => {
                   <div>{address.fullAddress}</div>
                 </div>
                 <div className={styles.address_operate}>
-                  {/*<span>*/}
-                  {/*<img src={chooseIcon} alt="" style={{width:'36px',height:'36px',margin:'-10px 10px 0 0'}}/>*/}
-                  {/*默认地址*/}
-                  {/*</span>*/}
-                  {/*<span className={styles.handle}>*/}
-                  {/*<s*/}
-                  {/*onClick={(e)=>{*/}
-                  {/*e.stopPropagation();*/}
-                  {/*edit(address);*/}
-                  {/*}}>*/}
-                  {/*<img src={editIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>*/}
-                  {/*编辑*/}
-                  {/*</s>*/}
-                  {/*<s*/}
-                  {/*onClick={(e)=>{*/}
-                  {/*e.stopPropagation();*/}
-                  {/*del(address);*/}
-                  {/*}}>*/}
-                  {/*<img src={delIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>*/}
-                  {/*删除*/}
-                  {/*</s>*/}
-                  {/*</span>*/}
                 </div>
               </div>
             </div>

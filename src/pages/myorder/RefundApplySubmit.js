@@ -13,6 +13,9 @@ import ScrollWrap from "../../components/scroll";
 import { WhiteSpace, TextareaItem } from "antd-mobile";
 
 class RefundApplySubmit extends PureComponent {
+
+
+
   render() {
     return (
       <div>
@@ -47,14 +50,13 @@ const RefundExplain = () => {
           <div className={styles.refundExplain_title}>{"退款说明："}</div>
           <div className={styles.refundExplain_title_p}>{"选填"}</div>
         </div>
-        <div className={styles.explain_textareaItem_c}>
-          <TextareaItem
-            clear={true}
-            placeholder="请输入"
-            autoHeight={true}
-            className={styles.explain_textareaItem}
-          />
-        </div>
+        <TextareaItem
+          style={{fontSize:'20px'}}
+          clear={true}
+          placeholder="请输入"
+          autoHeight={true}
+          className={styles.explain_textareaItem}
+        />
       </div>
     </div>
   );
