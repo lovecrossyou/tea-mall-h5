@@ -9,6 +9,7 @@ import styles from "./index.css";
 import ScrollWrap from "../../components/scroll";
 import { SettingsItem } from "../settings/components";
 import router from "umi/router";
+import { Navigator } from "../../components/navigator";
 
 export default class Settings extends PureComponent {
   constructor(props) {
@@ -25,6 +26,7 @@ export default class Settings extends PureComponent {
             position: "relative"
           }}
         >
+          <Navigator title="设置" />
           <ScrollWrap wrapId="settingsList" wrapClass={styles.wrap_body}>
             <SettingsItem
               title="地址管理"
