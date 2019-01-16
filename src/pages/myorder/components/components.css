@@ -1,0 +1,42 @@
+.flex_row{
+    display: flex;
+    flex-direction: row;
+}
+.orderTopProduct {
+
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    padding: 40px 30px 50px 30px;
+    box-sizing: border-box;
+
+
+}
+.orderTopProduct_img{
+
+    width:160px;
+    height:160px;
+    border-radius:4px;
+    margin-right: 15px;
+}
+.orderTopProduct_content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+.orderTopProduct_content_name{
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    line-height:40px;
+}
+.orderTopProduct_content_standard{
+
+    font-size:24px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    margin-top: 10px;
+}
