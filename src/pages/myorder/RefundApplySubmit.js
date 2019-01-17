@@ -77,7 +77,7 @@ const RefundReason = ({ reason, clickAction }) => {
     </div>
   );
 };
-const RefundMoney = () => {
+export const RefundMoney = () => {
   return (
     <div className={styles.ras_money_c}>
       <div className={styles.refundExplain_title}>退款金额：</div>

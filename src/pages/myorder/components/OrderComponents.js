@@ -8,8 +8,10 @@ import styles from "./components.css";
 export class OrderTopProduct extends PureComponent {
   render() {
     let data = this.props.data || {};
+    let orderTopProduct_style =
+      this.props.orderTopProduct || styles.orderTopProduct;
     return (
-      <div className={styles.orderTopProduct}>
+      <div className={orderTopProduct_style}>
         <img src={data.img || ""} className={styles.orderTopProduct_img} />
         <div className={styles.orderTopProduct_content}>
           <div className={styles.orderTopProduct_content_name}>{data.name}</div>

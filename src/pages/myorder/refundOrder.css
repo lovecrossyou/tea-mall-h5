@@ -238,3 +238,72 @@
     border:1px solid rgba(102, 102, 102, 1);
     border-radius:50%;
 }
+
+
+/*退款*/
+.refundDetail{
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    width: 100%;
+}
+.refundDetail_scroll{
+
+    width: 100%;
+    height: 100%;
+}
+
+.resultHeader_c{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 54px  40px ;
+    box-sizing: border-box;
+    background:rgba(255,89,75,1);
+}
+.resultHeader_status{
+
+    font-size:44px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    line-height: 44px;
+    color:rgba(255,255,255,1);
+}
+.resultHeader_time{
+    margin-top: 29px;
+    font-size:28px;
+    line-height: 28px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+.refundDetail_message{
+    padding: 31px;
+    box-sizing:border-box;
+    width:100%;
+    background:rgba(255,255,255,1);
+}
+.refundDetail_message_title{
+
+    line-height:28px;
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(31,31,31,1);
+}
+.refundDetail_orderProduct_message{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    padding: 23px 32px 32px 0px;
+    box-sizing: border-box;
+}
+.refundDetail_reason_info{
+
+    line-height:25px;
+    font-size:24px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+    margin-bottom: 32px;
+}

@@ -42,7 +42,11 @@ class RefundApply extends PureComponent {
                   key={"#" + index}
                   data={value}
                   itemClick={() => {
-                    router.push("/myorder/RefundApplySubmit");
+                    if (index === 1) {
+                      router.push("/myorder/RefundDetail");
+                    } else {
+                      router.push("/myorder/RefundApplySubmit");
+                    }
                   }}
                 />
               );
