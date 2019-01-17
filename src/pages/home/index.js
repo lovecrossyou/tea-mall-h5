@@ -11,6 +11,11 @@ import mall_main_img_3 from "./image/mall_main_img_3@2x.png";
 import mall_p_hot from "./image/mall_p_hot@2x.png";
 import mall_p_1 from "./image/mall_p_1@2x.png";
 import mall_p_5 from "./image/mall_p_5@2x.png";
+import mall_img from "./image/mall_img@2x.png";
+import mall_img_2 from "./image/mall_img_2@2x.png";
+import mall_img_3 from "./image/mall_img_3@2x.png";
+import mall_banner from "./image/mall_banner@2x.png";
+
 import CarouselTop from "../../components/carousel";
 import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
@@ -53,7 +58,7 @@ const HomeFreeTea = function() {
           <img src={mall_main_img_2} alt=""/>
         </div>
       </div>
-      <div className={styles.home_free_tea_right_item} style={{ marginTop: "12px" }}>
+      <div className={styles.home_free_tea_right_item}>
         <div className={styles.home_free_tea_intro}>
           <div className={styles.home_free_tea_intro_h}>名品优店</div>
           <div>回头客</div>
@@ -67,10 +72,11 @@ const HomeFreeTea = function() {
   </div>;
 };
 
-export const ProductItem = function() {
-  return <div className={styles.home_top_selling_tea_item} onClick={() => router.push("/product")}>
+export const ProductItem = ({image}) => {
+  console.log(111,image)
+  return <div className={styles.home_top_selling_tea_item}  onClick={()=>router.push('/product')}>
     <div className={styles.home_top_selling_tea_item_img}>
-      <img src={mall_p_1} alt=""/>
+      <img src={image} alt=""/>
     </div>
     <div className={styles.home_top_selling_tea_item_intro}>
       <div className={styles.home_top_selling_tea_item_intro_content}>自桃树乌龙茶15包组合自桃树乌龙茶15包组合</div>
@@ -82,17 +88,17 @@ export const ProductItem = function() {
 // 爆款茶
 const HomeSellingTea = function() {
   return <div className={styles.home_top_selling_tea}>
-    <ProductItem/>
-    <ProductItem/>
+    <ProductItem image={mall_img} />
+    <ProductItem image={mall_img} />
   </div>;
 };
 // 限时秒杀
 const TimeLimitSelling = function() {
   return <div className={styles.time_limit_selling}>
-    <ProductItem onClick={() => router.push("/limitbuy")}/>
-    <ProductItem/>
-    <ProductItem/>
-    <ProductItem/>
+    <ProductItem image={mall_img_2} onClick={() => router.push("/limitbuy")}/>
+    <ProductItem image={mall_img_2}/>
+    <ProductItem image={mall_img_2}/>
+    <ProductItem image={mall_img_2}/>
   </div>;
 };
 
@@ -101,7 +107,7 @@ const Section = function() {
     <HomeFreeTea/>
     <div className={styles.home_top_selling_tit}>爆款工夫茶</div>
     <HomeSellingTea/>
-    <div className={styles.home_top_selling_tit} onClick={() => router.push("/limitbuy")}>
+    <div className={styles.home_top_selling_tit} style={{marginTop:"46px"}} onClick={() => router.push("/limitbuy")}>
       <div>限时秒杀</div>
       <div className={styles.home_top_selling_tit_right}>
         <span>23</span>:
@@ -115,9 +121,9 @@ const Section = function() {
 
 export const HotRecommendShow = function() {
   return <div className={styles.home_footer}>
-    <ProductItem/>
-    <ProductItem/>
-    <ProductItem/>
+    <ProductItem image={mall_img_3}/>
+    <ProductItem image={mall_img_3}/>
+    <ProductItem image={mall_img_3}/>
   </div>;
 };
 
@@ -146,8 +152,8 @@ class Index extends PureComponent {
           }}
         >
           <ScrollWrap wrapId="homeList" wrapClass={styles.wrap_body}>
-            <div className={styles.carousel_container}>
-              <CarouselTop clsName={styles.carousel_container}/>
+            <div className={styles.carousel_container} >
+              <CarouselTop clsName={styles.carousel_container} imgs={[mall_banner,mall_banner]} />
             </div>
             <Section/>
             <HotRecommendShow/>

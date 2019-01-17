@@ -48,23 +48,6 @@
   width:100%;
   height:240px ;
 }
-.home_list{
-  width:100%;
-  height:88px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size:28px;
-  font-family:PingFang-SC-Bold;
-
-  border:1px solid #eeeeee;
-}
-.home_list_item{
-  color:#A0A0A0;
-}
-.home_list_item_active{
-  color:red;
-}
 
 .home_section{
   width:100%;
@@ -73,7 +56,6 @@
 }
 .home_free_tea{
   display: flex;
-  justify-content: space-between;
   margin-top:70px;
 }
 .home_free_tea_left{
@@ -91,13 +73,14 @@
 }
 .home_free_tea_intro{
   padding-left:18px;
-  padding-top:24px;
+  padding-top:20px;
   box-sizing: border-box;
   font-size:24px;
   line-height: 1.5;
   font-family:PingFang-SC-Regular;
   font-weight:400;
   color:rgba(54,59,66,1);
+  box-sizing: border-box;
 }
 .home_free_tea_intro .home_free_tea_intro_h{
   font-size:28px;
@@ -114,21 +97,21 @@
   height:352px;
   box-shadow:0px 2px 15px 1px rgba(230,235,239,1);
   border-radius:4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .home_free_tea_right_item{
   display: flex;
   background:rgba(248,250,252,1);
 }
 .home_free_tea_right .home_free_tea_intro{
-  flex-basis: 40%;
+  flex:1;
 }
-.home_free_tea_right_item .home_free_tea_img{
-  flex-basis: 60%;
-  height:170px;
-}
+.home_free_tea_right_item .home_free_tea_img,
 .home_free_tea_right_item .home_free_tea_img img{
-  width:100%;
-  height:170px;
+  width:220px;
+  height:166px;
 }
 .home_top_selling_tit{
   margin-top:86px;
