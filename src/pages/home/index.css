@@ -60,7 +60,7 @@
 }
 .home_free_tea_left{
   width:240px;
-  height:372px;
+  height:352px;
   background:rgba(248,250,252,1);
   box-shadow:0px 2px 15px 1px rgba(230,235,239,1);
   border-radius:4px;
@@ -68,18 +68,19 @@
 }
 .home_free_tea_left .home_free_tea_intro{
   width:750px;
-  height:136px;
+  height:116px;
   color:rgba(54,59,66,1);
 }
 .home_free_tea_intro{
   padding-left:18px;
-  padding-top:24px;
+  padding-top:20px;
   box-sizing: border-box;
   font-size:24px;
   line-height: 1.5;
   font-family:PingFang-SC-Regular;
   font-weight:400;
   color:rgba(54,59,66,1);
+  box-sizing: border-box;
 }
 .home_free_tea_intro .home_free_tea_intro_h{
   font-size:28px;
@@ -93,7 +94,7 @@
 }
 .home_free_tea_right{
   flex: 1;
-  height:372px;
+  height:352px;
   box-shadow:0px 2px 15px 1px rgba(230,235,239,1);
   border-radius:4px;
   display: flex;
@@ -110,7 +111,7 @@
 .home_free_tea_right_item .home_free_tea_img,
 .home_free_tea_right_item .home_free_tea_img img{
   width:220px;
-  height:170px;
+  height:166px;
 }
 .home_top_selling_tit{
   margin-top:86px;
