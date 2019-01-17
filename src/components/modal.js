@@ -10,7 +10,7 @@ import styles from "./index.css";
 
 export default class ModalBox extends Component {
   render() {
-    const { position, visible, onClose } = this.props;
+    const { position, visible, onClose, contenStyle_custom } = this.props;
     if (visible === false) return null;
     let contenStyle = styles.model_content_bottom;
     if (position === "top") {
@@ -20,6 +20,7 @@ export default class ModalBox extends Component {
     } else {
       contenStyle = styles.model_content_bottom;
     }
+    contenStyle = contenStyle_custom || contenStyle;
 
     return (
       <div>
