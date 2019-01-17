@@ -64,27 +64,22 @@ const RefundExplain = () => {
     <div>
       <WhiteSpace />
       <div className={styles.refundExplain}>
-        <div className={styles.refundExplain_title_c}>
-          <div className={styles.refundExplain_title}>{"退款说明："}</div>
-          <div className={styles.refundExplain_title_p}>{"选填"}</div>
-        </div>
-
-        <div style={{ width: "100%" }}>
-          {/*<TextareaItem*/}
-          {/*style={{fontSize:36,backgroundColor:'red',paddingLeft:0,width:'100%'}}*/}
-          {/*clear={true}*/}
-          {/*autoFocus={true}*/}
-          {/*placeholder="请输入"*/}
-          {/*rows={2}*/}
-          {/*labelNumber={1}*/}
-
-          {/*/>*/}
-          <textarea rows="3" cols="20" placeholder="选填" />
-        </div>
+        <TextareaItem
+          title={"退款说明："}
+          clear={true}
+          autoFocus={true}
+          placeholder="选填"
+          rows={2}
+        />
       </div>
     </div>
   );
 };
+class UploadImage extends PureComponent {
+  render() {
+    return <div />;
+  }
+}
 export default connect(state => {
   return {
     store: state.myorder
