@@ -3,6 +3,7 @@ import { TabBar } from 'antd-mobile';
 
 
 import Home from '../home/index'
+import Mall from '../mall/index'
 import Category from '../category/index'
 import ShoppingCart from '../shoppingcart/index'
 import Me from '../me/index'
@@ -41,6 +42,22 @@ class Index extends PureComponent {
             data-seed="logId"
           >
             <Home/>
+          </TabBar.Item>
+          <TabBar.Item
+            title="茶模"
+            key="Mall"
+            icon={{uri:'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg'}}
+            selectedIcon={{uri:'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg'}}
+            selected={this.state.selectedTab === 'mallTab'}
+            badge={1}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'mallTab',
+              });
+            }}
+            data-seed="logId"
+          >
+            <Mall/>
           </TabBar.Item>
           <TabBar.Item
             icon={{uri:'https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg'}}
