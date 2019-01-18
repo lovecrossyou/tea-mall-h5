@@ -144,7 +144,7 @@ class Index extends PureComponent {
     return (
       <div className={styles.home_container}>
         <Header/>
-        <NavBarList data={listArr}/>
+        <NavBarList data={listArr} activeCls={{color:"rgba(255,89,75,1)"}} />
         <div
           style={{
             height: `${this.clientHeight - 135 - 132}px`,

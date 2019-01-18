@@ -25,7 +25,8 @@ export default class NavBarList  extends Component{
       <div className={styles.home_list}>
         {this.props.data.map( (item,index) => {
           return <div key={index}
-                      className={ index === selectedInd ? styles.home_list_item_active : styles.home_list_item}
+                      style={index === selectedInd ? this.props.activeCls :{color:"#A0A0A0"}}
+                      // className={ index === selectedInd ? styles.home_list_item_active : styles.home_list_item}
                       onClick={this.setSelectIndex.bind(this,index)}>{item}</div>
         })
         }
