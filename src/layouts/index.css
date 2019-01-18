@@ -31,7 +31,8 @@
 }
 
 .nav_title{
-  height:35px;
+  height: 100%;
+  line-height:36px;
   font-size:36px;
   font-family:PingFang-SC-Bold;
   font-weight:bold;
@@ -40,6 +41,7 @@
 
 
 .nav_arrow{
+
   width: 19px;
   height: 36px;
 }

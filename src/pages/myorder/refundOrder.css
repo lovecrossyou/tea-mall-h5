@@ -307,3 +307,40 @@
     color:rgba(153,153,153,1);
     margin-bottom: 32px;
 }
+
+/*退款选择物流公司*/
+.nav_right_ref_chooseAdd{
+    display: inline-block;
+    line-height:28px;
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(31,31,31,1);
+    margin-right: 15px;
+}
+
+.ref_ordernumber{
+
+    display: flex;
+    padding: 0 40px;
+    flex-direction: row;
+    align-items: center;
+    height:88px;
+    background:rgba(255,255,255,1);
+}
+.ref_ordernumber_title{
+
+    line-height:28px;
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(31,31,31,1);
+}
+.ref_ordernumber_input{
+
+    font-size: 28px;
+    margin-left: 15px;
+    border-width: 0;
+    outline:medium;
+    flex: 1;
+}

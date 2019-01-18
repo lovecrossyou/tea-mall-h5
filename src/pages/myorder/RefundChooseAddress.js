@@ -1,6 +1,6 @@
 /**
  *Created by tianhaojie .
- *Created on 2019-01-16 .
+ *Created on 2019-01-18 .
  *desc
  */
 import React, { PureComponent } from "react";
@@ -10,9 +10,10 @@ import styles from "./refundOrder.css";
 import { OrderTopProduct } from "./components/OrderComponents";
 import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
-import { WhiteSpace, TextareaItem, ImagePicker } from "antd-mobile";
+import { WhiteSpace, InputItem } from "antd-mobile";
 import right_arrow from "../../assets/right_arrow@2x.png";
 import ModalBox from "../../components/modal";
+
 const isIPhone = new RegExp("\\biPhone\\b|\\biPod\\b", "i").test(
   window.navigator.userAgent
 );
@@ -22,14 +23,36 @@ if (isIPhone) {
     onTouchStart: e => e.preventDefault()
   };
 }
-class RefundApplySubmit extends PureComponent {
+
+class RefundChooseAddress extends PureComponent {
   state = {
     reason: "请选择"
   };
+
   render() {
+    const {
+      type = "text",
+      labelNumber = 5,
+      error = false,
+      children = "",
+      onErrorClick = "",
+      tipStyle = {},
+      ...other
+    } = this.props;
+    const errorTipStyle = {
+      color: "#f5222d",
+      padding: "5px 0px",
+      textAlign: "left",
+      position: "relative",
+      fontSize: 12,
+      ...tipStyle
+    };
     return (
       <div>
-        <Navigator title={"退货申请"} />
+        <Navigator
+          title={"退货申请"}
+          right={<div className={styles.nav_right_ref_chooseAdd}>提交</div>}
+        />
         <div className={styles.ras_container}>
           <ScrollWrap
             wrapId={"RefundApplyScroll"}
@@ -51,11 +74,9 @@ class RefundApplySubmit extends PureComponent {
                 this.reasonModal._open();
               }}
             />
-            <RefundExplain />
+
             <WhiteSpace />
-            <RefundMoney />
-            <WhiteSpace />
-            <UploadImage />
+            <InputOrderNumber />
           </ScrollWrap>
         </div>
         <ReasonModal
@@ -70,10 +91,21 @@ class RefundApplySubmit extends PureComponent {
     );
   }
 }
+const InputOrderNumber = () => {
+  return (
+    <div className={styles.ref_ordernumber}>
+      <div className={styles.ref_ordernumber_title}>物流单号</div>
+      <input
+        placeholder={"请输入单号"}
+        className={styles.ref_ordernumber_input}
+      />
+    </div>
+  );
+};
 const RefundReason = ({ reason, clickAction }) => {
   return (
     <div className={styles.ras_reason_c}>
-      <div className={styles.refundExplain_title}>退货原因</div>
+      <div className={styles.refundExplain_title}>选择物流公司</div>
       <div
         onClick={() => {
           clickAction();
@@ -85,59 +117,6 @@ const RefundReason = ({ reason, clickAction }) => {
     </div>
   );
 };
-export const RefundMoney = () => {
-  return (
-    <div className={styles.ras_money_c}>
-      <div className={styles.refundExplain_title}>退款金额：</div>
-      <div className={styles.ras_money_nunmber}>{"¥124.50"}</div>
-    </div>
-  );
-};
-const RefundExplain = () => {
-  return (
-    <div>
-      <WhiteSpace />
-      <div className={styles.refundExplain}>
-        <TextareaItem
-          title={"退款说明："}
-          clear={true}
-          autoFocus={true}
-          placeholder="选填"
-          rows={2}
-          moneyKeyboardWrapProps={moneyKeyboardWrapProps}
-        />
-      </div>
-    </div>
-  );
-};
-const data = [];
-class UploadImage extends PureComponent {
-  state = {
-    files: data,
-    multiple: true
-  };
-  onChange = (files, type, index) => {
-    console.log(files, type, index);
-    this.setState({
-      files
-    });
-  };
-  render() {
-    const { files } = this.state;
-    return (
-      <div className={styles.uploadImage}>
-        <div className={styles.uploadImage_title}>上传凭证</div>
-        <ImagePicker
-          files={files}
-          onChange={this.onChange}
-          onImageClick={(index, fs) => console.log(index, fs)}
-          selectable={files.length < 9}
-          multiple={this.state.multiple}
-        />
-      </div>
-    );
-  }
-}
 class ReasonModal extends PureComponent {
   state = {
     select: -1,
@@ -200,4 +179,4 @@ export default connect(state => {
   return {
     store: state.myorder
   };
-})(RefundApplySubmit);
+})(RefundChooseAddress);
