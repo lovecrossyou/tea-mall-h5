@@ -6,6 +6,8 @@
 
 import React, { PureComponent } from "react";
 import styles from "./index.css";
+import Toocomponent from "./components";
+
 import ScrollWrap from "../../components/scroll";
 import questionIcon from "./images/Teafight_icon_question mark@2x.png";
 import add from "./images/Teafight_icon_add@2x.png";
@@ -103,9 +105,7 @@ const ArticleRanking = () => {
       </div>
 
       <div className={styles.issue_content}>
-        空气中的茶香，古香古色的气息，带你穿越扬州三月,气
-        中的茶香香香香香香香香空气中的茶香，古香古色的气息， 带你穿越扬州三月,气
-        中的茶香香香香香香香香......
+        <Toocomponent />
       </div>
 
       {/*点赞 & 转发 & 评论*/}
