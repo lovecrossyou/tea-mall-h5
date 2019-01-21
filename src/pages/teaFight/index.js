@@ -185,7 +185,7 @@ export default class TeaFight extends PureComponent {
       <div className={styles.represent_wrapper}>
         <div
           style={{
-            height: `${this.clientHeight}px`,
+            height: `${this.clientHeight - 174 -130 - 150}px`,
             position: "relative"
           }}
         >
