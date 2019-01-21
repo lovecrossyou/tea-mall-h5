@@ -11,45 +11,52 @@ import found_btn_nolike from "./image/found_btn_nolike@2x.png";
 import water1 from "./image/1.jpg";
 import NavBarList from "../../components/navbarlist";
 import { Tabs } from "antd-mobile";
-import Recommend from "./Recommend";
+import Recommend from "./recommend";
+import TeaFight from "../teaFight";
+import Movie from "./movie";
+import Teaset from "./teaset";
+import Life from "./life";
+import TeaPoint from "./teapoint";
 
-const navList = ["发现", "关注"];
-const listArr = ["推荐", "视频", "斗茶", "约茶", "茶具", "生活"];
+const tabs = [
+  { title: '推荐' },
+  { title: '视频' },
+  { title: '斗茶' },
+  { title: '约茶' },
+  { title: '茶具' },
+  { title: '生活' },
+];
 
-export default class DiscoverRoot extends PureComponent {
+
+export default class Discoverroot extends PureComponent {
+
   renderTabBar = props => {
-    return <NavBarList data={listArr} activeCls={{ color: "#333333" }} />;
+    return <NavBarList data={listArr} activeCls={{ color: "#333333" }}/>;
   };
+
   render() {
     return (
       <div>
         <Tabs
-          tabs={listArr}
+          tabs={tabs}
           initialPage={0}
           animated={true}
           useOnPan={true}
           distanceToChangeTab={0.5}
-          renderTabBar={this.renderTabBar}
+          tabBarActiveTextColor='#333'
+          tabBarUnderlineStyle={{color:'#00000000'}}
           onChange={(tab, index) => {
             this.setState({ defaultSelect: index });
           }}
         >
-          <Recommend />
-          <Recommend />
-          <Recommend />
-          <Recommend />
-          <Recommend />
-          <Recommend />
+          <Recommend/>
+          <Movie/>
+          <TeaFight/>
+          <TeaPoint/>
+          <Teaset/>
+          <Life/>
         </Tabs>
       </div>
     );
   }
 }
-const WaterFallView = function() {
-  return (
-    <div className={styles.water_fail_view}>
-      <Recommend />
-      <Recommend />
-    </div>
-  );
-};
