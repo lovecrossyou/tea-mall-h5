@@ -16,7 +16,10 @@ export default class NavBarList  extends Component{
   setSelectIndex= index => {
     this.setState({
       selectedInd:index
-    })
+    });
+    if(this.props.onChange){
+      this.props.onChange(index);
+    }
   }
 
   render() {

@@ -6,12 +6,13 @@ import found_btn_search from "./image/found_btn_search@2x.png";
 import NavBarList from "../../components/navbarlist";
 import { Tabs } from "antd-mobile";
 import Discoverroot from "./discoverroot";
+import Focus from "./focus";
 
 const navList = ["发现", "关注"];
 
-const FindTea = function() {
+const TopNav = ({onChange})=>{
   return (
-    <div className={styles.tea_mall_nav}>
+    <div className={styles.tea_mall_nav} onClick={onChange}>
       <div className={styles.tea_mall_nav_left}>
         <NavBarList
           data={navList}
@@ -20,6 +21,7 @@ const FindTea = function() {
             fontSize: "44px",
             borderBottom: "6px solid red"
           }}
+          onChange={onChange}
         />
       </div>
       <div className={styles.tea_mall_nav_right}>
@@ -31,19 +33,32 @@ const FindTea = function() {
     </div>
   );
 };
-const tabs = ["发现", "关注"];
+// const tabs = ["发现", "关注"];
+const tabs = [
+  { title: '发现' },
+  { title: '关注' },
+];
+
 export default class Mall extends PureComponent {
 
   renderTabBar = props => {
-    return <FindTea />;
+    return <TopNav onChange={index => {
+      console.log('TopNav ',index);
+      this.setState({ defaultSelect: index });
+      props.goToTab(index);
+    }}/>;
   };
+
+  state = {
+    defaultSelect:0
+  }
 
   render() {
     return (
       <div className={styles.tea_mall_container}>
         <Tabs
           tabs={tabs}
-          initialPage={0}
+          initialPage={this.state.defaultSelect}
           animated={true}
           useOnPan={true}
           distanceToChangeTab={0.5}
@@ -54,7 +69,7 @@ export default class Mall extends PureComponent {
           }}
         >
           <Discoverroot />
-          <Discoverroot />
+          <Focus />
         </Tabs>
       </div>
     );
