@@ -194,13 +194,15 @@ export class SelectorBar extends PureComponent {
               }}
             >
               <div className={styles.selectorBar_item_title}>{value}</div>
-              <div
-                className={
-                  index === this.props.defaultSelect
-                    ? styles.selectorBar_item_indicator
-                    : styles.selectorBar_item_indicator_normal
-                }
-              />
+              {this.props.hideIndicator ? null : (
+                <div
+                  className={
+                    index === this.props.defaultSelect
+                      ? styles.selectorBar_item_indicator
+                      : styles.selectorBar_item_indicator_normal
+                  }
+                />
+              )}
             </div>
           );
         })}
