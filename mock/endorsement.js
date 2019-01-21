@@ -118,6 +118,41 @@ export default {
           productName: "张一元茉莉花茶 花茶 茶叶 茉莉花茶叶 罐装茉莉毛尖200g",
           originalPrice: 22500,
           salePrice: 18500
+        },
+        {
+          productImg:
+            "http://img.alicdn.com/bao/uploaded/i2/708405060/O1CN01oTvm631nFWZqWPV1A_!!0-item_pic.jpg_180x180.jpg",
+          productName: "张一元茉莉花茶 花茶 茶叶 茉莉花茶叶 罐装茉莉毛尖200g",
+          originalPrice: 22500,
+          salePrice: 18500
+        },
+        {
+          productImg:
+            "http://img.alicdn.com/bao/uploaded/i2/708405060/O1CN01oTvm631nFWZqWPV1A_!!0-item_pic.jpg_180x180.jpg",
+          productName: "张一元茉莉花茶 花茶 茶叶 茉莉花茶叶 罐装茉莉毛尖200g",
+          originalPrice: 22500,
+          salePrice: 18500
+        },
+        {
+          productImg:
+            "http://img.alicdn.com/bao/uploaded/i2/708405060/O1CN01oTvm631nFWZqWPV1A_!!0-item_pic.jpg_180x180.jpg",
+          productName: "张一元茉莉花茶 花茶 茶叶 茉莉花茶叶 罐装茉莉毛尖200g",
+          originalPrice: 22500,
+          salePrice: 18500
+        },
+        {
+          productImg:
+            "http://img.alicdn.com/bao/uploaded/i2/708405060/O1CN01oTvm631nFWZqWPV1A_!!0-item_pic.jpg_180x180.jpg",
+          productName: "张一元茉莉花茶 花茶 茶叶 茉莉花茶叶 罐装茉莉毛尖200g",
+          originalPrice: 22500,
+          salePrice: 18500
+        },
+        {
+          productImg:
+            "http://img.alicdn.com/bao/uploaded/i2/708405060/O1CN01oTvm631nFWZqWPV1A_!!0-item_pic.jpg_180x180.jpg",
+          productName: "张一元茉莉花茶 花茶 茶叶 茉莉花茶叶 罐装茉莉毛尖200g",
+          originalPrice: 22500,
+          salePrice: 18500
         }
       ],
       comment: {

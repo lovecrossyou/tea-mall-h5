@@ -13,8 +13,7 @@ import btn_right_shop from "./image/btn_right_shop@2x.png";
 import icon_btn_comments from "./image/btn_comments@2x.png";
 import icon_btn_givealike from "./image/btn_givealike@2x.png";
 import endorsement from "../../../mock/endorsement";
-import { WhiteSpace } from "antd-mobile";
-import { ProductItem } from "../home";
+import { WhiteSpace, ListView } from "antd-mobile";
 class Endorsement extends PureComponent {
   componentWillMount() {
     this.props.dispatch({
@@ -130,6 +129,7 @@ const EndorsementShopView = ({ data }) => {
     </div>
   );
 };
+
 class EndorsementCommend extends PureComponent {
   render() {
     const { list } = this.props;
@@ -141,12 +141,19 @@ class EndorsementCommend extends PureComponent {
         </div>
 
         <ScrollWrap
-          wrapId={"endorsementCommend"}
           wrapClass={styles.endorsement_commend_scroll}
+          wrapId={"endorsementCommend"}
         >
           <div className={styles.endorsement_commend_content}>
             {list.map((value, index) => {
-              return <ProductItem key={index + "#"} />;
+              return (
+                <div
+                  key={index + "#"}
+                  className={styles.endorsement_commend_content_item}
+                >
+                  <EndorsementCommendItem image={value.productImg} />
+                </div>
+              );
             })}
           </div>
         </ScrollWrap>
@@ -154,6 +161,33 @@ class EndorsementCommend extends PureComponent {
     );
   }
 }
+
+const EndorsementCommendItem = ({ image }) => {
+  return (
+    <div
+      className={styles.endorsement_commend_item}
+      onClick={() => router.push("/product")}
+    >
+      <div className={styles.home_top_selling_tea_item_img}>
+        <img
+          src={image}
+          alt=""
+          className={styles.endorsement_commend_item_img}
+        />
+      </div>
+
+      <div className={styles.home_top_selling_tea_item_intro}>
+        <div className={styles.home_top_selling_tea_item_intro_content}>
+          自桃树乌龙茶15包组合自桃树乌龙茶15包组合
+        </div>
+        <div className={styles.home_top_selling_tea_item_intro_price}>
+          ￥58.3
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Navigator = () => {
   return (
     <div className={styles.endorsement_nav}>
@@ -198,6 +232,7 @@ const BottomView = () => {
     </div>
   );
 };
+
 export default connect(state => {
   return {
     store: state.endorsement
