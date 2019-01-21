@@ -354,6 +354,8 @@ class ProductCommend extends PureComponent {
   }
 }
 class ProductTabbar extends PureComponent {
+
+
   render() {
     return (
       <div className={styles.productTabbar_container}>

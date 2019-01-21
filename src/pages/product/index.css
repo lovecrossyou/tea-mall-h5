@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   bottom: 102px;
-  top: 100px;
+  top: 156px;
   /*width: 100%;*/
   /*height: 100%;*/
 }
@@ -19,9 +19,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100px;
+  height: 156px;
   width: 100%;
   position: fixed;
+  padding-top: 28px;
+  box-sizing: border-box;
+
   background-color: white;
   border-bottom-width: 1px;
   border-bottom-color: #cccccc;

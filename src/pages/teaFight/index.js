@@ -16,11 +16,12 @@ import teaFight from "./images/Teafight_img@2x.png";
 import heart from "./images/Teafight_icon_ heart@2x.png";
 import share from "./images/Teafight_icon_share@2x.png";
 import comment from "./images/Teafight_icon_comment@2x.png";
+import { closest, Modal } from "antd-mobile";
 
 import CarouselTop from "../../components/carousel";
 
 // 点赞排行榜
-const Rankinglist = () => {
+const Rankinglist = ({showTips}) => {
   return (
     <div className={styles.ranking_wrapper}>
       <div className={styles.ranking_title}>
@@ -28,7 +29,9 @@ const Rankinglist = () => {
           <div className={styles.ranking_week}>一周排行榜</div>
           <div className={styles.ranking_date}>2019.1.1-2019.1.7</div>
         </div>
-        <div className={styles.question_img}>
+        <div
+          className={styles.question_img}
+          onClick={showTips}>
           <img src={questionIcon} alt="" />
         </div>
       </div>
@@ -131,10 +134,59 @@ const ArticleRanking = () => {
   );
 };
 
+
+const TipsModal = ({visible=false,onClose})=>{
+  return (
+    <Modal
+      visible={visible}
+      transparent
+      closable
+      maskClosable={true}
+      onClose={()=>onClose()}
+      title="关于排行榜"
+    >
+      <div style={{ height: 350, overflow: 'scroll' }}>
+       <div>
+         博主发布的关于茶艺的动态或者视频，按照点
+         赞数量进行排名。
+       </div>
+        <div>TIPS:排行榜为周排名，每周一零点更新数据</div>
+      </div>
+    </Modal>
+  )
+}
+
 export default class TeaFight extends PureComponent {
   constructor(props) {
     super(props);
     this.clientHeight = window.document.body.clientHeight;
+  }
+
+  state = {
+    showTips:false
+  }
+
+  showTips = () =>{
+    this.setState({
+      showTips:true
+    })
+  }
+
+  hideTips = ()=>{
+    this.setState({
+      showTips:false
+    })
+  }
+
+  onWrapTouchStart = (e) => {
+    // fix touch to scroll background page on iOS
+    if (!/iPhone|iPod|iPad/i.test(navigator.userAgent)) {
+      return;
+    }
+    // const pNode = closest(e.target, '.am-modal-content');
+    // if (!pNode) {
+    //   e.preventDefault();
+    // }
   }
 
   render() {
@@ -147,10 +199,13 @@ export default class TeaFight extends PureComponent {
           }}
         >
           <ScrollWrap wrapId="TeaFightList" wrapClass={styles.wrap_body}>
-            <Rankinglist />
+            <Rankinglist showTips={this.showTips.bind(this)}/>
             <ArticleRanking />
             <ArticleRanking />
           </ScrollWrap>
+          <TipsModal
+            onClose={this.hideTips.bind(this)}
+            visible={this.state.showTips}/>
         </div>
       </div>
     );
