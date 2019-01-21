@@ -33,7 +33,7 @@ const TopNav = ({onChange})=>{
     </div>
   );
 };
-// const tabs = ["发现", "关注"];
+
 const tabs = [
   { title: '发现' },
   { title: '关注' },
@@ -43,7 +43,6 @@ export default class Mall extends PureComponent {
 
   renderTabBar = props => {
     return <TopNav onChange={index => {
-      console.log('TopNav ',index);
       this.setState({ defaultSelect: index });
       props.goToTab(index);
     }}/>;
