@@ -1,0 +1,333 @@
+.endorsement_nav{
+
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 120px;
+    background-color: transparent;
+    padding: 44px 19px;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 999;
+    /*border-bottom: 1px solid #cccccc;*/
+
+}
+.endorsement_nav_title{
+    height: 100%;
+    line-height:36px;
+    font-size:36px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    color:white;
+}
+
+.endorsement_nav_arrow{
+    width: 19px;
+    height: 36px;
+}
+.endorsement_nav_right{
+    width: 19px;
+    height: 36px;
+}
+
+.endorsement_container{
+    width: 100vw;
+    height: calc(100vh - 88px - env(safe-area-inset-bottom) ) ;
+}
+.endorsement_scroll{
+    width: 100vw;
+    height: calc(100vh - 88px - env(safe-area-inset-bottom)) ;
+}
+.topImage{
+    width: 100%;
+}
+
+.publishinfo_header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 32px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(234,234,234,1);
+}
+.publishinfo_icon{
+
+    display: inline-block;
+    width:68px;
+    height:68px;
+    border-radius:50%;
+}
+.publishinfo_name{
+
+    display: inline-block;
+    line-height:28px;
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    margin-left: 9px;
+    margin-right: 11px;
+}
+.publishinfo_level{
+
+    display: inline-block;
+    height:32px;
+    background:rgba(255,89,75,1);
+    border-radius:4px;
+    padding: 2px 8px;
+    box-sizing: border-box;
+
+    text-align: center;
+    font-size:24px;
+    line-height: 32px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+}
+.publishinfo_attention{
+
+
+    background:rgba(212,209,209,0);
+    border:1px solid rgba(255, 89, 75, 1);
+    border-radius:24px;
+    height: 48px;
+    padding: 0 36px;
+
+    text-align: center;
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(255,89,75,1);
+    line-height:48px;
+}
+.publishinfo_content{
+
+    padding:32px 36px 32px 32px ;
+    font-size:30px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    line-height:44px;
+    box-sizing: border-box;
+}
+.publishinfo_bottom{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 22px;
+    padding-right: 45px;
+    box-sizing: border-box;
+    align-items: center;
+}
+.publishinfo_bottom_time{
+
+    font-size:24px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:40px;
+}
+.publishinfo_bottom_praisecount{
+
+    font-size:24px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:40px;
+}
+/*访客*/
+.vistor{
+
+    padding: 28px 19px;
+    box-sizing: border-box;
+    background:rgba(255,255,255,1);
+}
+.vistor_count{
+
+    font-size:30px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    line-height:40px;
+    margin-bottom: 16px;
+}
+.vistor_imgs_c{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.vistor_img{
+
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    margin: 16px 24px 16px 0;
+}
+.shopInfo_c{
+
+    display: flex;
+    flex-direction: row;
+    padding: 20px 60px 20px 42px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+.shopInfo_left{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.shopInfo_img{
+    width:82px;
+    height:82px;
+    border-radius:4px;
+    margin-right: 40px;
+}
+
+.shopInfo_name_c{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.shopInfo_name{
+    font-size:28px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.shopInfo_views{
+
+    font-size:26px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.shopInfo_goto{
+}
+.shopInfo_goto_name{
+
+    display: inline-block;
+    height: 28px;
+    font-size:28px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+}
+.shopInfo_goto_arrow{
+    margin-left: 11px;
+    display: inline-block;
+    width: 13px;
+    height: 24px;
+}
+
+/*推荐*/
+
+.endorsement_commend{
+    padding-top: 31px;
+    padding-left: 24px;
+    background-color: #FFFFFF;
+}
+.endorsement_commend_title_c{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.endorsement_commend_line{
+    width:4px;
+    height:32px;
+    margin-right: 12px;
+    background-color:rgba(255,89,75,1);
+    border-radius:2px;
+}
+.endorsement_commend_title{
+    height:32px;
+    font-size:32px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    line-height:32px;
+}
+
+.endorsement_commend_scroll{
+    position: absolute;
+    width: 100%;
+}
+.endorsement_commend_content{
+    display: flex;
+    flex-direction: row;
+}
+
+/*底部*/
+.endorsement_bottom_c{
+
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    background:rgba(0,0,0,1);
+    height: calc(88px + constant(safe-area-inset-bottom));
+    height: calc(88px + env(safe-area-inset-bottom));
+    bottom: 0;
+
+}
+.endorsement_bottom_left{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    background-color:  rgba(0,0,0,1);
+}
+.endorsement_bottom_left_c{
+    margin-top: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.endorsement_bottom_line{
+    margin-top: 24px;
+    width:1px;
+    height:40px;
+    background:rgba(58,58,58,1);
+}
+.endorsement_bottom_title{
+
+    display: inline-block;
+    font-size:28px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:28px;
+}
+.endorsement_bottom_icon{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-left: 8px;
+}
+.endorsement_bottom_count{
+
+    display: inline-block;
+    font-size:28px;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:28px;
+    margin-left: 20px;
+}
+/*.endorsement_bottom{*/
+    /*height: 88px;*/
+/*}*/
+/*@media (device-height:812px) and (-webkit-min-device-pixel-ratio:2){*/
+
+    /*!* 兼容iphoneX*!*/
+    /*.endorsement_bottomAdd{*/
+        /*height:34px;*/
+    /*}*/
+
+/*}*/

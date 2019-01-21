@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 class ScrollWrap extends PureComponent {
   componentDidMount() {
-    const { wrapId, getRef } = this.props;
+    const { wrapId, getRef, bounce_top = true } = this.props;
     if (getRef) {
       getRef(this.myRef);
     }
@@ -13,7 +13,7 @@ class ScrollWrap extends PureComponent {
       scrollY: true,
       mouseWheel: true,
       bounce: {
-        top: true,
+        top: bounce_top,
         bottom: true
       }
     });
