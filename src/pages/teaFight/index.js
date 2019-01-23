@@ -103,7 +103,7 @@ const ArticleRanking = () => {
           imgs={[teaFight, teaFight]}
         />
       </div>
-
+      {/*文字展开隐藏*/}
       <div className={styles.issue_content}>
         <Toocomponent />
       </div>
@@ -185,7 +185,7 @@ export default class TeaFight extends PureComponent {
       <div className={styles.represent_wrapper}>
         <div
           style={{
-            height: `${this.clientHeight - 174 -130 - 150}px`,
+            height: `${this.clientHeight - 174 - 130 - 150}px`,
             position: "relative"
           }}
         >
