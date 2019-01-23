@@ -1,0 +1,35 @@
+export default {
+  "POST /h5/mall/recommendList":{
+    code:0,
+    list:[
+      {
+        productImg:"http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg",
+        productTit:"茶艺修行之礼仪篇",
+        productIntro:"茶艺中的礼节指的是鞠",
+        personalData:{
+          name:"梦竹啊",
+          likeNum:7970,
+          headPortrait:"http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg"
+        }
+      },{
+        productImg:"http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg",
+        productTit:"茶艺修行之礼仪篇",
+        productIntro:"茶艺中的礼节指的是鞠",
+        personalData:{
+          name:"王欣啊",
+          likeNum:7970,
+          headPortrait:"http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg"
+        }
+      },{
+        productImg:"http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg",
+        productTit:"茶艺修行之礼仪篇",
+        productIntro:"茶艺中的礼节指的是鞠",
+        personalData:{
+          name:"徐晴啊",
+          likeNum:7970,
+          headPortrait:"http://img4.imgtn.bdimg.com/it/u=2769118404,1000928488&fm=15&gp=0.jpg"
+        }
+      }
+    ]
+  }
+}

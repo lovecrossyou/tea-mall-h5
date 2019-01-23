@@ -1,7 +1,7 @@
 import { Toast} from 'antd-mobile';
 
 export default {
-  namespace: 'classify',
+  namespace: 'home',
   state: {
     selectedInd : 0
   },

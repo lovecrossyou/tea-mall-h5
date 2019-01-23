@@ -73,7 +73,6 @@ const HomeFreeTea = function() {
 };
 
 export const ProductItem = ({image}) => {
-  console.log(111,image)
   return <div className={styles.home_top_selling_tea_item}  onClick={()=>router.push('/product')}>
     <div className={styles.home_top_selling_tea_item_img}>
       <img src={image} alt=""/>
@@ -166,6 +165,6 @@ class Index extends PureComponent {
 
 export default connect(state => {
   return {
-    store: state.classify
+    store: state.home
   };
 })(Index);
