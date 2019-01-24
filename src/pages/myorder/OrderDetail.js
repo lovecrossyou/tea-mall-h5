@@ -10,10 +10,9 @@ import styles from "./refundOrder.css";
 import { connect } from "dva";
 import ScrollWrap from "../../components/scroll";
 import { Toast, WhiteSpace } from "antd-mobile";
-import router from "umi/router";
 import { OrderTopProduct } from "./components/OrderComponents";
 import { ProductItem } from "../home/index";
-
+import ReasonModal from "./components/ReasonModal";
 const list = [
   {
     name: "订单编号：",
@@ -29,11 +28,14 @@ const list = [
   }
 ];
 class OrderDetail extends PureComponent {
+  state = {
+    reason: ""
+  };
   render() {
     return (
       <div>
         <Navigator title={"订单详情"} />
-        <div className={styles.refundDetail}>
+        <div className={styles.orderDetail_container}>
           <ScrollWrap
             wrapId={"refundDetail_scroll"}
             wrapClass={styles.refundDetail_scroll}
@@ -49,6 +51,13 @@ class OrderDetail extends PureComponent {
             <OrderDetailCommand />
           </ScrollWrap>
         </div>
+
+        <OrderDetailFooter
+          callAction={() => {
+            this.reasonModal._open();
+          }}
+        />
+        <ReasonModal ref={c => (this.reasonModal = c)} click={value => {}} />
       </div>
     );
   }
@@ -141,6 +150,22 @@ const OrderDetailCommand = () => {
     </div>
   );
 };
+
+const OrderDetailFooter = ({ callAction }) => {
+  return (
+    <div className={styles.orderDetail_footer_container}>
+      {/*<div className={styles.orderItem_bottom_refunding}>{"退款中"}</div>*/}
+      <div
+        className={styles.orderItem_bottom_delete}
+        onClick={() => callAction()}
+      >
+        {"取消订单"}
+      </div>
+      <div className={styles.orderItem_bottom_delete}>{"去付款"}</div>
+    </div>
+  );
+};
+
 export default connect(state => {
   return {
     store: state.myorder

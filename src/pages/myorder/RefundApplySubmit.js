@@ -12,7 +12,8 @@ import router from "umi/router";
 import ScrollWrap from "../../components/scroll";
 import { WhiteSpace, TextareaItem, ImagePicker } from "antd-mobile";
 import right_arrow from "../../assets/right_arrow@2x.png";
-import ModalBox from "../../components/modal";
+import ReasonModal from "./components/ReasonModal";
+
 const isIPhone = new RegExp("\\biPhone\\b|\\biPod\\b", "i").test(
   window.navigator.userAgent
 );
@@ -138,64 +139,7 @@ class UploadImage extends PureComponent {
     );
   }
 }
-class ReasonModal extends PureComponent {
-  state = {
-    select: -1,
-    visible: false
-  };
 
-  _open() {
-    this.setState({
-      visible: true
-    });
-  }
-  _close() {
-    this.setState({
-      visible: false
-    });
-  }
-  render() {
-    const reasonModal_items = ["拍错了/多拍", "质量问题", "描述详情与实物不符"];
-    return (
-      <ModalBox
-        visible={this.state.visible}
-        contenStyle_custom={styles.reasonModal}
-        onClose={() => {
-          this._close();
-        }}
-      >
-        <div className={styles.reasonModal_container}>
-          <div className={styles.reasonModal_title}>退款原因</div>
-          <div className={styles.reasonModal_item_container}>
-            {reasonModal_items.map((value, index) => {
-              return (
-                <div
-                  key={index + "#"}
-                  className={styles.reasonModal_item}
-                  onClick={() => {
-                    this.props.click && this.props.click(value);
-                    this.setState({
-                      select: index
-                    });
-                  }}
-                >
-                  <div className={styles.reasonModal_item_name}>{value}</div>
-                  <div
-                    className={
-                      this.state.select === index
-                        ? styles.reasonModal_item_radio_s
-                        : styles.reasonModal_item_radio
-                    }
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </ModalBox>
-    );
-  }
-}
 export default connect(state => {
   return {
     store: state.myorder
