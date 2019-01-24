@@ -123,7 +123,14 @@ const EndorsementShopView = ({ data }) => {
         </div>
       </div>
       <div>
-        <div className={styles.shopInfo_goto_name}>进店逛逛</div>
+        <div
+          className={styles.shopInfo_goto_name}
+          onClick={() => {
+            router.push("./storeDetails");
+          }}
+        >
+          进店逛逛
+        </div>
         <img className={styles.shopInfo_goto_arrow} src={btn_right_shop} />
       </div>
     </div>
@@ -150,6 +157,9 @@ class EndorsementCommend extends PureComponent {
                 <div
                   key={index + "#"}
                   className={styles.endorsement_commend_content_item}
+                  onClick={() => {
+                    router.push("./product");
+                  }}
                 >
                   <EndorsementCommendItem image={value.productImg} />
                 </div>

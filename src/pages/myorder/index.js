@@ -11,6 +11,7 @@ import React from "react";
 import ScrollWrap from "../../components/scroll";
 import { connect } from "dva";
 import { Toast, WhiteSpace, Carousel, Tabs } from "antd-mobile";
+import router from "umi/router";
 
 const listArr = ["全部", "待付款", "待发货", "待收货", "待评价"];
 
@@ -90,7 +91,12 @@ export class Order_All extends PureComponent {
         >
           {this.props.dataArr.map((value, index) => {
             return (
-              <div key={index + "#"}>
+              <div
+                key={index + "#"}
+                onClick={() => {
+                  router.push("myorder/OrderDetail");
+                }}
+              >
                 <OrderListItem data={value} />
                 <OrderItemFooter />
               </div>
