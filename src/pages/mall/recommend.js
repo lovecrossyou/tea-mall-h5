@@ -10,6 +10,7 @@ import found_btn_search from "./image/found_btn_search@2x.png";
 import found_btn_nolike from "./image/found_btn_nolike@2x.png";
 import water1 from "./image/1.jpg";
 import NavBarList from "../../components/navbarlist";
+import router from "umi/router";
 
 const FindTea = function() {
   return (
@@ -36,7 +37,12 @@ const FindTea = function() {
 
 const Product = function() {
   return (
-    <div className={styles.water_fail_product_item}>
+    <div
+      className={styles.water_fail_product_item}
+      onClick={() => {
+        router.push("./endorsement");
+      }}
+    >
       <div className={styles.water_fail_product_img}>
         <img src={water1} alt="" />
       </div>
