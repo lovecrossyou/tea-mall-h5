@@ -3,7 +3,7 @@
  *Created on 2019-01-15 .
  *desc
  */
-import NavBarList from "../../components/navbarlist";
+
 import styles from "./index.css";
 import { PureComponent } from "react";
 import { Navigator } from "../../components/navigator";
@@ -13,8 +13,7 @@ import { connect } from "dva";
 import { Toast, WhiteSpace, Carousel, Tabs } from "antd-mobile";
 import router from "umi/router";
 
-const listArr = ["全部", "待付款", "待发货", "待收货", "待评价"];
-
+const titleArr = ["全部", "待付款", "待发货", "待收货", "待评价"];
 class MyOrder extends PureComponent {
   constructor(props) {
     super(props);
@@ -40,7 +39,7 @@ class MyOrder extends PureComponent {
   renderTabBar = props => {
     return (
       <SelectorBar
-        listArr={listArr}
+        listArr={titleArr}
         defaultSelect={this.state.defaultSelect}
         onClick={index => {
           this.setState({ defaultSelect: index });
@@ -59,7 +58,7 @@ class MyOrder extends PureComponent {
 
         <div className={styles.tabbar_container}>
           <Tabs
-            tabs={listArr}
+            tabs={titleArr}
             initialPage={this.props.location.query.defaultSelect || 0}
             animated={true}
             useOnPan={true}
