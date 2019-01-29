@@ -114,7 +114,7 @@ export default class Focus extends PureComponent {
             position: "relative"
           }}
         >
-          <ScrollWrap wrapId="FocustList" wrapClass={styles.wrap_body}>
+          <ScrollWrap wrapId="Focust" wrapClass={styles.wrap_body}>
             <FocusPerson />
             <div className={styles.blogger_push_wrapper}>
               <div className={styles.header_title}>你或许喜欢TA们</div>
