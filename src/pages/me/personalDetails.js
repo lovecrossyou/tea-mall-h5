@@ -8,6 +8,7 @@ import { PureComponent } from "react";
 import styles from "./personalDetails.css";
 import ScrollWrap from "../../components/scroll";
 import React from "react";
+
 import zhulizhe from "../mall/image/zhulizhe.jpg";
 import userAdd from "./images/user_icon_add@2x.png";
 import shoppingCart from "./images/user_icon_shopping cart@2x.png";
