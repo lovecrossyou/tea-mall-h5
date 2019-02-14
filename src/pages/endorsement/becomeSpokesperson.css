@@ -58,6 +58,7 @@
 }
 .store_module{
     margin-top: 36px;
+    margin-bottom: 36px;
 }
 .store_module img{
     width:100%;
@@ -87,9 +88,8 @@
 .store_module_product{
     display: flex;
     height:352px;
-    padding-top:40px;
-    padding-bottom:36px;
-    /*box-sizing: border-box;*/
+    padding-top:4px;
+    box-sizing: border-box;
     overflow-x: scroll;
 }
 .product_item{

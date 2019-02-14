@@ -3,7 +3,7 @@ import styles from './becomeSpokesperson.css'
 
 import dianpu_bk from './image/dianpu_bk@2x.png'
 import shangpin_bk from './image/shangpin_bk@2x.png'
-
+import { WaterFailView } from "../mall/recommend";
 
 
 
@@ -51,7 +51,7 @@ const StoreModuleProduct = function() {
 
 
 export default function SpokespersonContainer(){
-  return(
+  return (
     <div className={styles.spokesperson_container}>
 
       <BecomeSpokesperson/>
@@ -63,11 +63,12 @@ export default function SpokespersonContainer(){
         <StoreModule imgsrc={dianpu_bk}/>
         <StoreModuleProduct/>
         <StoreModule imgsrc={shangpin_bk}/>
-
+        <WaterFailView/>
       </div>
 
     </div>
-  )
+
+  );
 }
 
 

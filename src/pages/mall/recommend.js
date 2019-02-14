@@ -65,14 +65,21 @@ const Product = function() {
     </div>
   );
 };
+
+export const WaterFailView = function() {
+  return <div className={styles.water_fail_view}>
+    <Product />
+    <Product />
+    <Product />
+    <Product />
+  </div>
+};
+
 export default class Recommend extends PureComponent {
   render() {
     return (
-      <div className={styles.water_fail_view}>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+      <div className={styles.recommend_container}>
+        <WaterFailView/>
       </div>
     );
   }
