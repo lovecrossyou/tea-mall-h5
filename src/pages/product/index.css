@@ -2,26 +2,29 @@
 .container {
   background-color: #f5f8fb;
   width: 100%;
-  overflow-x: hidden;
 }
-
-.product_scroll{
+.product_scroll_c{
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 102px;
-  top: 156px;
-  /*width: 100%;*/
-  /*height: 100%;*/
+  width: 100%;
+  height: 100%;
 }
-
+.product_scroll{
+  width: 100%;
+  height: 100%;
+}
+.tabbar_container{
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 102px;
+  width: 100%;
+}
 .productNav_container{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 156px;
   width: 100%;
-  position: fixed;
   padding-top: 28px;
   box-sizing: border-box;
 
@@ -30,6 +33,14 @@
   border-bottom-color: #cccccc;
   border-bottom-style: solid;
 
+}
+.p_d_p_container{
+  width: 100%;
+  height: 100%;
+  display: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .productNav_leftIcon{
   display: flex;
@@ -422,7 +433,7 @@
   display: flex;
   flex: 1;
   flex-direction: row;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 102px;

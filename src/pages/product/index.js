@@ -7,7 +7,8 @@ import {
   Flex,
   WingBlank,
   WhiteSpace,
-  Carousel
+  Carousel,
+  Tabs
 } from "antd-mobile";
 import ScrollWrap from "../../components/scroll";
 import Product_figure from "./image/Product_figure.png";
@@ -30,11 +31,13 @@ const storeInProduct_contentimgs = [
   storeInProduct_contentimg2,
   storeInProduct_contentimg3
 ];
-
+const titleArr = ["商品", "详情", "评价"];
 class Product extends PureComponent {
   constructor(props) {
     super(props);
-    this.clientHeight = window.document.body.clientHeight;
+    this.state = {
+      selectIndex: 0
+    };
   }
   componentDidMount() {
     console.log("xxxxxxx====" + JSON.stringify(this.props.store));
@@ -43,60 +46,41 @@ class Product extends PureComponent {
       payload: {}
     });
   }
-
+  renderTabBar = props => {
+    return (
+      <ProductNav
+        onBack={() => {
+          router.go(-1);
+        }}
+        rightAction={() => {}}
+        selectIndex={this.state.selectIndex}
+        onClick={index => {
+          this.setState({ selectIndex: index });
+          props.goToTab(index);
+        }}
+      />
+    );
+  };
   render() {
     return (
       <div className={styles.container}>
-        <ProductNav
-          onBack={() => {
-            router.go(-1);
-          }}
-          rightAction={() => {}}
-        />
-        <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
-          <div style={{ width: "100%", backgroundColor: "#fff" }}>
-            <CarouselTop
-              clsName={styles.carouselStyle}
-              imgs={[Product_figure, Product_figure, Product_figure]}
-            />
-          </div>
-
-          <ProductInfo />
-          <WhiteSpace />
-          <ProductRowSelectItem
-            dic={{
-              title: "产品参数：",
-              content: "领取新人专享福利",
-              arrow: true
+        <div className={styles.tabbar_container}>
+          <Tabs
+            tabs={titleArr}
+            initialPage={0}
+            animated={true}
+            useOnPan={true}
+            distanceToChangeTab={0.5}
+            renderTabBar={this.renderTabBar}
+            onChange={(tab, index) => {
+              this.setState({ selectIndex: index });
             }}
-          />
-          <Product_Line />
-          <ProductRowSelectItem
-            dic={{
-              title: "优惠券：",
-              content: "满50-100  满300-80  满200-50",
-              arrow: true
-            }}
-          />
-          <Product_Line />
-          <ProductRowSelectItem
-            dic={{ title: "运费：", content: "包邮", arrow: false }}
-          />
-          <Product_Line />
-          <ProductRowSelectItem
-            dic={{ title: "产品参数：", content: "", arrow: true }}
-          />
-          <WhiteSpace />
-
-          {/*商品评价*/}
-          <ProductAppraise />
-          <WhiteSpace />
-          {/*商品店铺*/}
-          <StoreInProduct />
-          <WhiteSpace />
-          <ProductCommend />
-        </ScrollWrap>
-
+          >
+            <ProductPart />
+            <ProductDetailPart />
+            <ProductAppraisePart />
+          </Tabs>
+        </div>
         <ProductTabbar
           toShoppingCart={() => {
             this._productParameterChoose._openModal();
@@ -105,7 +89,6 @@ class Product extends PureComponent {
             this._productParameterChoose._openModal();
           }}
         />
-
         <ProductParameterChoose ref={c => (this._productParameterChoose = c)} />
       </div>
     );
@@ -168,16 +151,18 @@ class ProductNav extends PureComponent {
         </div>
         <div className={styles.productNav_middle}>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            {["商品", "详情", "评价"].map((value, index) => {
+            {titleArr.map((value, index) => {
               return (
                 <div
                   key={index + "#"}
                   className={
-                    index === 0
+                    index === this.props.selectIndex
                       ? styles.productNav_middle_titleSelected
                       : styles.productNav_middle_titleNormal
                   }
-                  onClick={() => {}}
+                  onClick={() => {
+                    this.props.onClick(index);
+                  }}
                 >
                   {value}
                 </div>
@@ -195,16 +180,6 @@ class ProductNav extends PureComponent {
     );
   }
 }
-const TopSegment = () => {
-  return (
-    <Flex justify="between">
-      <Flex.Item>商品</Flex.Item>
-      <Flex.Item>详情</Flex.Item>
-      <Flex.Item>评价</Flex.Item>
-    </Flex>
-  );
-};
-
 class ProductAppraise extends PureComponent {
   render() {
     return (
@@ -216,6 +191,16 @@ class ProductAppraise extends PureComponent {
         <Product_appraise />
         <WhiteSpace />
         <Product_appraise />
+        {this.props.appraiseAll
+          ? ["1", "1", "1", "1", "1"].map((value, index) => {
+              return (
+                <div key={index + "#"}>
+                  <WhiteSpace />
+                  <Product_appraise />
+                </div>
+              );
+            })
+          : null}
       </div>
     );
   }
@@ -354,8 +339,6 @@ class ProductCommend extends PureComponent {
   }
 }
 class ProductTabbar extends PureComponent {
-
-
   render() {
     return (
       <div className={styles.productTabbar_container}>
@@ -528,6 +511,88 @@ class ProductParameterChoose extends PureComponent {
     );
   }
 }
+class ProductAppraisePart extends PureComponent {
+  render() {
+    return (
+      <div className={styles.product_scroll_c}>
+        <ScrollWrap
+          wrapId="product_appraise_scroll"
+          wrapClass={styles.product_scroll}
+        >
+          <ProductAppraise appraiseAll={true} />
+        </ScrollWrap>
+      </div>
+    );
+  }
+}
+class ProductDetailPart extends PureComponent {
+  render() {
+    return (
+      <div className={styles.product_scroll_c}>
+        <ScrollWrap
+          wrapId="product_detail_scroll"
+          wrapClass={styles.product_scroll}
+        >
+          <StoreInProduct />
+          <WhiteSpace />
+          <ProductCommend />
+        </ScrollWrap>
+      </div>
+    );
+  }
+}
+class ProductPart extends PureComponent {
+  render() {
+    return (
+      <div className={styles.product_scroll_c}>
+        <ScrollWrap wrapId="product_scroll" wrapClass={styles.product_scroll}>
+          <div style={{ width: "100%", backgroundColor: "#fff" }}>
+            <CarouselTop
+              clsName={styles.carouselStyle}
+              imgs={[Product_figure, Product_figure, Product_figure]}
+            />
+          </div>
+
+          <ProductInfo />
+          <WhiteSpace />
+          <ProductRowSelectItem
+            dic={{
+              title: "产品参数：",
+              content: "领取新人专享福利",
+              arrow: true
+            }}
+          />
+          <Product_Line />
+          <ProductRowSelectItem
+            dic={{
+              title: "优惠券：",
+              content: "满50-100  满300-80  满200-50",
+              arrow: true
+            }}
+          />
+          <Product_Line />
+          <ProductRowSelectItem
+            dic={{ title: "运费：", content: "包邮", arrow: false }}
+          />
+          <Product_Line />
+          <ProductRowSelectItem
+            dic={{ title: "产品参数：", content: "", arrow: true }}
+          />
+          <WhiteSpace />
+
+          {/*商品评价*/}
+          <ProductAppraise />
+          <WhiteSpace />
+          {/*商品店铺*/}
+          <StoreInProduct />
+          <WhiteSpace />
+          <ProductCommend />
+        </ScrollWrap>
+      </div>
+    );
+  }
+}
+
 export default connect(state => {
   return {
     store: state.product
