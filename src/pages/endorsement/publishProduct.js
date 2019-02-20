@@ -8,9 +8,10 @@ import icon_location  from './image/icon_location@2x.png'
 import btn_left  from './image/btn_left@2x.png'
 import icon_endorsement from './image/icon_endorsement@2x.png'
 import tea_img from './image/tea_img.png'
+import btn_draft from './image/btn_draft@2x.png'
+import btn_release from './image/btn_release@2x.png'
 
 const SelectLocation = function(data) {
-  console.log(11111111111111,data);
   if(data.selectProductArr.isImg == 0){
     return <div className={styles.usual_address}>
       {
@@ -19,7 +20,6 @@ const SelectLocation = function(data) {
         })
       }
     </div>
-
   }else{
     return <div className={styles.usual_pic}>
       {
@@ -31,8 +31,7 @@ const SelectLocation = function(data) {
       }
     </div>
   }
-
-}
+};
 
 const PublishProductLocation = function(data) {
 
@@ -46,26 +45,49 @@ const PublishProductLocation = function(data) {
   </div>
 };
 
+const PublishProductSpecific = function() {
+  return <div className={styles.publish_product_specific}>
+    <div className={styles.publish_product_specific_video}>
+      <div className={styles.push_video}>视频</div>
+    </div>
+    <div className={styles.publish_product_specific_tit}>
+      <TextareaItem
+        placeholder="添加标题"
+        count={10}
+      />
+    </div>
+    <div className={styles.publish_product_specific_content}>
+      <TextareaItem
+        placeholder="说说你的心得，可能会帮助更多人哦~"
+        rows={5}
+        count={100}
+      />
+    </div>
+  </div>
+};
+
+const Btn = function(data) {
+  return <div className={styles.save_btn_left}
+
+              onClick={()=>{
+                console.log(11111)
+              }}>
+      <img src={data.imgsrc} alt=""/>
+      <span>{data.name}</span>
+    </div>
+};
+
+const SaveBtn = function() {
+  return <div className={styles.save_btn}>
+    <Btn name="草稿" imgsrc={btn_draft} />
+    <Btn name="发布" imgsrc={btn_release} />
+  </div>
+};
+
 class PublishProduct extends PureComponent{
   render(){
     return <div className={styles.publish_product_container}>
-          发布
-        <div className={styles.publish_product_specific}>
-          <div className={styles.publish_product_specific_video}>视频</div>
-          <div className={styles.publish_product_specific_tit}>
-            <TextareaItem
-              placeholder="添加标题"
-              count={10}
-            />
-          </div>
-          <div className={styles.publish_product_specific_content}>
-            <TextareaItem
-              placeholder="说说你的心得，可能会帮助更多人哦~"
-              rows={5}
-              count={100}
-            />
-          </div>
-        </div>
+        <PublishProductSpecific/>
         <PublishProductLocation
                       imgLeft={icon_location}
                       tit="选择位置"
@@ -95,8 +117,7 @@ class PublishProduct extends PureComponent{
                         isImg:1
                       }}
         />
-
-
+        <SaveBtn/>
       </div>
   }
 }
