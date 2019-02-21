@@ -187,8 +187,13 @@ export class SelectorBar extends PureComponent {
   }
 
   render() {
+    let tabBgCls = this.props.tabBgCls ;
+    let backgroundColor = "#fff" ;
+    if(tabBgCls!==undefined){
+      backgroundColor = tabBgCls.backgroundColor ;
+    }
     return (
-      <div className={styles.selectorBar_container}>
+      <div className={styles.selectorBar_container} style={{backgroundColor:`${backgroundColor}`}}>
         {this.state.listArr.map((value, index) => {
           return (
             <div

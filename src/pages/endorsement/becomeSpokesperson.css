@@ -1,0 +1,121 @@
+
+
+.spokesperson_container{
+    width:100%;
+    padding-top:32px;
+    padding-left:32px;
+    padding-right:32px;
+    box-sizing: border-box;
+}
+
+.become_spokesperson_container{
+    width:100%;
+    padding:30px;
+    box-shadow:0px 3px 18px 0px rgba(194,193,193,0.73);
+    box-sizing: border-box;
+}
+.become_spokesperson_tit{
+    text-align: center;
+    font-size:36px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    color:rgba(31,31,31,1);
+    line-height:70px;
+}
+.become_spokesperson_content{
+    margin-top:30px;
+}
+.become_spokesperson_btn{
+    margin:40px auto;
+    width:260px;
+    height:68px;
+    line-height:68px;
+    text-align: center;
+    background:rgba(255,89,75,1);
+    border-radius:34px;
+    box-shadow:0px 3px 18px 0px rgba(194,193,193,0.73);
+    font-size:30px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+}
+
+.super_spokesperson_title{
+    margin-top: 60px;
+}
+.super_spokesperson_title_left{
+    font-size:36px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    color:rgba(31,31,31,1);
+    padding-right:16px;
+}
+.super_spokesperson_title_right{
+    font-size:24px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.store_module{
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+.store_module img{
+    width:100%;
+    height:96px;
+}
+.store_module_nav{
+    width:100%;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #E6E6E6;
+}
+.store_module_nav_filter{
+    border-right:1px solid #E6E6E6;
+}
+.store_module_nav_filter,
+.store_module_nav_more{
+    width:134px;
+    text-align: center;
+}
+.store_module_nav_money{
+    flex:1;
+    padding-left:70px;
+    box-sizing: border-box;
+}
+
+.store_module_product{
+    display: flex;
+    height:352px;
+    padding-top:4px;
+    box-sizing: border-box;
+    overflow-x: scroll;
+}
+.product_item{
+    width:186px;
+    height:276px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 2px 24px 0px rgba(194,193,193,0.73);
+    border-radius:4px;
+    margin-right:22px;
+}
+.product_item .product_item_img{
+    width:186px;
+    height:172px;
+    background: pink;
+}
+.product_item .product_item_sale{
+    font-size:24px;
+    color: #999999;
+    margin-top: 18px;
+    padding-left: 10px;
+}
+.product_item .product_item_price{
+    font-size:28px;
+    color: #FF594B;
+    padding-left: 10px;
+}
+
+
+
