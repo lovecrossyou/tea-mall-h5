@@ -58,7 +58,9 @@ export default class representStroe extends PureComponent {
           this.setState({ defaultSelect: index });
           props.goToTab(index);
         }}
-        tabBgCls={tabBg}
+        tabBgCls={{
+          backgroundColor:"black"
+        }}
       />
     );
   };
