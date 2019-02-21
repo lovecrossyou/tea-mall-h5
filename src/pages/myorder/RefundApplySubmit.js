@@ -105,7 +105,7 @@ const RefundExplain = () => {
           autoFocus={true}
           placeholder="选填"
           rows={2}
-          moneyKeyboardWrapProps={moneyKeyboardWrapProps}
+          moneykeyboardwrapprops={moneyKeyboardWrapProps}
         />
       </div>
     </div>
@@ -115,7 +115,7 @@ const data = [];
 class UploadImage extends PureComponent {
   state = {
     files: data,
-    multiple: true
+    multiple: false
   };
   onChange = (files, type, index) => {
     console.log(files, type, index);
@@ -131,7 +131,7 @@ class UploadImage extends PureComponent {
         <ImagePicker
           files={files}
           onChange={this.onChange}
-          onImageClick={(index, fs) => console.log(index, fs)}
+          onImageClick={(index, fs) => console.log(index, fs[index].url)}
           selectable={files.length < 9}
           multiple={this.state.multiple}
         />
