@@ -1,13 +1,13 @@
-import styles from "../index.css";
-import couponIcon from "../images/center_icon_Coupon@2x.png";
-import gotoNext from "../images/center_icon_next@2x.png";
-import React from "react";
-
 /**
  *日期: 2019-01-15
  *作者: lovecross
  *功能:
  */
+
+import styles from "../index.css";
+import couponIcon from "../images/center_icon_Coupon@2x.png";
+import gotoNext from "../images/center_icon_next@2x.png";
+import React from "react";
 
 export const MeItem = ({ title, subtitle = "", icon, onClick }) => {
   return (
