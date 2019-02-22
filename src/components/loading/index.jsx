@@ -19,8 +19,8 @@ export default class Loading extends React.Component {
     super(props);
     this.ratio = window.devicePixelRatio;
     this.state = {
-      width: 14 * this.ratio,
-      height: 14 * this.ratio
+      width: 28 * this.ratio,
+      height: 28 * this.ratio
     };
   }
 

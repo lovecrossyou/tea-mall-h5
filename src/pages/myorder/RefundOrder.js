@@ -5,7 +5,7 @@ import styles from "./refundOrder.css";
 import { connect } from "dva";
 import ScrollWrap from "../../components/scroll";
 import { Toast, WhiteSpace } from "antd-mobile";
-import { OrderListItem } from "./index";
+import { OrderListItem } from "./OrderList";
 import router from "umi/router";
 /**
  *Created by tianhaojie .
@@ -31,13 +31,13 @@ class RefundOrder extends PureComponent {
         <ScrollWrap wrapId="refundOrder" wrapClass={styles.myOrder_scroll}>
           {orderList.map((value, index) => {
             return (
-              <div
-                key={index + "#"}
-                onClick={() => {
-                  router.push("/myorder/RefundApply");
-                }}
-              >
-                <OrderListItem data={value} />
+              <div key={index + "#"}>
+                <OrderListItem
+                  data={value}
+                  onClick={() => {
+                    router.push("/myorder/RefundApply");
+                  }}
+                />
                 <OrderItemFooter />
               </div>
             );

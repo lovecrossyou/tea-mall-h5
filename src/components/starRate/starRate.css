@@ -1,0 +1,12 @@
+
+.star_container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.star{
+  margin: 0 8px;
+  width: 40px;
+  height: 40px;
+}
