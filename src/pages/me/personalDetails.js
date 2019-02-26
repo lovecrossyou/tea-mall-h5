@@ -50,7 +50,14 @@ const PersonalHeader = () => {
             style={{ width: "21px", height: "24px" }}
           />
         </div>
-        <div className={styles.advocacy_shop_text}>TA的代言商品</div>
+        <div
+          className={styles.advocacy_shop_text}
+          onClick={() => {
+            router.push("/me/representStroe");
+          }}
+        >
+          TA的代言商品
+        </div>
         <div>
           <img
             src={nextIcon}
@@ -111,7 +118,7 @@ export default class personalDetails extends PureComponent {
       <div>
         <div
           style={{
-            height: `${this.clientHeight - 150}px`,
+            height: `${this.clientHeight}px`,
             position: "relative"
           }}
         >

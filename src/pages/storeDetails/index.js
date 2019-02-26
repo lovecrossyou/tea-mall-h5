@@ -29,7 +29,7 @@ const SearchArea = () => {
   return (
     <div className={styles.top_area}>
       <div className={styles.top_search}>
-        <div className={styles.back_icon} onClick={()=>router.go(-1)}>
+        <div className={styles.back_icon} onClick={() => router.go(-1)}>
           <img src={backIcon} alt="" />
         </div>
         <div className={styles.top_search_input}>
@@ -105,7 +105,7 @@ class storeDetails extends PureComponent {
 
         <div
           style={{
-            height: `${this.clientHeight - 469 - 132 - 102}px`,
+            height: `${this.clientHeight - 469}px`,
             position: "relative"
           }}
         >
